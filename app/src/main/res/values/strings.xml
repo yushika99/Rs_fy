@@ -5,6 +5,8 @@
     <string name="my_personal_budgeting_app">My Personal Budgeting App</string>
     <string name="enter_email">Enter Email</string>
     <string name="password">password</string>
+    <string name="don_t_have_an_account_signup">Don\'t have an Account, signUp</string>
+    <string name="login">Login</string>
 
 </resources>
 
