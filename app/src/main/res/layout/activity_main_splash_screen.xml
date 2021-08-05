@@ -13,13 +13,14 @@
         android:layout_width="187dp"
         android:layout_height="209dp"
         android:layout_gravity="center"
-        android:src="@drawable/piggybank" />
+        android:src="@drawable/piggybank"
+        android:contentDescription="@string/logo" />
 
     <TextView
         android:id="@+id/appname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rs.fy"
+        android:text="@string/rs_fy"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="#333333"
@@ -36,9 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="My Personal Budgeting App"
+        android:text="@string/my_personal_budgeting_app"
         android:textColor="#333333"
-        android:textSize="2mm"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
 
