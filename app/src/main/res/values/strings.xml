@@ -3,6 +3,8 @@
     <string name="rs_fy">Rs.fy</string>
     <string name="logo">Logo</string>
     <string name="my_personal_budgeting_app">My Personal Budgeting App</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="password">password</string>
 
 </resources>
 
