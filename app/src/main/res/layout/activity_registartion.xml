@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:layout_margin="5dp"
-        android:text="Login" />
+        android:text="SignUp" />
 
     <TextView
         android:id="@+id/registerQn"
