@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".expensesActivity"
+    android:background="@drawable/bc3">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="My expenses "
+        android:textColor="#DCEDE4"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:shadowColor="#B60558"
+        android:shadowDx="35"
+        android:shadowDy="67"
+        android:shadowRadius="80"
+        android:gravity="center_horizontal" />
+
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#6F16372F"
+    android:layout_marginTop="50dp"
+    android:id="@+id/toolbar"
+    android:elevation="7dp"
+    android:theme="@style/AppTheme"
+    app:popupTheme="@style/AppTheme" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:layout_below="@+id/toolbar">
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Budget"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Today"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Week"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Month"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="In pocket"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/budgetTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+            <TextView
+                android:id="@+id/weekTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/monthTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Month"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="In pocket"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background=""
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+
+        </TableRow>
+    </TableLayout>
+
+
+
+
+</RelativeLayout>
