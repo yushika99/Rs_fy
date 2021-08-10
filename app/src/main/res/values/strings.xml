@@ -10,6 +10,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="large_text">
+        <string-array name="goal">
+            <item>Select Item</item>
+            <item>Salary</item>
+            <item>Grants</item>
+            <item>Rental</item>
+            <item>Invesment</item>
+            <item>Lottery</item>
+            <item>Interest</item>
+            <item>Dividend</item>
+            <item>Pension</item>
+            <item>Other</item>
+
+        </string-array>
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -103,6 +116,7 @@
     <string name="expenses">expenses</string>
     <string name="more">more</string>
     <string name="income">income</string>
+    <string name="my_income">My Income</string>
 
 
     <string-array name="Bitems">

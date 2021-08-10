@@ -1,0 +1,76 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IncomeGoalActivity"
+    android:orientation="vertical"
+    android:background="@drawable/incomeBackground1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Income Goals"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:shadowColor="#B60558"
+        android:shadowDx="35"
+        android:shadowDy="67"
+        android:shadowRadius="80"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/TotalIncomeTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/headtextsub"
+        android:gravity="center"
+        android:shadowColor="#F1E6EB"
+        android:shadowDx="35"
+        android:shadowDy="67"
+        android:shadowRadius="80"
+        android:text="Total Income Goal : Rs. 0.00 "
+        android:textColor="#FFF"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="1dp"
+        android:theme="@style/AppTheme"
+        app:popupTheme="@style/AppTheme" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            app:fabCustomSize="10mm"
+            android:backgroundTint="#C6018786"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/iconseplus"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+</LinearLayout>

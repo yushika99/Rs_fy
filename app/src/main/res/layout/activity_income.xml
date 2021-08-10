@@ -1,9 +1,479 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".incomeActivity">
+    tools:context=".expensesActivity"
+    android:background="@drawable/expensesdis3">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/my_income"
+        android:textColor="#DCEDE4"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:shadowColor="#B60558"
+        android:shadowDx="35"
+        android:shadowDy="67"
+        android:shadowRadius="80"
+        android:gravity="center_horizontal" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/toolbar"
+        android:elevation="1dp"
+        android:theme="@style/AppTheme"
+        app:popupTheme="@style/AppTheme" />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:layout_below="@+id/toolbar">
+
+
+        <TableRow android:background="@drawable/table_expensesr1"
+            android:layout_marginBottom="2sp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Goal"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Today"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Week"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Month"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Extra"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+
+
+        </TableRow>
+
+        <TableRow android:background="@drawable/table_row2">
+            <TextView
+                android:id="@+id/incomeTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+            <TextView
+                android:id="@+id/todayTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/weekTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/monthTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:id="@+id/inpocketTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12dp"/>
+
+
+        </TableRow>
+    </TableLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/table">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridLayout"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/IncomeGoalcardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal|center_vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/incomeGoals"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Income Goal"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+<!--                        android:shadowColor="#FAD17E06"-->
+                        android:shadowDx="5"
+                        android:shadowDy="7"
+                        android:shadowRadius="80"
+                        android:gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/todaycardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal|center_vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/iconsetoday"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Today "
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:shadowColor="#FAD17E06"
+                        android:shadowDx="5"
+                        android:shadowDy="7"
+                        android:shadowRadius="80"
+                        android:gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/weekcardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal|center_vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/iconseweek"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  This Week "
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:shadowColor="#FAD17E06"
+                        android:shadowDx="5"
+                        android:shadowDy="7"
+                        android:shadowRadius="80"
+                        android:gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/monthcardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal|center_vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/iconsemonth"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  This Month "
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:shadowColor="#FAD17E06"
+                        android:shadowDx="5"
+                        android:shadowDy="7"
+                        android:shadowRadius="80"
+                        android:gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/anlyticscardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal|center_vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/incomeAnalytics"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  Analytics "
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:shadowColor="#FAD17E06"
+                        android:shadowDx="5"
+                        android:shadowDy="7"
+                        android:shadowRadius="80"
+                        android:gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/historycardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#FFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal|center_vertical">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/incomeHistory"/>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  History "
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:shadowColor="#FAD17E06"
+                        android:shadowDx="5"
+                        android:shadowDy="7"
+                        android:shadowRadius="80"
+                        android:gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            app:layout_anchor="@+id/gridLayout"
+            app:layout_anchorGravity="center">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_margin="10dp"
+                android:backgroundTint="#C6018786"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iconseplus"
+                app:fabCustomSize="10mm" />
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+</RelativeLayout>
