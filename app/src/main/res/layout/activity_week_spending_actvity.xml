@@ -4,28 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BudgetActivity"
     android:orientation="vertical"
+    tools:context=".WeekSpendingActvity"
     android:background="@drawable/expensesdis3">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="FF03DAC5"
-        android:elevation="4dp"
-        android:maxWidth="1dp"
+        android:maxWidth="5dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Budget "
+        android:text="My Week's Spending "
         android:textColor="#DCEDE4"
         android:textAlignment="center"
         android:layout_marginBottom="1dp"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:shadowColor="#B60558"
         android:shadowDx="35"
@@ -34,7 +34,7 @@
         android:gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/TotalBudgetAmountTextview"
+        android:id="@+id/totalWeekAmountTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
@@ -42,37 +42,33 @@
         android:background="@drawable/headtextsub"
         android:gravity="center"
         android:shadowColor="#F1E6EB"
+        android:textSize="15sp"
         android:shadowDx="35"
         android:shadowDy="67"
         android:shadowRadius="80"
-        android:text="Total Budget Amount : Rs. 0.00 "
+        android:text="Total Week Amount : Rs. 0.00 "
         android:textColor="#FFF"
         android:textStyle="bold" />
 
-
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        app:fabCustomSize="10mm"
-        android:backgroundTint="#C6018786"
-        android:layout_margin="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/iconseplus"
-        />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal|center_vertical" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 

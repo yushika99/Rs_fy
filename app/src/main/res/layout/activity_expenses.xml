@@ -208,6 +208,7 @@
                 android:layout_gravity="center_horizontal|center_vertical">
 
                 <ImageView
+                    android:id="@+id/budgetEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/iconssalarybudget"/>
@@ -253,6 +254,7 @@
                 android:layout_gravity="center_horizontal|center_vertical">
 
                 <ImageView
+                    android:id="@+id/todayEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/iconsetoday"/>
@@ -298,6 +300,7 @@
                 android:layout_gravity="center_horizontal|center_vertical">
 
                 <ImageView
+                    android:id="@+id/weekEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/iconseweek"/>
@@ -343,6 +346,7 @@
                 android:layout_gravity="center_horizontal|center_vertical">
 
                 <ImageView
+                    android:id="@+id/monthEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/iconsemonth"/>
@@ -388,6 +392,7 @@
                 android:layout_gravity="center_horizontal|center_vertical">
 
                 <ImageView
+                    android:id="@+id/analysisEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/iconssalarybudget"/>
@@ -433,6 +438,7 @@
                 android:layout_gravity="center_horizontal|center_vertical">
 
                 <ImageView
+                    android:id="@+id/historyEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/iconsehistory"/>
