@@ -10,14 +10,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="large_text">
+
+
+
+
+
         <string-array name="goal">
-            <item>Select Item</item>
+            <item>Select Goal</item>
             <item>Salary</item>
             <item>Grants</item>
             <item>Rental</item>
             <item>Invesment</item>
-            <item>Lottery</item>
-            <item>Interest</item>
+            <item>Wages</item>
+            <item>side business</item>
             <item>Dividend</item>
             <item>Pension</item>
             <item>Other</item>
@@ -117,6 +122,25 @@
     <string name="more">more</string>
     <string name="income">income</string>
     <string name="my_income">My Income</string>
+    <string name="my_income_goals">My Income Goals</string>
+    <string name="history">History</string>
+    <string name="rs_0">Rs. 0</string>
+    <string name="rs_0">Rs. 0</string>
+    <string name="rs_0">Rs. 0</string>
+    <string name="rs_0">Rs. 0</string>
+    <string name="rs_0">Rs. 0</string>
+    <string name="today">Today</string>
+    <string name="this_week">This Week</string>
+    <string name="goal">Goal</string>
+    <string name="today">Today</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="extra">Extra</string>
+    <string name="income_goal">Income Goal</string>
+    <string name="this_month">This Month</string>
+    <string name="analytics">Analytics</string>
+    <string name="account_information">Account Information</string>
+    <string name="useremail_gmail_com">useremail@gmail.com</string>
 
 
     <string-array name="Bitems">

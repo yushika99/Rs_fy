@@ -26,9 +26,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.MutableData;
+import com.google.firebase.database.ValueEventListener;
 
 import org.joda.time.DateTime;
 import org.joda.time.Months;
@@ -41,13 +44,13 @@ import java.util.Calendar;
 
 public class IncomeGoalActivity extends AppCompatActivity {
 
-            private TextView TotalBudgetAmountTextview;
+            private TextView TotalIncomeGoalTextview;
             private RecyclerView recyclerView;
 
 
 
-            private FloatingActionButton fab;
-            private DatabaseReference budgetRef;
+            private FloatingActionButton goalfab;
+            private DatabaseReference goalRef;
             private FirebaseAuth mAuth;
             private ProgressDialog loader;
 
@@ -62,10 +65,10 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
                 //initializing
                 mAuth = FirebaseAuth.getInstance();
-                budgetRef = FirebaseDatabase.getInstance().getReference().child("budget").child(mAuth.getCurrentUser().getUid());
+                goalRef = FirebaseDatabase.getInstance().getReference().child("Income Goal").child(mAuth.getCurrentUser().getUid());
                 loader = new ProgressDialog(this);
 
-                TotalBudgetAmountTextview=findViewById(R.id.TotalBudgetAmountTextview);
+                TotalIncomeGoalTextview=findViewById(R.id.TotalIncomeGoalTextview);
                 recyclerView=findViewById(R.id.recyclerView);
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -73,50 +76,70 @@ public class IncomeGoalActivity extends AppCompatActivity {
                 linearLayoutManager.setReverseLayout(true);
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(linearLayoutManager);
-                fab = findViewById(R.id.fab);
-                fab.setOnClickListener(new View.OnClickListener() {
+
+                goalRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @org.jetbrains.annotations.NotNull DataSnapshot snapshot) {
+                        int totalGoal=0;
+
+                        for(DataSnapshot snap:snapshot.getChildren()){
+                            goalData data=snap.getValue(goalData.class);
+                            totalGoal+=data.getGoal();
+                            String sTotal=String.valueOf("Month Goal:Rs"+totalGoal);
+                            TotalIncomeGoalTextview.setText(sTotal);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @org.jetbrains.annotations.NotNull DatabaseError error) {
+
+                    }
+                })
+                        goalfab = findViewById(R.id.goalfab);
+                        goalfab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        additem();
+                        addgoal();
                     }
                 });
             }
 
-            private void additem() {
+            private void addgoal() {
                 AlertDialog.Builder myDiolag = new AlertDialog.Builder(this);
                 LayoutInflater inflater = LayoutInflater.from(this);
-                View myView = inflater.inflate(R.layout.input_layout, null);
+                View myView = inflater.inflate(R.layout.input_goal_layout, null);
                 myDiolag.setView(myView);
 
                 final AlertDialog dialog=myDiolag.create();
                 dialog.setCancelable(false);
                 dialog.show();
 
-                final Spinner itemsSpinner = myView.findViewById(R.id.itemsSpinner);
-                final EditText amount = myView.findViewById(R.id.amount);
-                final Button cancel =myView.findViewById(R.id.cancel);
-                final Button save =myView.findViewById(R.id.save);
+                final Spinner goalspinner = myView.findViewById(R.id.goalspinner);
+                final EditText goalAmount = myView.findViewById(R.id.goalamount);
+                final Button goalcancel =myView.findViewById(R.id.goalcancel);
+                final Button goalsave =myView.findViewById(R.id.goalsave);
 
-                save.setOnClickListener(new View.OnClickListener() {
+                goalsave.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
                         // validation
-                        String budgetAmount = amount.getText().toString();
-                        String budgetItem = itemsSpinner.getSelectedItem().toString();
-                        if(TextUtils.isEmpty(budgetAmount)){
-                            amount.setError("Amount is Required!");
+                        String goalAmount = goalAmount.getText().toString();
+                        String goalItem = goalspinner.getSelectedItem().toString();
+                        if(TextUtils.isEmpty(goalAmount)){
+                            goalAmount.setError("Amount is Required!");
                             return;
                         }
-                        if (budgetItem.equals("Select Item")){
-                            Toast.makeText(com.example.rs_fy.BudgetActivity.this,"Select a valid Item",Toast.LENGTH_SHORT).show();
+                        if (goalItem.equals("Select Goal")){
+                            Toast.makeText(com.example.rs_fy.IncomeGoalActivity.this,"Select a valid Item",Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            loader.setMessage("Adding a Budget Item");
+                            loader.setMessage("Adding an Income Goal");
                             loader.setCanceledOnTouchOutside(false);
                             loader.show();
 
-                            String id=budgetRef.push().getKey();
+                            String id=goalRef.push().getKey();
                             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                             Calendar cal =Calendar.getInstance();
                             String date= dateFormat.format(cal.getTime());
@@ -126,14 +149,14 @@ public class IncomeGoalActivity extends AppCompatActivity {
                             DateTime now =new DateTime();
                             Months months = Months.monthsBetween(epoch,now);
                             //pass parameters according to the paramiterlized constucter
-                            Data data = new Data(budgetItem,date,id,null,Integer.parseInt(budgetAmount), months.getMonths());
-                            budgetRef.child(id).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            goalData data = new goalData(goalItem,goaldate,goalid,null,Integer.parseInt(goalAmount), goalmonth.getMonths());
+                            goalRef.child(goalid).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(com.example.rs_fy.BudgetActivity.this,"Budget Item Added Sccessfuly",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(com.example.rs_fy.IncomeGoalActivity.this,"Goal Item Added Sccessfuly",Toast.LENGTH_SHORT).show();
                                     }else{
-                                        Toast.makeText(com.example.rs_fy.BudgetActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(com.example.rs_fy.IncomeGoalActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
                                     }
                                     loader.dismiss();
                                 }
@@ -142,7 +165,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-                cancel.setOnClickListener(new View.OnClickListener() {
+                goalcancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialog.dismiss();
@@ -155,45 +178,46 @@ public class IncomeGoalActivity extends AppCompatActivity {
             public void OnStart(){
                 super.onStart();
 
-                FirebaseRecyclerOptions<Data> options =new FirebaseRecyclerOptions.Builder<Data>()
-                        .setQuery(budgetRef,Data.class)
+                FirebaseRecyclerOptions<goalData> goaloptions =new FirebaseRecyclerOptions.Builder<goalData>()
+                        .setQuery(goalRef,goalData.class)
                         .build();
 
-                FirebaseRecyclerAdapter<Data, com.example.rs_fy.BudgetActivity.MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data, com.example.rs_fy.BudgetActivity.MyViewHolder>(options) {
+                FirebaseRecyclerAdapter<goalData, com.example.rs_fy.IncomeGoalActivity.MyViewHolder> adapter = new FirebaseRecyclerAdapter<goalData, com.example.rs_fy.IncomeGoalActivity.MyViewHolder>(goaloptions) {
                     @Override
-                    protected void onBindViewHolder(@NonNull com.example.rs_fy.BudgetActivity.MyViewHolder holder, int position, @NonNull  Data model) {
+                    protected void onBindViewHolder(@NonNull com.example.rs_fy.IncomeGoalActivity.MyViewHolder holder, int position, @NonNull  Data model) {
                         holder.setItemAmount("Allocated amount: Rs" +model.getAmount());
                         holder.setDate("On : "+model.getDate());
-                        holder.setItemName("Budget Item : "+model.getItem());
+                        holder.setItemName("Goal : "+model.getGoal());
                         holder.notes.setVisibility(View.GONE);
-                        switch (model.getItem()){
 
-                            case "Transport":
-                                holder.imageView.setImageResource(R.drawable.iconsetransport);
+                        switch (model.getGoal()){
+
+                            case "Salary":
+                                holder.imageView.setImageResource(R.drawable.incomeSalary);
                                 break;
-                            case "Food":
-                                holder.imageView.setImageResource(R.drawable.iconsefood);
+                            case "Grants":
+                                holder.imageView.setImageResource(R.drawable.incomeGrants);
                                 break;
-                            case "House":
-                                holder.imageView.setImageResource(R.drawable.iconsehome);
+                            case "Rental":
+                                holder.imageView.setImageResource(R.drawable.incomeRental);
                                 break;
-                            case "Entertainment":
-                                holder.imageView.setImageResource(R.drawable.iconseentertainment);
+                            case "Invesment":
+                                holder.imageView.setImageResource(R.drawable.incomeInvestments);
                                 break;
-                            case "Education":
-                                holder.imageView.setImageResource(R.drawable.iconseeducation);
+                            case "Wages":
+                                holder.imageView.setImageResource(R.drawable.incomewage);
                                 break;
-                            case "Charity":
-                                holder.imageView.setImageResource(R.drawable.iconsecharity);
+                            case "side business":
+                                holder.imageView.setImageResource(R.drawable.incomeside);
                                 break;
-                            case "Health":
-                                holder.imageView.setImageResource(R.drawable.iconsehealth);
+                            case "Dividend":
+                                holder.imageView.setImageResource(R.drawable.incomeDevidends);
                                 break;
-                            case "Personal":
-                                holder.imageView.setImageResource(R.drawable.iconsepersonal);
+                            case "Pension":
+                                holder.imageView.setImageResource(R.drawable.incomePension);
                                 break;
                             case "Other":
-                                holder.imageView.setImageResource(R.drawable.iconseother);
+                                holder.imageView.setImageResource(R.drawable.incomeOther);
                                 break;
 
                         }
@@ -202,9 +226,9 @@ public class IncomeGoalActivity extends AppCompatActivity {
                     @NonNull
 
                     @Override
-                    public com.example.rs_fy.BudgetActivity.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieve_layout,parent,false);
-                        return new com.example.rs_fy.BudgetActivity.MyViewHolder(view);
+                    public com.example.rs_fy.IncomeGoalActivity.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_retrieve_layout,parent,false);
+                        return new com.example.rs_fy.IncomeGoalActivity().MyViewHolder(view);
                     }
                 };
 
@@ -216,20 +240,20 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
             public class MyViewHolder extends android.support.v7.widget.RecyclerView.ViewHolder {
                 View mView;
-                public ImageView imageView;
-                public TextView notes;
+                public ImageView goalImageview;
+                public TextView goalnote;
 
                 public MyViewHolder(@NonNull  View itemView) {
                     super(itemView);
                     mView=itemView;
-                    imageView =itemView.findViewById(R.id.imageView);
-                    notes=itemView.findViewById(R.id.note);
+                    goalImageview =itemView.findViewById(R.id.goalImageview);
+                    goalnote=itemView.findViewById(R.id.goalnote);
 
                 }
 
-                public void setItemName(String itemName){
-                    TextView item= mView.findViewById(R.id.item);
-                    item.setText(itemName);
+                public void setGoal(String goalitem){
+                    TextView goalitem= mView.findViewById(R.id.goalitem);
+                    goalitem.setText(goalitem);
                 }
 
                 public void setItemAmount(String itemAmount){
