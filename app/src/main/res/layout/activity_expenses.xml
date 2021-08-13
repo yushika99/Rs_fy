@@ -7,7 +7,20 @@
     tools:context=".expensesActivity"
     android:background="@drawable/expensesdis3">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="FF03DAC5"
+        android:elevation="4dp"
+        android:maxWidth="1dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+
     <TextView
+        android:id="@+id/textbelowtoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -22,21 +35,15 @@
         android:shadowRadius="80"
         android:gravity="center_horizontal" />
 
-<androidx.appcompat.widget.Toolbar
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:id="@+id/toolbar"
-    android:elevation="1dp"
-    android:theme="@style/AppTheme"
-    app:popupTheme="@style/AppTheme" />
+
 
     <TableLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
-        android:layout_below="@+id/toolbar">
+        android:layout_margin="10dp"
+        android:layout_below="@+id/textbelowtoolbar">
 
 
         <TableRow android:background="@drawable/table_expensesr1"

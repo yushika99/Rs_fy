@@ -6,14 +6,50 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".RegistartionActivity">
+    tools:context=".RegistartionActivity"
+    android:background="@drawable/maincheck3">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Welcome"
+        android:textColor="#FAF8F8"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:shadowColor="#90373409"
+        android:shadowDx="65"
+        android:shadowDy="67"
+        android:shadowRadius="90"
+        android:gravity="center_horizontal"
+        />
 
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:src="@drawable/piggybank"
         android:contentDescription="@string/logo" />
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rs_fy"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginTop="1dp"
+        />
+    <TextView
+        android:id="@+id/appDiscrption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/my_personal_budgeting_app"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/email"
@@ -23,8 +59,8 @@
         android:textColor="#333333"
         android:inputType="textEmailAddress"
         android:textSize="20sp"
-        android:layout_margin="5dp"
-        android:textColorHint="#333333" />
+        android:layout_margin="10dp"
+        android:textColorHint="#AEBAB9" />
 
     <EditText
         android:id="@+id/password"
@@ -34,8 +70,10 @@
         android:textColor="#333333"
         android:inputType="textPassword"
         android:textSize="20sp"
-        android:layout_margin="5dp"
-        android:textColorHint="#333333" />
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:textColorHint="#AEBAB9" />
 
     <Button
         android:id="@+id/registerbtn"
@@ -51,5 +89,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="have an account? Login"
+        android:textColor="#030707"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:gravity="center"/>
 </LinearLayout>

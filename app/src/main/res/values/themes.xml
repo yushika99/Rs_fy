@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Rs_fy" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="Theme.Rs_fy" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#E831D1AD</item>
         <item name="colorPrimaryVariant">#0D3700B3</item>
