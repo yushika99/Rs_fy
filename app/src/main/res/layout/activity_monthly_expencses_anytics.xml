@@ -175,7 +175,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_transport"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -256,7 +256,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_food"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -337,7 +337,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_ent"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -418,7 +418,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_house"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -500,7 +500,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_edu"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -581,7 +581,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_cha"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -662,7 +662,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_hea"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -743,7 +743,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_per"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -825,7 +825,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-
+                                android:id="@+id/progress_ratio_oth"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"

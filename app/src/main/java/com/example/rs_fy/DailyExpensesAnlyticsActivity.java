@@ -110,24 +110,9 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         //anyChartView
         anyChartViewEx = findViewById(R.id.anyChartViewEx);
 
-        getTotalWeekTransportExpense();
-        getTotalWeekFoodExpense();
-        getTotalWeekHouseExpenses();
-        getTotalWeekEntertainmentExpenses();
-        getTotalWeekEducationExpenses();
-        getTotalWeekCharityExpenses();
-        getTotalWeekApparelExpenses();
-        getTotalWeekHealthExpenses();
-        getTotalWeekPersonalExpenses();
-        getTotalWeekOtherExpenses();
-        getTotalDaySpending();
-
 
 
 
     }
 
-    private void getTotalWeekTransportExpense() {
-
-    }
 }

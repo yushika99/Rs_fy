@@ -2,21 +2,25 @@ package com.example.rs_fy;
 
 public class Data {
 
-    String item,date,id,notes;
+    String item,date,id,itemNday,itemNweek,itemNmonth;
     int amount,month,week;
+    String notes;
 
     public Data() {
 
     }
 
-    public Data(String item, String date, String id, String notes, int amount, int month, int week) {
+    public Data(String item, String date, String id, String itemNday, String itemNweek, String itemNmonth, int amount, int month, int week, String notes) {
         this.item = item;
         this.date = date;
         this.id = id;
-        this.notes = notes;
+        this.itemNday = itemNday;
+        this.itemNweek = itemNweek;
+        this.itemNmonth = itemNmonth;
         this.amount = amount;
         this.month = month;
         this.week = week;
+        this.notes = notes;
     }
 
     public String getItem() {
@@ -43,12 +47,28 @@ public class Data {
         this.id = id;
     }
 
-    public String getNotes() {
-        return notes;
+    public String getItemNday() {
+        return itemNday;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setItemNday(String itemNday) {
+        this.itemNday = itemNday;
+    }
+
+    public String getItemNweek() {
+        return itemNweek;
+    }
+
+    public void setItemNweek(String itemNweek) {
+        this.itemNweek = itemNweek;
+    }
+
+    public String getItemNmonth() {
+        return itemNmonth;
+    }
+
+    public void setItemNmonth(String itemNmonth) {
+        this.itemNmonth = itemNmonth;
     }
 
     public int getAmount() {
@@ -73,5 +93,13 @@ public class Data {
 
     public void setWeek(int week) {
         this.week = week;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }

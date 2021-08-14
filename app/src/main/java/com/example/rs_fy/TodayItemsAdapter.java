@@ -144,8 +144,14 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
                     Weeks weeks= Weeks.weeksBetween(epoch,now);
                     Months months = Months.monthsBetween(epoch,now);
 
+                    String itemNday = item+date;
+                    String itemNweek = item+weeks.getWeeks();
+                    String itemNmonth = item+months.getMonths();
 
-                    Data data = new Data(item,date,post_key,note,amount, months.getMonths(),weeks.getWeeks());
+
+                    //Data data = new Data(item,date,post_key,note,amount, months.getMonths(),weeks.getWeeks());
+                    Data data = new Data(item,date,post_key,itemNday,itemNweek,itemNmonth,amount, months.getMonths(),weeks.getWeeks(),note);
+
                     //databse refrence
                     DatabaseReference reference= FirebaseDatabase.getInstance().getReference("expenses").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
