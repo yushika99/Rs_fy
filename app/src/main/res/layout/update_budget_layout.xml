@@ -5,13 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    app:cardCornerRadius="50dp">
+    app:cardCornerRadius="80dp">
 
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Update this item ? "
         android:textSize="14dp"
         android:textStyle="bold"
@@ -31,7 +32,7 @@
         android:text="itemName"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#333"/>
 
     <EditText
@@ -43,6 +44,7 @@
         android:textColorHint="#D6CCCC"
         android:textStyle="bold"
         android:textColor="#333"
+        android:textSize="20sp"
         android:inputType="number"/>
 
     <EditText
@@ -53,6 +55,7 @@
         android:hint="Enter note"
         android:textColorHint="#D6CCCC"
         android:textStyle="bold"
+        android:textSize="20sp"
         android:textColor="#333"
         android:inputType="textCapSentences"/>
 
@@ -65,36 +68,50 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="4"
+            android:gravity="center_horizontal">
             <Button
                 android:id="@+id/btnDelete"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:textAllCaps="false"
                 android:text="Delete"
+                android:textSize="12sp"
                 android:textColor="#333"
                 android:textStyle="bold"
-                android:layout_margin="2dp"
                 android:background="@drawable/button_cancel_form"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="4"
+            android:layout_gravity="center_horizontal">
 
             <Button
 
                 android:id="@+id/btnUpdate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="Update"
-                android:textColor="#F6F6F6"
-                android:textStyle="bold"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/button_save_form"
-                android:layout_margin="2dp"
-                />
+                android:gravity="center_horizontal"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textColor="#F6F6F6"
+                android:textSize="12sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
 

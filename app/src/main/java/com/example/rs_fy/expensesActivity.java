@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class expensesActivity extends AppCompatActivity {
 
 
-private ImageView budgetEBtnImageView,todayEBtnImageView,weekEBtnImageView,monthEBtnImageView;
+private ImageView budgetEBtnImageView,todayEBtnImageView,weekEBtnImageView,monthEBtnImageView,analysisEBtnImageView;
 
 
 
@@ -24,6 +24,7 @@ private ImageView budgetEBtnImageView,todayEBtnImageView,weekEBtnImageView,month
         todayEBtnImageView =findViewById(R.id.todayEBtnImageView);
         weekEBtnImageView =findViewById(R.id.weekEBtnImageView);
         monthEBtnImageView =findViewById(R.id.monthEBtnImageView);
+        analysisEBtnImageView =findViewById(R.id.analysisEBtnImageView);
 
         budgetEBtnImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +56,14 @@ private ImageView budgetEBtnImageView,todayEBtnImageView,weekEBtnImageView,month
             public void onClick(View v) {
                 Intent intent = new Intent(expensesActivity.this,WeekSpendingActvity.class);
                 intent.putExtra("type","month");
+                startActivity(intent);
+            }
+        });
+
+        analysisEBtnImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(expensesActivity.this,ChooseExpensesAnlyticsActivity.class);
                 startActivity(intent);
             }
         });

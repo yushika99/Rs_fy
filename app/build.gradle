@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'joda-time:joda-time:2.10.6'
     implementation 'com.firebaseui:firebase-ui-database:4.3.2'
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 
 
 }

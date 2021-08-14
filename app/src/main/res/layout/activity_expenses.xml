@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="FF03DAC5"
+        android:background="#59EAB7"
         android:elevation="4dp"
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -23,9 +23,9 @@
         android:id="@+id/textbelowtoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="55dp"
         android:text="My expenses "
-        android:textColor="#DCEDE4"
+        android:textColor="#0759EAB7"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -395,7 +395,7 @@
                     android:id="@+id/analysisEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/iconssalarybudget"/>
+                    android:src="@drawable/iconseanlysis"/>
 
 
 

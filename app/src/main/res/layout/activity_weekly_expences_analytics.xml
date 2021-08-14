@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WeeklyExpencesAnalyticsActivity"
+    android:background="@drawable/expensesdis3">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="#0759EAB7"
+            android:elevation="4dp"
+            android:maxWidth="1dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            tools:targetApi="lollipop" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" My Week Spending "
+            android:textColor="#F5FBFFFE"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:shadowColor="#B60558"
+            android:shadowDx="35"
+            android:shadowDy="67"
+            android:shadowRadius="80"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/totalAmoutSpentOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Amount: Rs.0 "
+            android:layout_marginTop="1dp"
+            android:background="@drawable/headtextsub"
+            android:layout_marginHorizontal="80dp"
+            android:gravity="center"
+            android:shadowColor="#F1E6EB"
+            android:shadowDx="35"
+            android:shadowDy="67"
+            android:shadowRadius="80"
+            android:textColor="#FFF"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/statusbar">
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/green" />
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="L < 50%"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#333"/>
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/brown" />
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="50% - 99% "
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#333"/>
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="18dp"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/red" />
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text=" G > 100% "
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#333"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutTransport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Transport"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsTransportAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/transport_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout"
+                        android:src="@drawable/iconsetransport" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutFood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout1"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Food"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsFoodAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/food_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout1"
+                        android:src="@drawable/iconsefood" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutEntertainment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout2"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Entertainment"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsEntertainmentAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/entertainment_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout2"
+                        android:src="@drawable/iconseentertainment" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout3"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Home"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsHomeAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/Home_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout3"
+                        android:src="@drawable/iconsehome" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout4"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Education"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsEducationAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/education_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout4"
+                        android:src="@drawable/iconseeducation" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutCharity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout5"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Charity"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsCharityAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/charity_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout5"
+                        android:src="@drawable/iconsecharity" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutHealth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout6"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Health"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsHealthAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/health_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout6"
+                        android:src="@drawable/iconsehealth" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutPersonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout7"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Personal"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsPersonalAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/personal_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout7"
+                        android:src="@drawable/iconsepersonal" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/setcard">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout8"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Other"
+                            android:textColor="#333"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analyticsOtherAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:text="Rs .0"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textColor="#333"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/other_status"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/linerLayout8"
+                        android:src="@drawable/iconseother" />
+                </RelativeLayout>
+
+                <com.anychart.AnyChartView
+                    android:id="@+id/anyChartViewEx"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp" />
+
+                <RelativeLayout
+                    android:id="@+id/linerLayoutExAnliysis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/month_spet_bottom">
+
+                    <LinearLayout
+                        android:id="@+id/linerLayout10"
+                        android:layout_width="250dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Summary of Spending"
+                            android:textAlignment="center"
+                            android:textColor="#0B0A0A"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/monthSpentAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_vertical"
+                            android:text="Total Spent: Rs.0"
+                            android:textAlignment="center"
+                            android:textColor="#333"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/monthRatioSpending"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="status"
+                                android:textAlignment="center"
+                                android:textColor="#333"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                            <ImageView
+                                android:id="@+id/monthRatioSpending_Image"
+                                android:layout_width="0dp"
+                                android:layout_height="18dp"
+                                android:layout_weight="1"
+                                android:layout_marginTop="5dp"/>
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="This Week"
+                            android:textColor="#333"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_toEndOf="@id/linerLayout10"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/iconstodayexanalyze"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</LinearLayout>
