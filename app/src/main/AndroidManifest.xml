@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rs_fy">
-        <activity android:name=".MonthlyExpencsesAnyticsActivity"
+        <activity android:name=".HistortyExActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".MonthlyExpencsesAnyticsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".WeeklyExpencesAnalyticsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

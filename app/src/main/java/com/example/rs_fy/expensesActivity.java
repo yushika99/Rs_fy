@@ -128,6 +128,13 @@ private CardView budgetcardViewbtn,todaycardViewbtn,weekcardViewbtn,monthcardVie
             }
         });
 
+        historycardViewbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(expensesActivity.this, HistortyExActivity.class);
+                startActivity(intent);
+            }
+        });
 
         budgetRef.addValueEventListener(new ValueEventListener() {
             @Override

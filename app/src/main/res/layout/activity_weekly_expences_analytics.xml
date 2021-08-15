@@ -899,7 +899,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:gravity="center_vertical"
-                            android:text="Summary of Spending"
+                            android:text="Summary of Weekly Spending"
                             android:textAlignment="center"
                             android:textColor="#0B0A0A"
                             android:textSize="20sp"
@@ -959,7 +959,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/iconstodayexanalyze"/>
+                        android:src="@drawable/iconsweekexanalyze"/>
 
                 </RelativeLayout>
 
