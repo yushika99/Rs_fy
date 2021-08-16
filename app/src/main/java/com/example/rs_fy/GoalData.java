@@ -1,14 +1,14 @@
 package com.example.rs_fy;
 
-public class goalData {
+public class GoalData {
 
     String goalItem,goaldate,goalid,goalnotes;
     int goalamount,goalmonth;
 
-    public goalData() {
+    public GoalData() {
     }
 
-    public goalData(String goalItem, String goaldate, String goalid, String goalnotes, int goalamount, int goalmonth) {
+    public GoalData(String goalItem, String goaldate, String goalid, String goalnotes, int goalamount, int goalmonth) {
         this.goalItem = goalItem;
         this.goaldate = goaldate;
         this.goalid = goalid;

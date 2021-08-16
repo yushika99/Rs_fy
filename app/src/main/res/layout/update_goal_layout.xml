@@ -12,23 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Update Goal ? "
-        android:textSize="14dp"
+        android:text="   UPDATE  INCOME     GOAL  "
+        android:textSize="38dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="#333"
-        android:shadowColor="#009688"
-        android:shadowDx="35"
-        android:shadowDy="67"
-        android:shadowRadius="180"
-        />
+        android:textColor="#333" />
 
     <TextView
         android:id="@+id/updategoalchategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Goal"
+        android:layout_marginTop="13dp"
+        android:text="Goalname"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="25dp"
@@ -39,28 +34,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter amount"
-        android:textColorHint="#D6CCCC"
+        android:hint="Enter Amount:"
+        android:inputType="number"
+        android:textColor="#000"
         android:textStyle="bold"
-        android:textColor="#333"
-        android:inputType="number"/>
+        android:textSize="20dp"
+        android:textColorHint="#000"/>
 
     <EditText
         android:id="@+id/updatenote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Enter note"
-        android:textColorHint="#D6CCCC"
+        android:hint="  Enter Note:"
+        android:textColor="#000"
+        android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="#333"
-        android:inputType="textCapSentences"/>
-
+        android:textColorHint="#000"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="100dp"
         android:orientation="horizontal">
+
 
         <RelativeLayout
             android:layout_width="0dp"

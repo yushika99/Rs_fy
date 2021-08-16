@@ -37,7 +37,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".IncomeGoalActivity" />
-        <activity android:name=".incomeActivity" />
+        <activity android:name=".IncomeActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

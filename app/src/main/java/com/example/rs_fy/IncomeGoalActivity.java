@@ -52,7 +52,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
 
     private FloatingActionButton gfab;
-    private DatabaseReference incomeRef;
+    private DatabaseReference goalref;
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
 
@@ -72,7 +72,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
         //initializing
         mAuth = FirebaseAuth.getInstance();
-        incomeRef = FirebaseDatabase.getInstance().getReference().child("goal").child(mAuth.getCurrentUser().getUid());
+        goalref = FirebaseDatabase.getInstance().getReference().child("goal").child(mAuth.getCurrentUser().getUid());
         loader = new ProgressDialog(this);
 
         TotalGoalAmountTextview=findViewById(R.id.TotalGoalAmountTextview);
@@ -84,7 +84,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        incomeRef.addValueEventListener(new ValueEventListener() {
+        goalref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull  DataSnapshot snapshot) {
                 int totalAmount =0;
@@ -123,20 +123,21 @@ public class IncomeGoalActivity extends AppCompatActivity {
         final AlertDialog dialog=myDiolag.create();
         dialog.setCancelable(false);
 
-        final Spinner goalSpinner = myView.findViewById(R.id.goalSpinner);
-        final EditText amount = myView.findViewById(R.id.goalamount);
-        final Button cancel =myView.findViewById(R.id.goalcancel);
-        final Button save =myView.findViewById(R.id.goalsave);
 
-        save.setOnClickListener(new View.OnClickListener() {
+        final Spinner inputgoalspinner = myView.findViewById(R.id.inputgoalspinner);
+        final EditText inputgoalamount = myView.findViewById(R.id.inputgoalamount);
+        final Button inputgoalcancel =myView.findViewById(R.id.inputgoalcancel);
+        final Button inputgoalsave =myView.findViewById(R.id.inputgoalsave);
+
+        inputgoalsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // validation
-                String goalAmount = amount.getText().toString();
-                String goalAmount = goalSpinner.getSelectedItem().toString();
+                String goalAmount = inputgoalamount.getText().toString();
+                String goalItem = inputgoalspinner.getSelectedItem().toString();
                 if(TextUtils.isEmpty(goalAmount)){
-                    amount.setError("Amount is Required!");
+                    inputgoalamount.setError("Amount is Required!");
                     return;
                 }
                 if (goalAmount.equals("Select Item")){
@@ -147,7 +148,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
 
-                    String id=incomeRef.push().getKey();
+                    String id=goalref.push().getKey();
                     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                     Calendar cal =Calendar.getInstance();
                     String date= dateFormat.format(cal.getTime());
@@ -160,8 +161,8 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
 
                     //pass parameters according to the paramiterlized constucter
-                    Data data = new Data(budgetItem,date,id,null,Integer.parseInt(goalAmount), months.getMonths(),weeks.getWeeks());
-                    incomeRef.child(id).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    GoalData data = new GoalData(goalItem,goaldate,goalid,null,Integer.parseInt(goalAmount), goalmonth.getMonths(),goalweeks.getWeeks());
+                    goalref.child(goalid).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
@@ -176,7 +177,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        cancel.setOnClickListener(new View.OnClickListener() {
+        inputgoalcancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
@@ -190,7 +191,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
         super.onStart();
 
         FirebaseRecyclerOptions<Data> options =new FirebaseRecyclerOptions.Builder<Data>()
-                .setQuery(incomeRef,Data.class)
+                .setQuery(goalref,Data.class)
                 .build();
 
         FirebaseRecyclerAdapter<Data, MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data, MyViewHolder>(options) {
@@ -332,7 +333,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
 
                 Data data = new Data(item,date,post_key,null,amount, months.getMonths(),weeks.getWeeks());
-                incomeRef.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                goalref.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
@@ -352,7 +353,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
         delBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                incomeRef.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                goalref.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){

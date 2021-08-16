@@ -7,19 +7,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class incomeActivity extends AppCompatActivity {
-    private CardView IncomeGoalcardView;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class IncomeActivity extends AppCompatActivity {
+    private CardView ihomegoalcardView;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income);
 
-        IncomeGoalcardView =findViewById(R.id.IncomeGoalcardView);
+        ihomegoalcardView =findViewById(R.id.ihomegoalcardView);
 
-        IncomeGoalcardView.setOnClickListener(new View.OnClickListener() {
+        ihomegoalcardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (incomeActivity.this, IncomeGoalActivity.class);
+                Intent intent = new Intent (IncomeActivity.this, IncomeGoalActivity.class);
                 startActivity(intent);
             }
         });

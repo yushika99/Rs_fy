@@ -28,7 +28,7 @@
 
 
             <TextView
-                android:id="@+id/goal"
+                android:id="@+id/inputgoal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -39,7 +39,7 @@
 
 
             <TextView
-                android:id="@+id/choosegoal"
+                android:id="@+id/inputchoosegoal"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:gravity="center"
@@ -50,7 +50,7 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/goalspinner"
+                android:id="@+id/inputgoalspinner"
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:layout_gravity="center"
@@ -64,7 +64,7 @@
             </Spinner>
 
             <EditText
-                android:id="@+id/goalamount"
+                android:id="@+id/inputgoalamount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -76,8 +76,8 @@
                 android:textColorHint="#000"/>
 
             <EditText
-
-                android:id="@+id/goalnote"
+                 android:visibility="gone"
+                android:id="@+id/inputgoalnote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="  Enter Note:"
@@ -102,7 +102,7 @@
 
 
                 <Button
-                    android:id="@+id/goalcancel"
+                    android:id="@+id/inputgoalcancel"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:textAllCaps="false"
@@ -121,7 +121,7 @@
                 android:layout_weight="1">
 
                 <Button
-                    android:id="@+id/goalsave"
+                    android:id="@+id/inputgoalsave"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:textAllCaps="false"
