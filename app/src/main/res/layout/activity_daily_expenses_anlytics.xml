@@ -878,17 +878,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:orientation="horizontal"
-                    android:background="@drawable/month_spet_bottom">
+                    android:background="@drawable/month_spet_bottom"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/linerLayout10"
                         android:layout_width="250dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="vertical">
 
 
@@ -931,12 +931,13 @@
                                 android:textColor="#333"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
+
                             <ImageView
                                 android:id="@+id/monthRatioSpending_Image"
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
-                                android:layout_weight="1"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1" />
                         </LinearLayout>
 
                         <TextView
@@ -950,15 +951,16 @@
 
 
                     </LinearLayout>
+
                     <ImageView
-                        android:layout_toEndOf="@id/linerLayout10"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/iconstodayexanalyze"/>
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@id/linerLayout10"
+                        android:src="@drawable/iconstodayexanalyze" />
 
                 </RelativeLayout>
 
