@@ -17,14 +17,14 @@
 
         <!--            check-->
         <LinearLayout
-            android:id="@+id/goallinerlayout"
+            android:id="@+id/retrivegoallinerlayout"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
             <TextView
-                android:id="@+id/goalitem"
+                android:id="@+id/retrivegoalitem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -34,7 +34,7 @@
                 android:textSize="19sp"/>
 
             <TextView
-                android:id="@+id/goalamount"
+                android:id="@+id/retrivegoalamount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -45,7 +45,7 @@
                 android:textSize="18sp"/>
 
             <TextView
-                android:id="@+id/goalnote"
+                android:id="@+id/retrivegoalnote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -55,7 +55,7 @@
                 android:textColor="#333"
                 android:textSize="18sp"/>
             <TextView
-                android:id="@+id/goaldate"
+                android:id="@+id/retrivegoaldate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -68,16 +68,16 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/goalImageview"
+            android:id="@+id/retrivegoalImageview"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="14dp"
             android:layout_marginLeft="14dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
-            android:layout_toEndOf="@+id/goallinerlayout"
-            android:layout_toRightOf="@+id/goallinerlayout"
-            android:src="@drawable/incomeSalary" />
+            android:layout_toEndOf="@+id/retrivegoallinerlayout"
+            android:layout_toRightOf="@+id/retrivegoallinerlayout"
+            android:src="@drawable/incomesalary" />
     </RelativeLayout>
 
 

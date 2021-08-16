@@ -3,18 +3,23 @@ package com.example.rs_fy;
 public class GoalData {
 
     String goalItem,goaldate,goalid,goalnotes;
-    int goalamount,goalmonth;
+    int goalamount,goalmonth,goalweek;
 
     public GoalData() {
     }
 
-    public GoalData(String goalItem, String goaldate, String goalid, String goalnotes, int goalamount, int goalmonth) {
+    public GoalData(String goalItem, String goaldate, String goalid, String goalnotes, int goalamount, int goalmonth,int goalweek) {
         this.goalItem = goalItem;
         this.goaldate = goaldate;
         this.goalid = goalid;
         this.goalnotes = goalnotes;
         this.goalamount = goalamount;
         this.goalmonth = goalmonth;
+        this.goalweek=goalweek;
+
+
+
+
     }
 
     public String getGoalItem() {
@@ -63,6 +68,14 @@ public class GoalData {
 
     public void setGoalmonth(int goalmonth) {
         this.goalmonth = goalmonth;
+    }
+
+    public int getGoalweek() {
+        return goalweek;
+    }
+
+    public void setGoalweek(int goalweek) {
+        this.goalweek = goalweek;
     }
 }
 

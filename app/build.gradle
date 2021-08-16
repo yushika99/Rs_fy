@@ -3,6 +3,7 @@ plugins {
 }
 apply plugin: 'com.google.gms.google-services'
 
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -52,6 +53,8 @@ dependencies {
     implementation 'joda-time:joda-time:2.10.6'
     implementation 'com.firebaseui:firebase-ui-database:4.3.2'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation platform('com.google.firebase:firebase-bom:28.3.1')
+
 
 
     //anyChartView

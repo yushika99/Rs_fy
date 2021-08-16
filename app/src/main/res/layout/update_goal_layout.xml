@@ -64,7 +64,7 @@
 
 
             <Button
-                android:id="@+id/goaldelete"
+                android:id="@+id/updategoaldelete"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textAllCaps="false"
@@ -83,7 +83,7 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/goalupdate"
+                android:id="@+id/updategoalupdate"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textAllCaps="false"
