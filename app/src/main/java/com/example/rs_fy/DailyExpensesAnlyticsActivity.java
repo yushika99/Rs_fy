@@ -59,7 +59,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_expenses_anlytics);
 
-        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+        settingsToolbar = findViewById(R.id.todayIncomeToolbar);
         setSupportActionBar(settingsToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -71,11 +71,11 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         personalRef = FirebaseDatabase.getInstance().getReference("personal").child(onlineUserId);
 
 
-        totalAmoutSpentOn = findViewById(R.id.totalAmoutSpentOn);
+        totalAmoutSpentOn = findViewById(R.id.todaytotalAmoutincome);
 
         //general analytic
         monthSpentAmount = findViewById(R.id.monthSpentAmount);
-        linerLayoutExAnliysis = findViewById(R.id.linerLayoutExAnliysis);
+        linerLayoutExAnliysis = findViewById(R.id.linerLayoutMonthlyInAnliysis);
         monthRatioSpending = findViewById(R.id.monthRatioSpending);
         monthRatioSpending_Image = findViewById(R.id.monthRatioSpending_Image);
 
@@ -94,12 +94,12 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         relativeLayoutTransport = findViewById(R.id.relativeLayoutTransport);
         relativeLayoutFood = findViewById(R.id.relativeLayoutFood);
         relativeLayoutEntertainment = findViewById(R.id.relativeLayoutEntertainment);
-        relativeLayoutHome = findViewById(R.id.relativeLayoutHome);
+        relativeLayoutHome = findViewById(R.id.relativeLayoutInvest);
         relativeLayoutEducation = findViewById(R.id.relativeLayoutEducation);
         relativeLayoutCharity = findViewById(R.id.relativeLayoutCharity);
-        relativeLayoutHealth = findViewById(R.id.relativeLayoutHealth);
-        relativeLayoutPersonal = findViewById(R.id.relativeLayoutPersonal);
-        relativeLayoutOther = findViewById(R.id.relativeLayoutOther);
+        relativeLayoutHealth = findViewById(R.id.relativeLayoutDividend);
+        relativeLayoutPersonal = findViewById(R.id.relativeLayoutPension);
+        relativeLayoutOther = findViewById(R.id.relativeLayoutOtherIncome);
 
         //status textviews
         progress_ratio_transport = findViewById(R.id.progress_ratio_transport);

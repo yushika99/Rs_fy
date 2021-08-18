@@ -141,6 +141,7 @@
     <string name="analytics">Analytics</string>
     <string name="account_information">Account Information</string>
     <string name="useremail_gmail_com">useremail@gmail.com</string>
+    <string name="month_income_anlytics">Month Income Anlytics</string>
 
 
     <string-array name="Bitems">

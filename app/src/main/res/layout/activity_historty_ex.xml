@@ -9,7 +9,7 @@
     android:background="@drawable/expensesdis3">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_Feed_Toolbar"
+        android:id="@+id/todayIncomeToolbar"
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:background="#0759EAB7"

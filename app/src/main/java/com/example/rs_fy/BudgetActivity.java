@@ -10,8 +10,6 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.provider.CalendarContract;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -34,7 +32,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
@@ -81,7 +78,7 @@ public class BudgetActivity extends AppCompatActivity {
         loader = new ProgressDialog(this);
 
         TotalBudgetAmountTextview=findViewById(R.id.TotalBudgetAmountTextview);
-        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView=findViewById(R.id.TodayIncomeRecyclerView);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);

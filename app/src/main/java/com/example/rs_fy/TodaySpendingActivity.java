@@ -72,9 +72,9 @@ public class TodaySpendingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getActionBar().setTitle("My Today Spending ");
 
-        totalAmoutSpentOn=findViewById(R.id.totalAmoutSpentOn);
+        totalAmoutSpentOn=findViewById(R.id.todaytotalAmoutincome);
         progressBar=findViewById(R.id.progressBar);
-        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView=findViewById(R.id.TodayIncomeRecyclerView);
 
         fab=findViewById(R.id.fab);
         loader=new ProgressDialog(this);

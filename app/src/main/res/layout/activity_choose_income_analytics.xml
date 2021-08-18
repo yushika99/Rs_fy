@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".ChooseIncomeAnalytics"
+android:background="@drawable/incomedis2">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/analyticsIncomehometoolbar"
+    android:layout_width="match_parent"
+    android:layout_height="68dp"
+    android:background="#0759EAB7"
+    android:elevation="4dp"
+    android:maxWidth="1dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    tools:targetApi="lollipop" />
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/todayIncomeAnalyticscardView"
+    android:layout_width="180dp"
+    android:layout_height="180dp"
+    android:layout_row="0"
+    android:layout_column="0"
+    android:layout_gravity="center"
+    android:layout_rowWeight="2"
+    android:layout_columnWeight="1"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:background="#FFF"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="15dp">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal|center_vertical">
+
+        <ImageView
+            android:id="@+id/todayIncomeAnalyticsImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/todayincomeanalytics"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Today Income Anlytics "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:shadowColor="#8BC34A"
+            android:shadowDx="5"
+            android:shadowDy="7"
+            android:shadowRadius="80"
+            android:gravity="center_horizontal"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/weekIncomeAnalyticscardView"
+    android:layout_width="180dp"
+    android:layout_height="180dp"
+    android:layout_row="0"
+    android:layout_column="0"
+    android:layout_gravity="center"
+    android:layout_rowWeight="2"
+    android:layout_columnWeight="1"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="20dp"
+    android:background="#FFF"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="15dp">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal|center_vertical">
+
+        <ImageView
+            android:id="@+id/weekIncomeAnalyticsImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/weekincomeanalytics"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Week Income Anlytics "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:shadowColor="#8BC34A"
+            android:shadowDx="5"
+            android:shadowDy="7"
+            android:shadowRadius="80"
+            android:gravity="center_horizontal"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/monthIncomeAnalyticscardView"
+    android:layout_width="180dp"
+    android:layout_height="180dp"
+    android:layout_row="0"
+    android:layout_column="0"
+    android:layout_gravity="center"
+    android:layout_rowWeight="2"
+    android:layout_columnWeight="1"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="20dp"
+    android:background="#FFF"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="15dp">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal|center_vertical">
+
+        <ImageView
+            android:id="@+id/monthIncomeAnalyticsImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/monthincomeanalytics"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/month_income_anlytics"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:shadowColor="#8BC34A"
+            android:shadowDx="5"
+            android:shadowDy="7"
+            android:shadowRadius="80"
+            android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</LinearLayout>

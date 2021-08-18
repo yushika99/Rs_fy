@@ -208,31 +208,31 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
 
                     case "Salary":
-                        holder.imageView.setImageResource(R.drawable.incomesalary);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomesalary);
                         break;
                     case "Grants":
-                        holder.imageView.setImageResource(R.drawable.incomegrantt);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomegrantt);
                         break;
                     case "Rental":
-                        holder.imageView.setImageResource(R.drawable.incomerental);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomerental);
                         break;
                     case "Invesment":
-                        holder.imageView.setImageResource(R.drawable.incomeinvest);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomeinvest);
                         break;
                     case "Wages":
-                        holder.imageView.setImageResource(R.drawable.incomewage);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomewage);
                         break;
                     case "side business":
-                        holder.imageView.setImageResource(R.drawable.incomeside);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomeside);
                         break;
                     case "Dividend":
-                        holder.imageView.setImageResource(R.drawable.incomedevidence);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomedevidence);
                         break;
                     case "Pension":
-                        holder.imageView.setImageResource(R.drawable.incomepension);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomepension);
                         break;
                     case "Other":
-                        holder.imageView.setImageResource(R.drawable.incomeother);
+                        holder.retrivegoalImageview.setImageResource(R.drawable.incomeother);
                         break;
 
                 }
@@ -296,24 +296,24 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
         AlertDialog.Builder myDialog= new AlertDialog.Builder(this);
         LayoutInflater inflater= LayoutInflater.from(this);
-        View mView = inflater.inflate(R.layout.update_goal_layout,null);
+        View gView = inflater.inflate(R.layout.update_goal_layout,null);
 
-        myDialog.setView(mView);
+        myDialog.setView(gView);
         final AlertDialog dialog=myDialog.create();
 
-        final TextView gItem=mView.findViewById(R.id.itemName);
-        final EditText gAmount=mView.findViewById(R.id.goalamount);
-        final EditText mNotes=mView.findViewById(R.id.goalnotes);
+        final TextView gItem=gView.findViewById(R.id.retrivegoalitem);
+        final EditText gAmount=gView.findViewById(R.id.retrivegoalamount);
+        final EditText gNotes=gView.findViewById(R.id.retrivegoalnote);
 
-        mNotes.setVisibility(View.GONE);
+        gNotes.setVisibility(View.GONE);
 
-        gItem.setText(item);
+        gItem.setText(goalItem);
 
         gAmount.setText(String.valueOf(goalamount));
         gAmount.setSelection(String.valueOf(goalamount).length());
 
-        Button delBtn=mView.findViewById(R.id.btnDelete);
-        Button btnUpdate=mView.findViewById(R.id.btnUpdate);
+        Button deleteBtn=gView.findViewById(R.id.updategoaldelete);
+        Button btnUpdate=gView.findViewById(R.id.updategoalupdate);
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -331,13 +331,18 @@ public class IncomeGoalActivity extends AppCompatActivity {
                 Weeks weeks= Weeks.weeksBetween(epoch,now);
                 Months months = Months.monthsBetween(epoch,now);
 
-
+//ipost_key=getgoalRef(position).getKey();
+//                        goalItem=model.getGoalItem();
+//                        goalamount = model.getGoalamount();
+//                        updateIdata();
+                
+                
                 GoalData data = new GoalData(goalItem,goaldate,ipost_key,null,goalamount, goalmonth.getGoalmonth(),goalweeks.getWeeks());
                 goalref.child(ipost_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(IncomeGoalActivity.this," Item Updated Sccessfuly ",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(IncomeGoalActivity.this," Goal Updated Sccessfuly ",Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(IncomeGoalActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
                         }
@@ -350,14 +355,14 @@ public class IncomeGoalActivity extends AppCompatActivity {
         });
 
         //delete item
-        delBtn.setOnClickListener(new View.OnClickListener() {
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goalref.child(ipost_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(IncomeGoalActivity.this,"  Deleted  Sccessfuly ",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(IncomeGoalActivity.this,"  Goal Deleted  Sccessfuly ",Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(IncomeGoalActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
                         }

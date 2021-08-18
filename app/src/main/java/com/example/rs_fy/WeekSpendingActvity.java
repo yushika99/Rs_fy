@@ -6,13 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -62,7 +60,7 @@ public class WeekSpendingActvity extends AppCompatActivity {
 
         totalWeekAmountTextView=findViewById(R.id.totalWeekAmountTextView);
         progressBar=findViewById(R.id.progressBar);
-        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView=findViewById(R.id.TodayIncomeRecyclerView);
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".TodaySpendingActivity"
-    android:background="@drawable/expensesdis3">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".WeekIncomeActivity"
+android:background="@drawable/incomedis2">
+
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<!--      put   toolbar here -->
-
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/incomeweektoolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0759EAB7"
+            android:background="FF03DAC5"
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -26,9 +29,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Today My Spending "
+            android:text="Weekly My Income "
             android:textColor="#F5FBFFFE"
             android:textAlignment="center"
+            android:layout_marginTop="19dp"
             android:textSize="25sp"
             android:textStyle="bold"
             android:shadowColor="#B60558"
@@ -38,20 +42,17 @@
             android:gravity="center_horizontal" />
 
         <TextView
-            android:id="@+id/todaytotalAmoutincome"
+            android:id="@+id/weekTotalAmoutIncome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Amount: Rs.0 "
-            android:layout_marginTop="1dp"
-            android:background="@drawable/headtextsub"
+            android:layout_marginTop="19dp"
             android:layout_marginHorizontal="80dp"
+            android:background="@drawable/headtextsub"
             android:gravity="center"
-            android:shadowColor="#F1E6EB"
-            android:shadowDx="35"
-            android:shadowDy="67"
-            android:shadowRadius="80"
-            android:textColor="#FFF"
-            android:textStyle="bold"/>
+            android:textSize="18dp"
+            android:text="week Total Income : Rs. 0.00 "
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
 
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -59,7 +60,7 @@
             android:layout_height="match_parent">
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/weekIncomeProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -67,24 +68,15 @@
                 app:layout_anchorGravity="center" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/TodayIncomeRecyclerView"
+                android:id="@+id/weekIncomeRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                app:fabCustomSize="10mm"
-                android:backgroundTint="#C6018786"
-                android:layout_margin="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/iconseplus"
-                />
+?
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     </LinearLayout>
+
+
 
 </LinearLayout>

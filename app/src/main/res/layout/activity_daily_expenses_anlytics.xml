@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_Feed_Toolbar"
+        android:id="@+id/todayIncomeToolbar"
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:background="#0759EAB7"
@@ -38,7 +38,7 @@
         android:gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/totalAmoutSpentOn"
+        android:id="@+id/todaytotalAmoutincome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total Amount: Rs.0 "
@@ -142,7 +142,7 @@
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout"
+                        android:id="@+id/linerLayoutSal"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -211,7 +211,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout"
+                        android:layout_toEndOf="@+id/linerLayoutSal"
                         android:src="@drawable/iconsetransport" />
                 </RelativeLayout>
 
@@ -223,7 +223,7 @@
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout1"
+                        android:id="@+id/linerLayoutGrant"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -292,7 +292,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout1"
+                        android:layout_toEndOf="@+id/linerLayoutGrant"
                         android:src="@drawable/iconsefood" />
                 </RelativeLayout>
 
@@ -304,7 +304,7 @@
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout2"
+                        android:id="@+id/linerLayoutRental"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -373,19 +373,19 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout2"
+                        android:layout_toEndOf="@+id/linerLayoutRental"
                         android:src="@drawable/iconseentertainment" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutHome"
+                    android:id="@+id/relativeLayoutInvest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout3"
+                        android:id="@+id/linerLayoutInvesment"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -455,7 +455,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout3"
+                        android:layout_toEndOf="@+id/linerLayoutInvesment"
                         android:src="@drawable/iconsehome" />
                 </RelativeLayout>
 
@@ -468,7 +468,7 @@
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout4"
+                        android:id="@+id/linerLayoutWages"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -537,7 +537,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout4"
+                        android:layout_toEndOf="@+id/linerLayoutWages"
                         android:src="@drawable/iconseeducation" />
                 </RelativeLayout>
 
@@ -549,7 +549,7 @@
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout5"
+                        android:id="@+id/linerLayoutSidebusiness"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -618,19 +618,19 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout5"
+                        android:layout_toEndOf="@+id/linerLayoutSidebusiness"
                         android:src="@drawable/iconsecharity" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutHealth"
+                    android:id="@+id/relativeLayoutDividend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout6"
+                        android:id="@+id/linerLayoutDividend"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -699,19 +699,19 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout6"
+                        android:layout_toEndOf="@+id/linerLayoutDividend"
                         android:src="@drawable/iconsehealth" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutPersonal"
+                    android:id="@+id/relativeLayoutPension"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout7"
+                        android:id="@+id/linerLayoutPension"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -780,12 +780,12 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout7"
+                        android:layout_toEndOf="@+id/linerLayoutPension"
                         android:src="@drawable/iconsepersonal" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutOther"
+                    android:id="@+id/relativeLayoutOtherIncome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -793,7 +793,7 @@
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout8"
+                        android:id="@+id/linerLayoutOtherIncome"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -862,7 +862,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayout8"
+                        android:layout_toEndOf="@+id/linerLayoutOtherIncome"
                         android:src="@drawable/iconseother" />
                 </RelativeLayout>
 
@@ -873,16 +873,16 @@
                     android:layout_marginTop="20dp" />
 
                 <RelativeLayout
-                    android:id="@+id/linerLayoutExAnliysis"
+                    android:id="@+id/linerLayoutMonthlyInAnliysis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/month_spet_bottom"
+                    android:background="@drawable/incomeSummaryBottom"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/linerLayout10"
+                        android:id="@+id/incomeSummarylinerLayout"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -959,7 +959,7 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@id/linerLayout10"
+                        android:layout_toEndOf="@id/incomeSummarylinerLayout"
                         android:src="@drawable/iconstodayexanalyze" />
 
                 </RelativeLayout>

@@ -49,7 +49,7 @@ public class HistortyExActivity extends AppCompatActivity  implements DatePicker
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historty_ex);
 
-        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+        settingsToolbar = findViewById(R.id.todayIncomeToolbar);
         setSupportActionBar(settingsToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

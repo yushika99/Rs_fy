@@ -76,7 +76,7 @@
                 android:textColorHint="#000"/>
 
             <EditText
-                 android:visibility="gone"
+
                 android:id="@+id/inputgoalnote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
