@@ -1,16 +1,13 @@
 package com.example.rs_fy;
 
-import androidx.annotation.NonNull;
+import  androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.provider.CalendarContract;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,27 +29,31 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.joda.time.MutableDateTime;
 import org.joda.time.Weeks;
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Map;
+
 
 public class IncomeGoalActivity extends AppCompatActivity {
 
     private TextView TotalGoalAmountTextview;
-    private androidx.recyclerview.widget.RecyclerView recyclerView;
+    private RecyclerView goalrecyclerView;
 
 
 
     private FloatingActionButton gfab;
-    private DatabaseReference goalref;
+
+    private DatabaseReference goalref,personalIRef;
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
 
@@ -73,25 +74,26 @@ public class IncomeGoalActivity extends AppCompatActivity {
         //initializing
         mAuth = FirebaseAuth.getInstance();
         goalref = FirebaseDatabase.getInstance().getReference().child("goal").child(mAuth.getCurrentUser().getUid());
+        personalIRef = FirebaseDatabase.getInstance().getReference("income_personal").child(mAuth.getCurrentUser().getUid());
         loader = new ProgressDialog(this);
 
         TotalGoalAmountTextview=findViewById(R.id.TotalGoalAmountTextview);
-        recyclerView=findViewById(R.id.goalrecyclerView);
+        goalrecyclerView=findViewById(R.id.goalrecyclerView);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        goalrecyclerView.setHasFixedSize(true);
+        goalrecyclerView.setLayoutManager(linearLayoutManager);
 
         goalref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                int totalAmountGoal =0;
+                int totalIAmount =0;
                 for(DataSnapshot snap: snapshot.getChildren()){
                     GoalData data = snap.getValue(GoalData.class);
-                    totalAmountGoal+=data.getGoalamount();
-                    String gTotal =String.valueOf("Month Goal: Rs. "+totalAmountGoal);
+                    totalIAmount+=data.getGoalamount();
+                    String gTotal =String.valueOf("Month Goal: Rs. "+totalIAmount);
                     TotalGoalAmountTextview.setText(gTotal);
                 }
 
@@ -109,10 +111,61 @@ public class IncomeGoalActivity extends AppCompatActivity {
         gfab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 additem();
             }
         });
+
+        goalref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists() && snapshot.getChildrenCount()>0){
+                    int totaliammount = 0;
+
+                    for (DataSnapshot snap:snapshot.getChildren()){
+
+                        Data data =snap.getValue(Data.class);
+
+                        totaliammount+=data.getAmount();
+
+                        String sttotal=String.valueOf("Month Goal: "+totaliammount);
+
+                        TotalGoalAmountTextview.setText(sttotal);
+
+                    }
+                    int weeklyGoal = totaliammount/4;
+                    int dailyGoal = totaliammount/30;
+                    personalIRef.child("goal").setValue(totaliammount);
+                    personalIRef.child("weeklyGoal").setValue(weeklyGoal);
+                    personalIRef.child("dailyGoal").setValue(dailyGoal);
+
+                }else {
+                    personalIRef.child("goal").setValue(0);
+                    personalIRef.child("weeklyGoal").setValue(0);
+                    personalIRef.child("dailyGoal").setValue(0);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        getMonthSalaryIncomeRatios();
+        getMonthGrantsIncomeRatios();
+        getMonthRentalIncomeRatios();
+        getMonthInvesmentIncomeRatios();
+        getMonthWagesIncomeRatios();
+        getMonthSide_businessIncomeRatios();
+        getMonthDividendIncomeRatios();
+        getMonthPensionIncomeRatios();
+        getMonthOtherIncomeRatios();
+
+
     }
+
 
     private void additem() {
         AlertDialog.Builder myDiolag = new AlertDialog.Builder(this);
@@ -148,16 +201,16 @@ public class IncomeGoalActivity extends AppCompatActivity {
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
 
-                    String id=goalref.push().getKey();
+                    String goalid=goalref.push().getKey();
                     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                     Calendar cal =Calendar.getInstance();
-                    String date= dateFormat.format(cal.getTime());
+                    String goaldate= dateFormat.format(cal.getTime());
 
                     MutableDateTime epoch =new MutableDateTime();
                     epoch.setDate(0);
                     DateTime now =new DateTime();
-                    Weeks weeks= Weeks.weeksBetween(epoch,now);
-                    Months months = Months.monthsBetween(epoch,now);
+                    Weeks goalweeks= Weeks.weeksBetween(epoch,now);
+                    Months goalmonth = Months.monthsBetween(epoch,now);
 
 
                     //pass parameters according to the paramiterlized constucter
@@ -197,16 +250,13 @@ public class IncomeGoalActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<GoalData, MyViewHolder> adapter = new FirebaseRecyclerAdapter<GoalData, MyViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull  GoalData model) {
-                holder.setItemAmount("Allocated amount: Rs" +model.getGoalamount());
-                holder.setDate("On : "+model.getGoaldate());
-                holder.setItemName("Goal Item : "+model.getGoalItem());
+                holder.seGoalAmount("Allocated amount: Rs" +model.getGoalmount());
+                holder.setGoalDate("On : "+model.getGoaldate());
+                holder.setGoalName("Goal Item : "+model.getGoalItem());
                 holder.goalnotes.setVisibility(View.GONE);
+
+
                 switch (model.getGoalItem()){
-
-
-
-
-
                     case "Salary":
                         holder.retrivegoalImageview.setImageResource(R.drawable.incomesalary);
                         break;
@@ -240,7 +290,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
                 holder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        ipost_key=getgoalRef(position).getKey();
+                        ipost_key=getRef(position).getKey();
                         goalItem=model.getGoalItem();
                         goalamount = model.getGoalamount();
                         updateIdata();

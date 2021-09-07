@@ -142,6 +142,9 @@
     <string name="account_information">Account Information</string>
     <string name="useremail_gmail_com">useremail@gmail.com</string>
     <string name="month_income_anlytics">Month Income Anlytics</string>
+    <string name="today_income_anlytics">Today Income Anlytics</string>
+    <string name="week_income_anlytics">Week Income Anlytics</string>
+    <string name="my_income">My Income</string>
 
 
     <string-array name="Bitems">

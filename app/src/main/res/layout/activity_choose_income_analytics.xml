@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-tools:context=".ChooseIncomeAnalytics"
+tools:context=".ChooseIncomeAnalyticsActivity"
 android:background="@drawable/incomedis2">
 
 <androidx.appcompat.widget.Toolbar
@@ -52,7 +52,7 @@ android:background="@drawable/incomedis2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  Today Income Anlytics "
+            android:text="@string/today_income_anlytics"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#333"
@@ -99,7 +99,7 @@ android:background="@drawable/incomedis2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  Week Income Anlytics "
+            android:text="@string/week_income_anlytics"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#333"

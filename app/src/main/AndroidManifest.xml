@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rs_fy">
-        <activity android:name=".MonthIncomeActivity"></activity>
+        <activity android:name=".IncomeHistoryActivity"></activity>
+        <activity android:name=".MonthIncomeActivity" />
         <activity android:name=".weekIncomeActivity" />
         <activity android:name=".WeeklyIncomeAnalyticsActivity" />
         <activity android:name=".MonthlyIncomeAnalyticsActivity" />
         <activity android:name=".DailyIncomeAnalyticsActivity" />
-        <activity android:name=".ChooseIncomeAnalytics" />
+        <activity android:name=".ChooseIncomeAnalyticsActivity" />
         <activity android:name=".TodayIncomeActivity" />
         <activity
             android:name=".HistortyExActivity"
