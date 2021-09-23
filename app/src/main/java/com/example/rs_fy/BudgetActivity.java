@@ -365,7 +365,7 @@ public class BudgetActivity extends AppCompatActivity {
         mAmount.setText(String.valueOf(amount));
         mAmount.setSelection(String.valueOf(amount).length());
 
-        Button delBtn=mView.findViewById(R.id.btnDelete);
+        Button delBtn=mView.findViewById(R.id.delBut);
          Button btnUpdate=mView.findViewById(R.id.btnUpdate);
 
          btnUpdate.setOnClickListener(new View.OnClickListener() {

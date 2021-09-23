@@ -19,18 +19,18 @@
         android:textColor="#333" />
 
     <TextView
-        android:id="@+id/updategoalchategory"
+        android:id="@+id/itemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:text="Wage"
+        android:text="itemName"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="25dp"
         android:textColor="#333"/>
 
     <EditText
-        android:id="@+id/updateamount"
+        android:id="@+id/amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -42,7 +42,7 @@
         android:textColorHint="#000"/>
 
     <EditText
-        android:id="@+id/updatenote"
+        android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="  Enter Note:"
@@ -50,6 +50,7 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColorHint="#000"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,7 +65,7 @@
 
 
             <Button
-                android:id="@+id/updategoaldelete"
+                android:id="@+id/delBut"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textAllCaps="false"
@@ -83,7 +84,7 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/updategoalupdate"
+                android:id="@+id/btnUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textAllCaps="false"

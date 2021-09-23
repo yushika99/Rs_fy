@@ -124,7 +124,7 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
             mNotes.setText(note);
             mNotes.setSelection(note.length());
 
-            Button delBtn=mView.findViewById(R.id.btnDelete);
+            Button delBtn=mView.findViewById(R.id.delBut);
             Button btnUpdate=mView.findViewById(R.id.btnUpdate);
 
             btnUpdate.setOnClickListener(new View.OnClickListener() {

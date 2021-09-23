@@ -24,7 +24,7 @@
         android:gravity="center_horizontal" />
 
     <GridLayout
-        android:id="@+id/ihomegridLayout"
+        android:id="@+id/grid_layout"
         android:rowCount="1"
         android:columnCount="2"
         android:layout_marginBottom="20dp"
@@ -115,7 +115,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="My Expense "
+                    android:text="@string/my_expense"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="#333"/>
