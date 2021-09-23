@@ -37,34 +37,36 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
-public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
+public class DailyAnalyticsActivity extends AppCompatActivity {
 
     private Toolbar settingsToolbar;
+
 
     private FirebaseAuth mAuth;
     private String onlineUserId = "";
     private DatabaseReference expensesRef,personalRef;
 
-    private TextView totalAmoutSpentOn,analyticsTransportAmount,analyticsFoodAmount,analyticsEntertainmentAmount,analyticsHomeAmount,
-     analyticsEducationAmount,analyticsCharityAmount,analyticsHealthAmount,analyticsPersonalAmount,analyticsOtherAmount,monthSpentAmount;
+    private TextView totalBudgetAmountTextView, analyticsTransportAmount,analyticsFoodAmount,analyticsHouseExpensesAmount,analyticsEntertainmentAmount;
+    private TextView analyticsEducationAmount,analyticsCharityAmount,analyticsApparelAmount,analyticsHealthAmount,analyticsPersonalExpensesAmount,analyticsOtherAmount, monthSpentAmount;
 
-    private RelativeLayout relativeLayoutTransport,relativeLayoutFood,relativeLayoutEntertainment,relativeLayoutHome,relativeLayoutEducation,
-            relativeLayoutCharity,relativeLayoutHealth,relativeLayoutPersonal,relativeLayoutOther,linerLayoutExAnliysis;
+    private RelativeLayout linearLayoutFood,linearLayoutTransport,linearLayoutFoodHouse,linearLayoutEntertainment,linearLayoutEducation;
+    private RelativeLayout linearLayoutCharity,linearLayoutApparel,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther, linearLayoutAnalysis;
 
-    private AnyChartView anyChartViewEx;
-    private TextView monthRatioSpending,progress_ratio_transport,progress_ratio_food,progress_ratio_house,progress_ratio_ent,progress_ratio_edu,progress_ratio_cha,progress_ratio_hea,progress_ratio_per,progress_ratio_oth;
-    private ImageView transport_status,food_status,Home_status,education_status,charity_status,entertainment_status,personal_status,health_status,other_status,monthRatioSpending_Image;
+    private AnyChartView anyChartView;
+    private TextView progress_ratio_transport,progress_ratio_food,progress_ratio_house,progress_ratio_ent,progress_ratio_edu,progress_ratio_cha, progress_ratio_app,progress_ratio_hea,progress_ratio_per,progress_ratio_oth, monthRatioSpending;
+    private ImageView status_Image_transport, status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_app,status_Image_hea,status_Image_per,status_Image_oth, monthRatioSpending_Image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daily_expenses_anlytics);
+        setContentView(R.layout.activity_daily_analytics);
 
-        settingsToolbar = findViewById(R.id.todayIncomeToolbar);
+        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
         setSupportActionBar(settingsToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Today Analytics");
+
 
         mAuth = FirebaseAuth.getInstance();
         onlineUserId = mAuth.getCurrentUser().getUid();
@@ -72,62 +74,63 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         personalRef = FirebaseDatabase.getInstance().getReference("personal").child(onlineUserId);
 
 
-        totalAmoutSpentOn = findViewById(R.id.todaytotalAmoutincome);
+        totalBudgetAmountTextView = findViewById(R.id.totalBudgetAmountTextView);
 
         //general analytic
         monthSpentAmount = findViewById(R.id.monthSpentAmount);
-        linerLayoutExAnliysis = findViewById(R.id.linerLayoutMonthlyInAnliysis);
+        linearLayoutAnalysis = findViewById(R.id.linearLayoutAnalysis);
         monthRatioSpending = findViewById(R.id.monthRatioSpending);
         monthRatioSpending_Image = findViewById(R.id.monthRatioSpending_Image);
 
-
         analyticsTransportAmount = findViewById(R.id.analyticsTransportAmount);
         analyticsFoodAmount = findViewById(R.id.analyticsFoodAmount);
+        analyticsHouseExpensesAmount = findViewById(R.id.analyticsHouseExpensesAmount);
         analyticsEntertainmentAmount = findViewById(R.id.analyticsEntertainmentAmount);
-        analyticsHomeAmount = findViewById(R.id.analyticsHomeAmount);
         analyticsEducationAmount = findViewById(R.id.analyticsEducationAmount);
         analyticsCharityAmount = findViewById(R.id.analyticsCharityAmount);
+        analyticsApparelAmount = findViewById(R.id.analyticsApparelAmount);
         analyticsHealthAmount = findViewById(R.id.analyticsHealthAmount);
-        analyticsPersonalAmount = findViewById(R.id.analyticsPersonalAmount);
+        analyticsPersonalExpensesAmount = findViewById(R.id.analyticsPersonalExpensesAmount);
         analyticsOtherAmount = findViewById(R.id.analyticsOtherAmount);
 
         //Relative layouts views
-        relativeLayoutTransport = findViewById(R.id.relativeLayoutTransport);
-        relativeLayoutFood = findViewById(R.id.relativeLayoutFood);
-        relativeLayoutEntertainment = findViewById(R.id.relativeLayoutEntertainment);
-        relativeLayoutHome = findViewById(R.id.relativeLayoutInvest);
-        relativeLayoutEducation = findViewById(R.id.relativeLayoutEducation);
-        relativeLayoutCharity = findViewById(R.id.relativeLayoutCharity);
-        relativeLayoutHealth = findViewById(R.id.relativeLayoutDividend);
-        relativeLayoutPersonal = findViewById(R.id.relativeLayoutPension);
-        relativeLayoutOther = findViewById(R.id.relativeLayoutOtherIncome);
+        linearLayoutTransport = findViewById(R.id.linearLayoutTransport);
+        linearLayoutFood = findViewById(R.id.linearLayoutFood);
+        linearLayoutFoodHouse = findViewById(R.id.linearLayoutFoodHouse);
+        linearLayoutEntertainment = findViewById(R.id.linearLayoutEntertainment);
+        linearLayoutEducation = findViewById(R.id.linearLayoutEducation);
+        linearLayoutCharity = findViewById(R.id.linearLayoutCharity);
+        linearLayoutApparel = findViewById(R.id.linearLayoutApparel);
+        linearLayoutHealth = findViewById(R.id.linearLayoutHealth);
+        linearLayoutPersonalExp = findViewById(R.id.linearLayoutPersonalExp);
+        linearLayoutOther = findViewById(R.id.linearLayoutOther);
 
-        //status textviews
+        //textviews
         progress_ratio_transport = findViewById(R.id.progress_ratio_transport);
         progress_ratio_food = findViewById(R.id.progress_ratio_food);
         progress_ratio_house = findViewById(R.id.progress_ratio_house);
         progress_ratio_ent = findViewById(R.id.progress_ratio_ent);
         progress_ratio_edu = findViewById(R.id.progress_ratio_edu);
         progress_ratio_cha = findViewById(R.id.progress_ratio_cha);
+        progress_ratio_app = findViewById(R.id.progress_ratio_app);
         progress_ratio_hea = findViewById(R.id.progress_ratio_hea);
         progress_ratio_per = findViewById(R.id.progress_ratio_per);
         progress_ratio_oth = findViewById(R.id.progress_ratio_oth);
-
-        //imageviews
-        //,,;
-
-        transport_status = findViewById(R.id.transport_status);
-        food_status = findViewById(R.id.food_status);
-        Home_status = findViewById(R.id.Home_status);
-        education_status = findViewById(R.id.education_status);
-        charity_status = findViewById(R.id.charity_status);
-        health_status = findViewById(R.id.health_status);
-        entertainment_status = findViewById(R.id.entertainment_status);
-        personal_status = findViewById(R.id.personal_status);
-        other_status = findViewById(R.id.other_status);
+//imageviews
+        status_Image_transport = findViewById(R.id.status_Image_transport);
+        status_Image_food = findViewById(R.id.status_Image_food);
+        status_Image_house = findViewById(R.id.status_Image_house);
+        status_Image_ent = findViewById(R.id.status_Image_ent);
+        status_Image_edu = findViewById(R.id.status_Image_edu);
+        status_Image_cha = findViewById(R.id.status_Image_cha);
+        status_Image_app = findViewById(R.id.status_Image_app);
+        status_Image_hea = findViewById(R.id.status_Image_hea);
+        status_Image_per = findViewById(R.id.status_Image_per);
+        status_Image_oth = findViewById(R.id.status_Image_oth);
 
         //anyChartView
-        anyChartViewEx = findViewById(R.id.anyChartViewEx);
+        anyChartView = findViewById(R.id.anyChartView);
+
 
         getTotalWeekTransportExpense();
         getTotalWeekFoodExpense();
@@ -135,11 +138,11 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         getTotalWeekEntertainmentExpenses();
         getTotalWeekEducationExpenses();
         getTotalWeekCharityExpenses();
+        getTotalWeekApparelExpenses();
         getTotalWeekHealthExpenses();
         getTotalWeekPersonalExpenses();
         getTotalWeekOtherExpenses();
         getTotalDaySpending();
-
 
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
@@ -151,6 +154,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                 },
                 2000
         );
+
 
     }
 
@@ -182,19 +186,18 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
 
                 }
                 else {
-                    relativeLayoutTransport.setVisibility(View.GONE);
+                    linearLayoutTransport.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
     private void getTotalWeekFoodExpense(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -220,18 +223,17 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     }
                     personalRef.child("dayFood").setValue(totalAmount);
                 }else {
-                    relativeLayoutFood.setVisibility(View.GONE);
+                    linearLayoutFood.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
     private void getTotalWeekHouseExpenses(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -253,22 +255,21 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsHomeAmount.setText("Spent: " + totalAmount);
+                        analyticsHouseExpensesAmount.setText("Spent: " + totalAmount);
                     }
                     personalRef.child("dayHouse").setValue(totalAmount);
                 }else {
-                    relativeLayoutHome.setVisibility(View.GONE);
+                    linearLayoutFoodHouse.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
     private void getTotalWeekEntertainmentExpenses(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -294,18 +295,17 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     }
                     personalRef.child("dayEnt").setValue(totalAmount);
                 }else {
-                    relativeLayoutEntertainment.setVisibility(View.GONE);
+                    linearLayoutEntertainment.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
     private void getTotalWeekEducationExpenses(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -331,18 +331,17 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     }
                     personalRef.child("dayEdu").setValue(totalAmount);
                 }else {
-                    relativeLayoutEducation.setVisibility(View.GONE);
+                    linearLayoutEducation.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
     private void getTotalWeekCharityExpenses(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -368,18 +367,53 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     }
                     personalRef.child("dayCha").setValue(totalAmount);
                 }else {
-                    relativeLayoutCharity.setVisibility(View.GONE);
+                    linearLayoutCharity.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+    private void getTotalWeekApparelExpenses(){
+        MutableDateTime epoch = new MutableDateTime();
+        epoch.setDate(0); //Set to Epoch time
+        DateTime now = new DateTime();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = Calendar.getInstance();
+        String date = dateFormat.format(cal.getTime());
+        String itemNday = "Apparel and Services"+date;
 
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
+        Query query = reference.orderByChild("itemNday").equalTo(itemNday);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    int totalAmount = 0;
+                    for (DataSnapshot ds :  snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        int pTotal = Integer.parseInt(String.valueOf(total));
+                        totalAmount += pTotal;
+                        analyticsApparelAmount.setText("Spent: " + totalAmount);
+                    }
+                    personalRef.child("dayApp").setValue(totalAmount);
+                }else {
+                    linearLayoutApparel.setVisibility(View.GONE);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     private void getTotalWeekHealthExpenses(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -405,18 +439,17 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     }
                     personalRef.child("dayHea").setValue(totalAmount);
                 }else {
-                    relativeLayoutHealth.setVisibility(View.GONE);
+                    linearLayoutHealth.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
     private void getTotalWeekPersonalExpenses(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -438,18 +471,18 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmount += pTotal;
-                        analyticsPersonalAmount.setText("Spent: " + totalAmount);
+                        analyticsPersonalExpensesAmount.setText("Spent: " + totalAmount);
                     }
                     personalRef.child("dayPer").setValue(totalAmount);
                 }else {
-                    relativeLayoutPersonal.setVisibility(View.GONE);
+                    linearLayoutPersonalExp.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -478,14 +511,14 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     }
                     personalRef.child("dayOther").setValue(totalAmount);
                 }else {
-                    relativeLayoutOther.setVisibility(View.GONE);
+                    linearLayoutOther.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -509,12 +542,12 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                         totalAmount+=pTotal;
 
                     }
-                    totalAmoutSpentOn.setText("Total day's spending: Rs: "+ totalAmount);
-                    monthSpentAmount.setText("Total Spent: Rs: "+totalAmount);
+                    totalBudgetAmountTextView.setText("Total day's spending: $ "+ totalAmount);
+                    monthSpentAmount.setText("Total Spent: $ "+totalAmount);
                 }
                 else {
-                    totalAmoutSpentOn.setText("You've not spent today");
-                    anyChartViewEx.setVisibility(View.GONE);
+                    totalBudgetAmountTextView.setText("You've not spent today");
+                    anyChartView.setVisibility(View.GONE);
                 }
             }
 
@@ -573,6 +606,13 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                         chaTotal = 0;
                     }
 
+                    int appTotal;
+                    if (snapshot.hasChild("dayApp")){
+                        appTotal = Integer.parseInt(snapshot.child("dayApp").getValue().toString());
+                    }else {
+                        appTotal = 0;
+                    }
+
                     int heaTotal;
                     if (snapshot.hasChild("dayHea")){
                         heaTotal = Integer.parseInt(snapshot.child("dayHea").getValue().toString());
@@ -601,6 +641,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     data.add(new ValueDataEntry("Entertainment", entTotal));
                     data.add(new ValueDataEntry("Education", eduTotal));
                     data.add(new ValueDataEntry("Charity", chaTotal));
+                    data.add(new ValueDataEntry("Apparel", appTotal));
                     data.add(new ValueDataEntry("Health", heaTotal));
                     data.add(new ValueDataEntry("Personal", perTotal));
                     data.add(new ValueDataEntry("other", othTotal));
@@ -622,20 +663,19 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                             .itemsLayout(LegendLayout.HORIZONTAL)
                             .align(Align.CENTER);
 
-                    anyChartViewEx.setChart(pie);
+                    anyChartView.setChart(pie);
                 }
                 else {
-                    Toast.makeText(DailyExpensesAnlyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DailyAnalyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyExpensesAnlyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyAnalyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
     private void setStatusAndImageResource(){
         personalRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -681,6 +721,13 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                         chaTotal = Integer.parseInt(snapshot.child("dayCha").getValue().toString());
                     }else {
                         chaTotal = 0;
+                    }
+
+                    float appTotal;
+                    if (snapshot.hasChild("dayApp")){
+                        appTotal = Integer.parseInt(snapshot.child("dayApp").getValue().toString());
+                    }else {
+                        appTotal = 0;
                     }
 
                     float heaTotal;
@@ -757,6 +804,13 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                         chaRatio = 0;
                     }
 
+                    float appRatio;
+                    if (snapshot.hasChild("dayAppRatio")){
+                        appRatio = Integer.parseInt(snapshot.child("dayAppRatio").getValue().toString());
+                    }else {
+                        appRatio =0;
+                    }
+
                     float heaRatio;
                     if (snapshot.hasChild("dayHealthRatio")){
                         heaRatio = Integer.parseInt(snapshot.child("dayHealthRatio").getValue().toString());
@@ -805,93 +859,106 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     float transportPercent = (traTotal/traRatio)*100;
                     if (transportPercent<50){
                         progress_ratio_transport.setText(transportPercent+" %" +" used of "+traRatio + ". Status:");
-                        transport_status.setImageResource(R.drawable.green);
+                        status_Image_transport.setImageResource(R.drawable.green);
                     }else if (transportPercent >= 50 && transportPercent <100){
                         progress_ratio_transport.setText(transportPercent+" %" +" used of "+traRatio + ". Status:");
-                        transport_status.setImageResource(R.drawable.brown);
+                        status_Image_transport.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_transport.setText(transportPercent+" %" +" used of "+traRatio + ". Status:");
-                        transport_status.setImageResource(R.drawable.red);
+                        status_Image_transport.setImageResource(R.drawable.red);
 
                     }
 
                     float foodPercent = (foodTotal/foodRatio)*100;
                     if (foodPercent<50){
                         progress_ratio_food.setText(foodPercent+" %" +" used of "+foodRatio + ". Status:");
-                        food_status.setImageResource(R.drawable.green);
+                        status_Image_food.setImageResource(R.drawable.green);
                     }else if (foodPercent >= 50 && foodPercent <100){
                         progress_ratio_food.setText(foodPercent+" %" +" used of "+foodRatio + ". Status:");
-                        food_status.setImageResource(R.drawable.brown);
+                        status_Image_food.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_food.setText(foodPercent+" %" +" used of "+foodRatio + ". Status:");
-                        food_status.setImageResource(R.drawable.red);
+                        status_Image_food.setImageResource(R.drawable.red);
 
                     }
 
                     float housePercent = (houseTotal/houseRatio)*100;
                     if (housePercent<50){
                         progress_ratio_house.setText(housePercent+" %" +" used of "+houseRatio + ". Status:");
-                        Home_status.setImageResource(R.drawable.green);
+                        status_Image_house.setImageResource(R.drawable.green);
                     }else if (housePercent >= 50 && housePercent <100){
                         progress_ratio_house.setText(housePercent+" %" +" used of "+houseRatio + ". Status:");
-                        Home_status.setImageResource(R.drawable.brown);
+                        status_Image_house.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_house.setText(housePercent+" %" +" used of "+houseRatio + ". Status:");
-                        Home_status.setImageResource(R.drawable.red);
+                        status_Image_house.setImageResource(R.drawable.red);
 
                     }
 
                     float entPercent = (entTotal/entRatio)*100;
                     if (entPercent<50){
                         progress_ratio_ent.setText(entPercent+" %" +" used of "+entRatio + ". Status:");
-                        entertainment_status.setImageResource(R.drawable.green);
+                        status_Image_ent.setImageResource(R.drawable.green);
                     }else if (entPercent >= 50 && entPercent <100){
                         progress_ratio_ent.setText(entPercent+" %" +" used of "+entRatio + ". Status:");
-                        entertainment_status.setImageResource(R.drawable.brown);
+                        status_Image_ent.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_ent.setText(entPercent+" %" +" used of "+entRatio + ". Status:");
-                        entertainment_status.setImageResource(R.drawable.red);
+                        status_Image_ent.setImageResource(R.drawable.red);
 
                     }
 
                     float eduPercent = (eduTotal/eduRatio)*100;
                     if (eduPercent<50){
                         progress_ratio_edu.setText(eduPercent+" %" +" used of "+eduRatio + ". Status:");
-                        education_status.setImageResource(R.drawable.green);
+                        status_Image_edu.setImageResource(R.drawable.green);
                     }
                     else if (eduPercent >= 50 && eduPercent <100){
                         progress_ratio_edu.setText(eduPercent+" %" +" used of "+eduRatio + ". Status:");
-                        education_status.setImageResource(R.drawable.brown);
+                        status_Image_edu.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_edu.setText(eduPercent+" %" +" used of "+eduRatio + ". Status:");
-                        education_status.setImageResource(R.drawable.red);
+                        status_Image_edu.setImageResource(R.drawable.red);
 
                     }
 
                     float chaPercent = (chaTotal/chaRatio)*100;
                     if (chaPercent<50){
                         progress_ratio_cha.setText(chaPercent+" %" +" used of "+chaRatio + ". Status:");
-                        charity_status.setImageResource(R.drawable.green);
+                        status_Image_cha.setImageResource(R.drawable.green);
                     }else if (chaPercent >= 50 && chaPercent <100){
                         progress_ratio_cha.setText(chaPercent+" %" +" used of "+chaRatio + ". Status:");
-                        charity_status.setImageResource(R.drawable.brown);
+                        status_Image_cha.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_cha.setText(chaPercent+" %" +" used of "+chaRatio + ". Status:");
-                        charity_status.setImageResource(R.drawable.red);
+                        status_Image_cha.setImageResource(R.drawable.red);
+
+                    }
+
+                    float appPercent = (appTotal/appRatio)*100;
+                    if (appPercent<50){
+                        progress_ratio_app.setText(appPercent+" %" +" used of "+appRatio + ". Status:");
+                        status_Image_app.setImageResource(R.drawable.green);
+                    }else if (appPercent >= 50 && appPercent <100){
+                        progress_ratio_app.setText(appPercent+" %" +" used of "+appRatio + ". Status:");
+                        status_Image_app.setImageResource(R.drawable.brown);
+                    }else {
+                        progress_ratio_app.setText(appPercent+" %" +" used of "+appRatio + ". Status:");
+                        status_Image_app.setImageResource(R.drawable.red);
 
                     }
 
                     float heaPercent = (heaTotal/heaRatio)*100;
                     if (heaPercent<50){
                         progress_ratio_hea.setText(heaPercent+" %" +" used of "+heaRatio + ". Status:");
-                        health_status.setImageResource(R.drawable.green);
+                        status_Image_hea.setImageResource(R.drawable.green);
                     }
                     else if (heaPercent >= 50 && heaPercent <100){
                         progress_ratio_hea.setText(heaPercent+" %" +" used of "+heaRatio + ". Status:");
-                        health_status.setImageResource(R.drawable.brown);
+                        status_Image_hea.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_hea.setText(heaPercent+" %" +" used of "+heaRatio + ". Status:");
-                        health_status.setImageResource(R.drawable.red);
+                        status_Image_hea.setImageResource(R.drawable.red);
 
                     }
 
@@ -899,34 +966,34 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     float perPercent = (perTotal/perRatio)*100;
                     if (perPercent<50){
                         progress_ratio_per.setText(perPercent+" %" +" used of "+perRatio + " . Status:");
-                        personal_status.setImageResource(R.drawable.green);
+                        status_Image_per.setImageResource(R.drawable.green);
                     }else if (perPercent >= 50 && perPercent <100){
                         progress_ratio_per.setText(perPercent+" %" +" used of "+perRatio + " . Status:");
-                        personal_status.setImageResource(R.drawable.brown);
+                        status_Image_per.setImageResource(R.drawable.brown);
                     }
                     else {
                         progress_ratio_per.setText(perPercent+" %" +" used of "+perRatio + " . Status:");
-                        personal_status.setImageResource(R.drawable.red);
+                        status_Image_per.setImageResource(R.drawable.red);
                     }
 
 
                     float otherPercent = (othTotal/othRatio)*100;
                     if (otherPercent<50){
                         progress_ratio_oth.setText(otherPercent+" %" +" used of "+othRatio + ". Status:");
-                        other_status.setImageResource(R.drawable.green);
+                        status_Image_oth.setImageResource(R.drawable.green);
                     }
                     else if (otherPercent >= 50 && otherPercent <100){
                         progress_ratio_oth.setText(otherPercent+" %" +" used of "+othRatio + ". Status:");
-                        other_status.setImageResource(R.drawable.brown);
+                        status_Image_oth.setImageResource(R.drawable.brown);
                     }else {
                         progress_ratio_oth.setText(otherPercent+" %" +" used of "+othRatio + ". Status:");
-                        other_status.setImageResource(R.drawable.red);
+                        status_Image_oth.setImageResource(R.drawable.red);
 
                     }
 
                 }
                 else {
-                    Toast.makeText(DailyExpensesAnlyticsActivity.this, "setStatusAndImageResource Errors", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DailyAnalyticsActivity.this, "setStatusAndImageResource Errors", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -936,6 +1003,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

@@ -14,7 +14,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/todayIncomeToolbar"
+                android:id="@+id/my_Feed_Toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
                 android:background="#0759EAB7"
@@ -24,6 +24,7 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 tools:targetApi="lollipop" />
             <TextView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Daily Income "
@@ -40,7 +41,7 @@
 
 
             <TextView
-                android:id="@+id/todaytotalAmoutincome"
+                android:id="@+id/totalIncomAmountTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Today Total: Rs.0 "
@@ -144,7 +145,7 @@
                         android:background="@drawable/setcard">
 
                         <LinearLayout
-                            android:id="@+id/linerLayoutSal"
+                            android:id="@+id/linearLayoutsal"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -189,7 +190,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/salary_status"
+                                    android:id="@+id/status_Image_Salary"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -213,7 +214,7 @@
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_margin="10dp"
-                            android:layout_toEndOf="@+id/linerLayoutSal"
+                            android:layout_toEndOf="@+id/linearLayoutsal"
                             android:src="@drawable/incomesalary" />
                     </RelativeLayout>
 
@@ -270,7 +271,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/Grants_status"
+                                    android:id="@+id/status_Image_Grants"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -351,7 +352,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/Rental_status"
+                                    android:id="@+id/status_Image_Rental"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -433,7 +434,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/Invesment_status"
+                                    android:id="@+id/status_Image_Invesment"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -515,7 +516,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/Wages_status"
+                                    android:id="@+id/status_Image_Wages"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -544,7 +545,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/relativeLayoutCharity"
+                        android:id="@+id/relativeLayoutSidebusiness"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
@@ -596,7 +597,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/Sidebusiness_status"
+                                    android:id="@+id/status_Image_sidebusiness"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -677,7 +678,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/Dividend_status"
+                                    android:id="@+id/status_Image_Dividend"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -758,7 +759,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/Pension_status"
+                                    android:id="@+id/status_Image_Pension"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -828,7 +829,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/progress_ratio_other_i"
+                                    android:id="@+id/progress_ratio_other"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
@@ -840,7 +841,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/other_income_status"
+                                    android:id="@+id/status_Image_Other"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginRight="10dp"
@@ -871,13 +872,13 @@
 
                     //check
                     <com.anychart.AnyChartView
-                        android:id="@+id/anyChartViewEx"
+                        android:id="@+id/anyChartView"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp" />
 
                     <RelativeLayout
-                        android:id="@+id/linerLayoutDailyInAnliysis"
+                        android:id="@+id/linearLayoutAnalysis"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -909,7 +910,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/todaytotalsumAmount"
+                                android:id="@+id/monthIncomeAmount"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -926,7 +927,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/TodayRatioIncome"
+                                    android:id="@+id/monthRatioIncome"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="2"
@@ -937,7 +938,7 @@
                                     android:textStyle="bold" />
 
                                 <ImageView
-                                    android:id="@+id/TodayRatioIncome_Image"
+                                    android:id="@+id/monthRatioIncome_Image"
                                     android:layout_width="0dp"
                                     android:layout_height="18dp"
                                     android:layout_marginTop="5dp"

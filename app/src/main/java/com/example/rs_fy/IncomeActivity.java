@@ -1,12 +1,5 @@
 package com.example.rs_fy;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -42,20 +35,20 @@ import java.util.Map;
 import java.util.Objects;
 
 public class IncomeActivity extends AppCompatActivity {
-    private Toolbar ihometoolbar;
+    private Toolbar toolbar;
     private TextView ihomegoalTv,ihometodayTv,ihomeweekTv,ihomemonthTv,ihomeextraTv;
     private CardView ihomegoalcardView,ihometodaycardView,ihomeweekcardView,ihomemonthcardView,ihomeanlyticscardView,ihomehistorycardView;
 
     private CardView analyticsCardView;
 
     private FirebaseAuth mAuth;
-    private DatabaseReference goalRef, incomeRef, personalIRef;
+    private DatabaseReference goalRef, incomeRef, personalRef;
     private String onlineUserID = "";
 
-    private int totalIAmountMonth = 0;
-    private int totalAImountGoal = 0;
-    private  int totalAImountGoalB = 0;
-    private  int totalAImountGoalC = 0;
+    private int totalAmountMonth = 0;
+    private int totalAmountGoal = 0;
+    private  int totalAmountGoalB = 0;
+    private  int totalAmountGoalC = 0;
 
 
 
@@ -64,8 +57,8 @@ public class IncomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income);
 
-        ihometoolbar = findViewById(R.id.ihometoolbar);
-        setSupportActionBar(ihometoolbar);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("My income");
 
 
@@ -80,10 +73,10 @@ public class IncomeActivity extends AppCompatActivity {
         onlineUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
         goalRef = FirebaseDatabase.getInstance().getReference("goal").child(onlineUserID);
         incomeRef = FirebaseDatabase.getInstance().getReference("income").child(onlineUserID);
-        personalIRef = FirebaseDatabase.getInstance().getReference("ipersonal").child(onlineUserID);
+        personalRef = FirebaseDatabase.getInstance().getReference("personal").child(onlineUserID);
 
 
-        //goal card
+        //goal card=home btn
         ihomegoalcardView = findViewById(R.id.ihomegoalcardView);
         ihomegoalcardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +104,7 @@ public class IncomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(IncomeActivity.this, WeekIncomeActivity.class);
+                intent.putExtra("type","week");
                 startActivity(intent);
 
             }
@@ -122,6 +116,7 @@ public class IncomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(IncomeActivity.this, MonthIncomeActivity.class);
+                intent.putExtra("type","month");
                 startActivity(intent);
 
             }
@@ -148,12 +143,9 @@ public class IncomeActivity extends AppCompatActivity {
 
             }
         });
-//        private int totalIAmountMonth = 0;
-//        private int totalAImountGoal = 0;
-//        private  int totalAImountGoalB = 0;
-//        private  int totalAImountGoalC = 0;
 
-        incomeRef.addValueEventListener(new ValueEventListener() {
+
+        goalRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -162,12 +154,12 @@ public class IncomeActivity extends AppCompatActivity {
                         Map<String, Object> map = (Map<String, Object>)ds.getValue();
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
-                        totalAImountGoalB+=pTotal;
+                        totalAmountGoalB+=pTotal;
                     }
-                    totalAImountGoalC = totalAImountGoalB;
-                    personalIRef.child("goal").setValue(totalAImountGoalC);
+                    totalAmountGoalC = totalAmountGoalB;
+                    personalRef.child("goal").setValue(totalAmountGoalC);
                 }else {
-                    personalIRef.child("goal").setValue(0);
+                    personalRef.child("goal").setValue(0);
                     Toast.makeText(IncomeActivity.this, "Please Set an Income Goal ", Toast.LENGTH_LONG).show();
                 }
 
@@ -197,12 +189,13 @@ public class IncomeActivity extends AppCompatActivity {
                         Map<String, Object> map = (Map<String, Object>)ds.getValue();
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
-                        totalAImountGoal+=pTotal;
-                        ihomegoalTv.setText("$ "+String.valueOf(totalAImountGoal));
+                        totalAmountGoal+=pTotal;
+                        ihomegoalTv.setText("Rs. "+String.valueOf(totalAmountGoal));
                     }
                 }else {
-                    totalAImountGoal=0;
-                    ihomegoalTv.setText("$ "+String.valueOf(0));
+                    totalAmountGoal=0;
+                    ihomegoalTv.setText("Rs. "+String.valueOf(0));
+                    //check
 
 
                 }
@@ -222,21 +215,21 @@ public class IncomeActivity extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(cal.getTime());
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserID);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(onlineUserID);
         Query query = reference.orderByChild("date").equalTo(date);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                int totalIAmount = 0;
+                int totalAmount = 0;
                 for (DataSnapshot ds :  dataSnapshot.getChildren()){
                     Map<String, Object> map = (Map<String, Object>)ds.getValue();
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
-                    totalIAmount+=pTotal;
-                    ihomemonthTv.setText("$ "+ totalIAmount);
+                    totalAmount+=pTotal;
+                    ihomemonthTv.setText("Rs. "+ totalAmount);
                 }
-                personalIRef.child("today").setValue(totalIAmount);
+                personalRef.child("today").setValue(totalAmount);
             }
 
             @Override
@@ -257,17 +250,17 @@ public class IncomeActivity extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int totalIAmount = 0;
+                int totalAmount = 0;
                 for (DataSnapshot ds :  dataSnapshot.getChildren()){
                     Map<String, Object> map = (Map<String, Object>)ds.getValue();
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
-                    totalIAmount+=pTotal;
-                    ihomemonthTv.setText("$ "+ totalIAmount);
+                    totalAmount+=pTotal;
+                    ihomemonthTv.setText("Rs. "+ totalAmount);
 
                 }
-                personalIRef.child("month").setValue(totalIAmount);
-                totalIAmount = totalIAmount;
+                personalRef.child("month").setValue(totalAmount);
+                totalAmountMonth  = totalAmount;
 
             }
 
@@ -289,15 +282,15 @@ public class IncomeActivity extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int totalIAmount = 0;
+                int totalAmount  = 0;
                 for (DataSnapshot ds :  dataSnapshot.getChildren()){
                     Map<String, Object> map = (Map<String, Object>)ds.getValue();
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
-                    totalIAmount+=pTotal;
-                    ihomeweekTv.setText("$ "+ totalIAmount);
+                    totalAmount +=pTotal;
+                    ihomeweekTv.setText("Rs. "+ totalAmount );
                 }
-                personalIRef.child("week").setValue(totalIAmount);
+                personalRef.child("week").setValue(totalAmount );
             }
 
             @Override
@@ -308,7 +301,7 @@ public class IncomeActivity extends AppCompatActivity {
     }
 
     private void getExtra(){
-        personalIRef.addValueEventListener(new ValueEventListener() {
+        personalRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot snapshot) {
                 if (snapshot.exists()) {
@@ -326,8 +319,8 @@ public class IncomeActivity extends AppCompatActivity {
                         monthIncome = 0;
                     }
 
-                    int savings = goal - monthIncome;
-                    ihomeextraTv.setText("$ " + savings);
+                    int extra = goal - monthIncome;
+                    ihomeextraTv.setText("Rs. " + extra);
 
                 }
             }
@@ -356,6 +349,3 @@ public class IncomeActivity extends AppCompatActivity {
     }
 }
 
-}
-
-}

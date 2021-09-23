@@ -24,7 +24,7 @@
 
 
             <TextView
-                android:id="@+id/retrivegoalitem"
+                android:id="@+id/item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -34,7 +34,7 @@
                 android:textSize="19sp"/>
 
             <TextView
-                android:id="@+id/retrivegoalamount"
+                android:id="@+id/amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -45,7 +45,7 @@
                 android:textSize="18sp"/>
 
             <TextView
-                android:id="@+id/retrivegoalnote"
+                android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -55,7 +55,7 @@
                 android:textColor="#333"
                 android:textSize="18sp"/>
             <TextView
-                android:id="@+id/retrivegoaldate"
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -68,7 +68,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/retrivegoalImageview"
+            android:id="@+id/imageview"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="14dp"

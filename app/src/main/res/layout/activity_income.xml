@@ -19,7 +19,7 @@
         android:gravity="center_horizontal" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/ihometoolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="1dp"
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
-        android:layout_below="@+id/ihometoolbar">
+        android:layout_below="@+id/toolbar">
 
 
         <TableRow android:background="@drawable/table_income_raw_1"
@@ -435,7 +435,7 @@
             app:layout_anchorGravity="center">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/gfab"
+                android:id="@+id/fab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"

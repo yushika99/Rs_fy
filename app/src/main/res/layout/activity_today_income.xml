@@ -15,7 +15,7 @@ tools:context=".TodayIncomeActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/incometodaytoolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="FF03DAC5"
@@ -40,7 +40,7 @@ tools:context=".TodayIncomeActivity"
         android:gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/todayTotalAmoutIncome"
+        android:id="@+id/totalAmountIncome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
@@ -58,20 +58,20 @@ tools:context=".TodayIncomeActivity"
         android:layout_height="match_parent">
 
         <ProgressBar
-            android:id="@+id/TodayIncomeProgressBar"
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            app:layout_anchor="@+id/TodayIncomeRecyclerView"
+            app:layout_anchor="@+id/recyclerView"
             app:layout_anchorGravity="center" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/TodayIncomeRecyclerView"
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ifab"
+            android:id="@+id/fab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"

@@ -36,7 +36,6 @@ import org.joda.time.DateTime;
 import org.joda.time.Months;
 import org.joda.time.MutableDateTime;
 import org.joda.time.Weeks;
-import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -47,24 +46,19 @@ import java.util.Map;
 public class IncomeGoalActivity extends AppCompatActivity {
 
     private TextView TotalGoalAmountTextview;
-    private RecyclerView goalrecyclerView;
+    private RecyclerView recyclerView;
 
 
+    private FloatingActionButton fab;
 
-    private FloatingActionButton gfab;
-
-    private DatabaseReference goalref,personalIRef;
+    private DatabaseReference goalRef, personalRef;
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
 
     //updating budget
-    private String ipost_key="";
-    private String goalItem="";
-    private int goalamount=0;
-
-    public IncomeGoalActivity() {
-    }
-
+    private String post_key = "";
+    private String item = "";
+    private int amount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,76 +67,76 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
         //initializing
         mAuth = FirebaseAuth.getInstance();
-        goalref = FirebaseDatabase.getInstance().getReference().child("goal").child(mAuth.getCurrentUser().getUid());
-        personalIRef = FirebaseDatabase.getInstance().getReference("income_personal").child(mAuth.getCurrentUser().getUid());
+        goalRef = FirebaseDatabase.getInstance().getReference().child("goal").child(mAuth.getCurrentUser().getUid());
+        personalRef = FirebaseDatabase.getInstance().getReference("personal").child(mAuth.getCurrentUser().getUid());
         loader = new ProgressDialog(this);
 
-        TotalGoalAmountTextview=findViewById(R.id.TotalGoalAmountTextview);
-        goalrecyclerView=findViewById(R.id.goalrecyclerView);
+        TotalGoalAmountTextview = findViewById(R.id.TotalGoalAmountTextview);
+        recyclerView = findViewById(R.id.recyclerView);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
-        goalrecyclerView.setHasFixedSize(true);
-        goalrecyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
-        goalref.addValueEventListener(new ValueEventListener() {
+        goalRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                int totalIAmount =0;
-                for(DataSnapshot snap: snapshot.getChildren()){
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int totalAmount = 0;
+                for (DataSnapshot snap : snapshot.getChildren()) {
                     GoalData data = snap.getValue(GoalData.class);
-                    totalIAmount+=data.getGoalamount();
-                    String gTotal =String.valueOf("Month Goal: Rs. "+totalIAmount);
-                    TotalGoalAmountTextview.setText(gTotal);
+                    totalAmount += data.getAmount();
+                    String sTotal = String.valueOf("Month Goal: Rs. " + totalAmount);
+                    TotalGoalAmountTextview.setText(sTotal);
                 }
 
             }
 
             @Override
-            public void onCancelled(@NonNull  DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
 
+//floating action button to add goals
 
-
-        gfab = findViewById(R.id.gfab);
-        gfab.setOnClickListener(new View.OnClickListener() {
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                additem();
+                addgoal();
             }
         });
 
-        goalref.addValueEventListener(new ValueEventListener() {
+        goalRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() && snapshot.getChildrenCount()>0){
-                    int totaliammount = 0;
+                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
+                    int totalammount = 0;
 
-                    for (DataSnapshot snap:snapshot.getChildren()){
+                    for (DataSnapshot snap : snapshot.getChildren()) {
 
-                        Data data =snap.getValue(Data.class);
+                        Data data = snap.getValue(Data.class);
 
-                        totaliammount+=data.getAmount();
+                        totalammount += data.getAmount();
 
-                        String sttotal=String.valueOf("Month Goal: "+totaliammount);
+                        String sttotal = String.valueOf("Month Goal: " + totalammount);
 
                         TotalGoalAmountTextview.setText(sttotal);
 
                     }
-                    int weeklyGoal = totaliammount/4;
-                    int dailyGoal = totaliammount/30;
-                    personalIRef.child("goal").setValue(totaliammount);
-                    personalIRef.child("weeklyGoal").setValue(weeklyGoal);
-                    personalIRef.child("dailyGoal").setValue(dailyGoal);
+                    int weeklyGoal = totalammount / 4;
+                    int dailyGoal = totalammount / 30;
+                    personalRef.child("goal").setValue(totalammount);
+                    personalRef.child("weeklyGoal").setValue(weeklyGoal);
+                    personalRef.child("dailyGoal").setValue(dailyGoal);
 
-                }else {
-                    personalIRef.child("goal").setValue(0);
-                    personalIRef.child("weeklyGoal").setValue(0);
-                    personalIRef.child("dailyGoal").setValue(0);
+                } else {
+                    personalRef.child("goal").setValue(0);
+                    personalRef.child("weeklyGoal").setValue(0);
+                    personalRef.child("dailyGoal").setValue(0);
                 }
 
             }
@@ -167,61 +161,64 @@ public class IncomeGoalActivity extends AppCompatActivity {
     }
 
 
-    private void additem() {
+    private void addgoal() {
         AlertDialog.Builder myDiolag = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
         View myView = inflater.inflate(R.layout.input_goal_layout, null);
         myDiolag.setView(myView);
 
-        final AlertDialog dialog=myDiolag.create();
+        final AlertDialog dialog = myDiolag.create();
         dialog.setCancelable(false);
 
 
-        final Spinner inputgoalspinner = myView.findViewById(R.id.inputgoalspinner);
-        final EditText inputgoalamount = myView.findViewById(R.id.inputgoalamount);
-        final Button inputgoalcancel =myView.findViewById(R.id.inputgoalcancel);
-        final Button inputgoalsave =myView.findViewById(R.id.inputgoalsave);
+        final Spinner itemSpinner = myView.findViewById(R.id.itemspinner);
+        final EditText amount = myView.findViewById(R.id.amount);
+        final Button cancel = myView.findViewById(R.id.cancel);
+        final Button save = myView.findViewById(R.id.save);
 
-        inputgoalsave.setOnClickListener(new View.OnClickListener() {
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // validation
-                String goalAmount = inputgoalamount.getText().toString();
-                String goalItem = inputgoalspinner.getSelectedItem().toString();
-                if(TextUtils.isEmpty(goalAmount)){
-                    inputgoalamount.setError("Amount is Required!");
+                String goalAmount = amount.getText().toString();
+                String goalItem = itemSpinner.getSelectedItem().toString();
+                if (TextUtils.isEmpty(goalAmount)) {
+                    amount.setError("Amount is Required!");
                     return;
                 }
-                if (goalAmount.equals("Select Item")){
-                    Toast.makeText(IncomeGoalActivity.this,"Select a valid Item",Toast.LENGTH_SHORT).show();
-                }
-                else{
+                if (goalItem.equals("Select Goal")) {
+                    Toast.makeText(IncomeGoalActivity.this, "Select a valid Item", Toast.LENGTH_SHORT).show();
+                } else {
                     loader.setMessage("Adding a Goal");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
 
-                    String goalid=goalref.push().getKey();
+                    String id = goalRef.push().getKey();
                     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                    Calendar cal =Calendar.getInstance();
-                    String goaldate= dateFormat.format(cal.getTime());
+                    Calendar cal = Calendar.getInstance();
+                    String date = dateFormat.format(cal.getTime());
 
-                    MutableDateTime epoch =new MutableDateTime();
+                    MutableDateTime epoch = new MutableDateTime();
                     epoch.setDate(0);
-                    DateTime now =new DateTime();
-                    Weeks goalweeks= Weeks.weeksBetween(epoch,now);
-                    Months goalmonth = Months.monthsBetween(epoch,now);
+                    DateTime now = new DateTime();
+                    Weeks weeks = Weeks.weeksBetween(epoch, now);
+                    Months months = Months.monthsBetween(epoch, now);
+
+                    String itemNday = goalItem + date;
+                    String itemNweek = goalItem + weeks.getWeeks();
+                    String itemNmonth = goalItem + months.getMonths();
 
 
                     //pass parameters according to the paramiterlized constucter
-                    GoalData data = new GoalData(goalItem,goaldate,goalid,null,Integer.parseInt(goalAmount), goalmonth.getMonths(),goalweeks.getWeeks());
-                    goalref.child(goalid).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    GoalData data = new GoalData(goalItem, date, id, itemNday, itemNweek, itemNmonth, Integer.parseInt(goalAmount), weeks.getWeeks(), months.getMonths(), null);
+                    goalRef.child(id).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(IncomeGoalActivity.this,"Goal Item Added Sccessfuly",Toast.LENGTH_SHORT).show();
-                            }else{
-                                Toast.makeText(IncomeGoalActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            if (task.isSuccessful()) {
+                                Toast.makeText(IncomeGoalActivity.this, "Goal Item Added Sccessfuly", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(IncomeGoalActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
                             loader.dismiss();
                         }
@@ -230,7 +227,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        inputgoalcancel.setOnClickListener(new View.OnClickListener() {
+        cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
@@ -240,49 +237,50 @@ public class IncomeGoalActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void OnStart(){
+    public void OnStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<GoalData> options =new FirebaseRecyclerOptions.Builder<GoalData>()
-                .setQuery(goalref,GoalData.class)
+        FirebaseRecyclerOptions<GoalData> options = new FirebaseRecyclerOptions.Builder<GoalData>()
+                .setQuery(goalRef, GoalData.class)
                 .build();
 
         FirebaseRecyclerAdapter<GoalData, MyViewHolder> adapter = new FirebaseRecyclerAdapter<GoalData, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull  GoalData model) {
-                holder.seGoalAmount("Allocated amount: Rs" +model.getGoalmount());
-                holder.setGoalDate("On : "+model.getGoaldate());
-                holder.setGoalName("Goal Item : "+model.getGoalItem());
-                holder.goalnotes.setVisibility(View.GONE);
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull GoalData model) {
+                holder.setItemAmount("Allocated amount: Rs" + model.getAmount());
+                holder.setDate("On : " + model.getDate());
+                holder.setItemName("Goal Item : " + model.getItem());
+
+                holder.notes.setVisibility(View.GONE);
 
 
-                switch (model.getGoalItem()){
+                switch (model.getItem()) {
                     case "Salary":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomesalary);
+                        holder.imageView.setImageResource(R.drawable.incomesalary);
                         break;
                     case "Grants":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomegrantt);
+                        holder.imageView.setImageResource(R.drawable.incomegrantt);
                         break;
                     case "Rental":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomerental);
+                        holder.imageView.setImageResource(R.drawable.incomerental);
                         break;
                     case "Invesment":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomeinvest);
+                        holder.imageView.setImageResource(R.drawable.incomeinvest);
                         break;
                     case "Wages":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomewage);
+                        holder.imageView.setImageResource(R.drawable.incomewage);
                         break;
                     case "side business":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomeside);
+                        holder.imageView.setImageResource(R.drawable.incomeside);
                         break;
                     case "Dividend":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomedevidence);
+                        holder.imageView.setImageResource(R.drawable.incomedevidence);
                         break;
                     case "Pension":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomepension);
+                        holder.imageView.setImageResource(R.drawable.incomepension);
                         break;
                     case "Other":
-                        holder.retrivegoalImageview.setImageResource(R.drawable.incomeother);
+                        holder.imageView.setImageResource(R.drawable.incomeother);
                         break;
 
                 }
@@ -290,113 +288,113 @@ public class IncomeGoalActivity extends AppCompatActivity {
                 holder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        ipost_key=getRef(position).getKey();
-                        goalItem=model.getGoalItem();
-                        goalamount = model.getGoalamount();
-                        updateIdata();
+                        post_key = getRef(position).getKey();
+                        item = model.getItem();
+                        amount = model.getAmount();
+                        updateData();
                     }
                 });
             }
 
             @NonNull
-
             @Override
-            public MyViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
-                View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_retrieve_layout,parent,false);
+            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_retrieve_layout, parent, false);
                 return new MyViewHolder(view);
             }
         };
 
         recyclerView.setAdapter(adapter);
         adapter.startListening();
-        adapter.notify();
+        adapter.notifyDataSetChanged();
 
     }
 
-    public class MyViewHolder extends android.support.v7.widget.RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         View mView;
-        public ImageView retrivegoalImageview;
-        public TextView retrivegoalnote,retrivegoaldate;
+        public ImageView imageView;
+        public TextView notes, date;
 
-        public MyViewHolder(@NonNull  View itemView) {
+
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            mView=itemView;
-            retrivegoalImageview =itemView.findViewById(R.id.retrivegoalImageview);
-            retrivegoalnote=itemView.findViewById(R.id.retrivegoalnote);
-            retrivegoaldate=itemView.findViewById(R.id.retrivegoaldate);
+            mView = itemView;
+            imageView = itemView.findViewById(R.id.imageview);
+            notes = itemView.findViewById(R.id.note);
+            date = itemView.findViewById(R.id.date);
 
         }
 
-        public void setItemName(String itemName){
-            TextView retrivegoalitem= mView.findViewById(R.id.retrivegoalitem);
-            retrivegoalitem.setText(itemName);
+        public void setItemName(String itemName) {
+            TextView item = mView.findViewById(R.id.item);
+            item.setText(itemName);
         }
 
-        public void setItemAmount(String itemAmount){
-            TextView retrivegoalamount= mView.findViewById(R.id.retrivegoalamount);
-            retrivegoalamount.setText(itemAmount);
+        public void setItemAmount(String itemAmount) {
+            TextView amount = mView.findViewById(R.id.amount);
+            amount.setText(itemAmount);
         }
 
-        public void setDate(String itemDate){
-            TextView retrivegoaldate= mView.findViewById(R.id.retrivegoaldate);
-            retrivegoaldate.setText(itemDate);
+        public void setDate(String itemDate) {
+            TextView date = mView.findViewById(R.id.date);
+            date.setText(itemDate);
         }
     }
-    private void updateIdata(){
 
-        AlertDialog.Builder myDialog= new AlertDialog.Builder(this);
-        LayoutInflater inflater= LayoutInflater.from(this);
-        View gView = inflater.inflate(R.layout.update_goal_layout,null);
+    private void updateData() {
 
-        myDialog.setView(gView);
-        final AlertDialog dialog=myDialog.create();
+        AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View mView = inflater.inflate(R.layout.update_goal_layout, null);
 
-        final TextView gItem=gView.findViewById(R.id.retrivegoalitem);
-        final EditText gAmount=gView.findViewById(R.id.retrivegoalamount);
-        final EditText gNotes=gView.findViewById(R.id.retrivegoalnote);
+        myDialog.setView(mView);
+        final AlertDialog dialog = myDialog.create();
 
-        gNotes.setVisibility(View.GONE);
+        final TextView mItem = mView.findViewById(R.id.itemName);
+        final EditText mAmount = mView.findViewById(R.id.amount);
+        final EditText mNotes = mView.findViewById(R.id.note);
 
-        gItem.setText(goalItem);
+        mNotes.setVisibility(View.GONE);
 
-        gAmount.setText(String.valueOf(goalamount));
-        gAmount.setSelection(String.valueOf(goalamount).length());
+        mItem.setText(item);
 
-        Button deleteBtn=gView.findViewById(R.id.updategoaldelete);
-        Button btnUpdate=gView.findViewById(R.id.updategoalupdate);
+        mAmount.setText(String.valueOf(amount));
+        mAmount.setSelection(String.valueOf(amount).length());
+
+        Button deleteBtn = mView.findViewById(R.id.delBut);
+        Button btnUpdate = mView.findViewById(R.id.btnUpdate);
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goalamount=Integer.parseInt(gAmount.getText().toString());
+                amount = Integer.parseInt(mAmount.getText().toString());
                 //take month
 
                 DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                Calendar cal =Calendar.getInstance();
-                String date= dateFormat.format(cal.getTime());
+                Calendar cal = Calendar.getInstance();
+                String date = dateFormat.format(cal.getTime());
 
-                MutableDateTime epoch =new MutableDateTime();
+                MutableDateTime epoch = new MutableDateTime();
                 epoch.setDate(0);
-                DateTime now =new DateTime();
-                Weeks weeks= Weeks.weeksBetween(epoch,now);
-                Months months = Months.monthsBetween(epoch,now);
+                DateTime now = new DateTime();
+                Weeks weeks = Weeks.weeksBetween(epoch, now);
+                Months months = Months.monthsBetween(epoch, now);
 
-//ipost_key=getgoalRef(position).getKey();
-//                        goalItem=model.getGoalItem();
-//                        goalamount = model.getGoalamount();
-//                        updateIdata();
-                
-                
-                GoalData data = new GoalData(goalItem,goaldate,ipost_key,null,goalamount, goalmonth.getGoalmonth(),goalweeks.getWeeks());
-                goalref.child(ipost_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+                String itemNday = item + date;
+                String itemNweek = item + weeks.getWeeks();
+                String itemNmonth = item + months.getMonths();
+
+
+                GoalData data = new GoalData(item, date, post_key, itemNday, itemNweek, itemNmonth, amount, weeks.getWeeks(), months.getMonths(), null);
+                goalRef.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(IncomeGoalActivity.this," Goal Updated Sccessfuly ",Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(IncomeGoalActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(IncomeGoalActivity.this, "Goal updated Sccessfuly", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(IncomeGoalActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                         }
-
+                        loader.dismiss();
                     }
                 });
 
@@ -408,13 +406,13 @@ public class IncomeGoalActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goalref.child(ipost_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                goalRef.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(IncomeGoalActivity.this,"  Goal Deleted  Sccessfuly ",Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(IncomeGoalActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(IncomeGoalActivity.this, "  Goal Deleted  Sccessfuly ", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(IncomeGoalActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -426,4 +424,322 @@ public class IncomeGoalActivity extends AppCompatActivity {
         dialog.show();
 
     }
+
+    private void getMonthSalaryIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Salary");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int daySalRatio = pTotal / 30;
+                    int weekSalRatio = pTotal / 4;
+                    int monthSalRatio = pTotal;
+
+                    personalRef.child("daySalRatio").setValue(daySalRatio);
+                    personalRef.child("weekSalRatio").setValue(weekSalRatio);
+                    personalRef.child("monthSalRatio").setValue(monthSalRatio);
+
+                } else {
+                    personalRef.child("daySalRatio").setValue(0);
+                    personalRef.child("weekSalRatio").setValue(0);
+                    personalRef.child("monthSalRatio").setValue(0);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthGrantsIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Food");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayGrantsRatio = pTotal / 30;
+                    int weekGrantsRatio = pTotal / 4;
+                    int monthGrantsRatio = pTotal;
+
+                    personalRef.child("dayGrantsRatio").setValue(dayGrantsRatio);
+                    personalRef.child("weekGrantsRatio").setValue(weekGrantsRatio);
+                    personalRef.child("monthGrantsRatio").setValue(monthGrantsRatio);
+
+                } else {
+                    personalRef.child("dayGrantsRatio").setValue(0);
+                    personalRef.child("weekGrantsRatio").setValue(0);
+                    personalRef.child("monthGrantsRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthRentalIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Rental Income");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayRentRatio = pTotal / 30;
+                    int weekRentRatio = pTotal / 4;
+                    int monthRentRatio = pTotal;
+
+                    personalRef.child("dayRentRatio").setValue(dayRentRatio);
+                    personalRef.child("weekRentRatio").setValue(weekRentRatio);
+                    personalRef.child("monthRentRatio").setValue(monthRentRatio);
+
+                } else {
+                    personalRef.child("dayRentRatio").setValue(0);
+                    personalRef.child("weekRentRatio").setValue(0);
+                    personalRef.child("monthRentRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthInvesmentIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Investmant");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayInvestRatio = pTotal / 30;
+                    int weekInvestRatio = pTotal / 4;
+                    int monthInvestRatio = pTotal;
+
+                    personalRef.child("dayInvestRatio").setValue(dayInvestRatio);
+                    personalRef.child("weekInvestRatio").setValue(weekInvestRatio);
+                    personalRef.child("monthInvestRatio").setValue(monthInvestRatio);
+
+                } else {
+                    personalRef.child("dayInvestRatio").setValue(0);
+                    personalRef.child("weekInvestRatio").setValue(0);
+                    personalRef.child("monthInvestRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthWagesIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("wage");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayWageRatio = pTotal / 30;
+                    int weekWageRatio = pTotal / 4;
+                    int monthWageRatio = pTotal;
+
+                    personalRef.child("dayWageRatio").setValue(dayWageRatio);
+                    personalRef.child("weekWageRatio").setValue(weekWageRatio);
+                    personalRef.child("monthWageRatio").setValue(monthWageRatio);
+
+                } else {
+                    personalRef.child("dayWageRatio").setValue(0);
+                    personalRef.child("weekWageRatio").setValue(0);
+                    personalRef.child("monthWageRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthSide_businessIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Charity");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int daySbRatio = pTotal / 30;
+                    int weekSbRatio = pTotal / 4;
+                    int monthSbRatio = pTotal;
+
+                    personalRef.child("daySbRatio").setValue(daySbRatio);
+                    personalRef.child("weekSbRatio").setValue(weekSbRatio);
+                    personalRef.child("monthSbRatio").setValue(monthSbRatio);
+
+                } else {
+                    personalRef.child("daySbRatio").setValue(0);
+                    personalRef.child("weekSbRatio").setValue(0);
+                    personalRef.child("monthSbRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthDividendIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Dividend");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayDividendRatio = pTotal / 30;
+                    int weekDividendRatio = pTotal / 4;
+                    int monthDividendRatio = pTotal;
+
+                    personalRef.child("dayDividendRatio").setValue(dayDividendRatio);
+                    personalRef.child("weekDividendRatio").setValue(weekDividendRatio);
+                    personalRef.child("monthDividendRatio").setValue(monthDividendRatio);
+
+                } else {
+                    personalRef.child("dayDividendRatio").setValue(0);
+                    personalRef.child("weekDividendRatio").setValue(0);
+                    personalRef.child("monthDividendRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthPensionIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Pension");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayPensionRatio = pTotal / 30;
+                    int weekPensionRatio = pTotal / 4;
+                    int monthPensionRatio = pTotal;
+
+                    personalRef.child("dayPensionRatio").setValue(dayPensionRatio);
+                    personalRef.child("weekPensionRatio").setValue(weekPensionRatio);
+                    personalRef.child("monthPensionRatio").setValue(monthPensionRatio);
+
+                } else {
+                    personalRef.child("dayPensionRatio").setValue(0);
+                    personalRef.child("weekPensionRatio").setValue(0);
+                    personalRef.child("monthPensionRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getMonthOtherIncomeRatios() {
+        Query query = goalRef.orderByChild("item").equalTo("Other");
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int pTotal = 0;
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
+                        Object total = map.get("amount");
+                        pTotal = Integer.parseInt(String.valueOf(total));
+                    }
+
+                    int dayOtherRatio = pTotal / 30;
+                    int weekOtherRatio = pTotal / 4;
+                    int monthOtherRatio = pTotal;
+
+                    personalRef.child("dayOtherRatio").setValue(dayOtherRatio);
+                    personalRef.child("weekOtherRatio").setValue(weekOtherRatio);
+                    personalRef.child("monthOtherRatio").setValue(monthOtherRatio);
+
+                } else {
+                    personalRef.child("dayOtherRatio").setValue(0);
+                    personalRef.child("weekOtherRatio").setValue(0);
+                    personalRef.child("monthOtherRatio").setValue(0);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
 }

@@ -866,7 +866,7 @@
                 </RelativeLayout>
 
                 <com.anychart.AnyChartView
-                    android:id="@+id/anyChartViewEx"
+                    android:id="@+id/anyChartViewIN"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp" />

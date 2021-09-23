@@ -9,15 +9,14 @@ tools:context=".ChooseIncomeAnalyticsActivity"
 android:background="@drawable/incomedis2">
 
 <androidx.appcompat.widget.Toolbar
-    android:id="@+id/analyticsIncomehometoolbar"
+    android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="68dp"
     android:background="#0759EAB7"
     android:elevation="4dp"
     android:maxWidth="1dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    tools:targetApi="lollipop" />
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 <androidx.cardview.widget.CardView
     android:id="@+id/todayIncomeAnalyticscardView"
