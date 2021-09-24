@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
 <!--      put   toolbar here -->
 
@@ -21,12 +22,13 @@
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            tools:targetApi="lollipop" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Today My Spending "
+            android:text="@string/today_my_spending31ts"
             android:textColor="#F5FBFFFE"
             android:textAlignment="center"
             android:textSize="25sp"
@@ -41,7 +43,7 @@
             android:id="@+id/todaytotalAmoutincome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Amount: Rs.0 "
+            android:text="@string/total_amount_rs_046ts"
             android:layout_marginTop="1dp"
             android:background="@drawable/headtextsub"
             android:layout_marginHorizontal="80dp"
@@ -76,12 +78,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
-                app:fabCustomSize="10mm"
+                app:fabCustomSize="10dp"
                 android:backgroundTint="#C6018786"
                 android:layout_margin="10dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/iconseplus"
-                />
+                tools:ignore="ContentDescription"
+                tools:targetApi="lollipop" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

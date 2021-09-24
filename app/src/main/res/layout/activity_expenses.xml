@@ -15,7 +15,8 @@
         android:elevation="4dp"
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:targetApi="lollipop" />
 
 
 
@@ -24,10 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
-        android:text="My expenses "
+        android:text="@string/my_expensesl1"
         android:textColor="#FBFBFB"
         android:textAlignment="center"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:shadowColor="#B60558"
         android:shadowDx="35"
@@ -52,40 +53,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Budget"
+                android:text="@string/budgetl1"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
             <TextView
 
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Today"
-                android:textColor="#FFF"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:padding="5dp"
-                android:textSize="12dp"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Week"
-                android:textColor="#FFF"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:padding="5dp"
-                android:textSize="12dp"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Month"
+                android:text="@string/todayl12"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -96,12 +75,34 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="In pocket"
+                android:text="@string/weekl1"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/monthl1"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/in_pocketl1"
+                android:textColor="#FFF"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:textSize="12sp"/>
 
 
         </TableRow>
@@ -112,59 +113,59 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0l1"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
             <TextView
                 android:id="@+id/todayTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0l3"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/weekTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0l4"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/monthTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0l23"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/inpocketTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0l678"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="12dp"/>
+                android:textSize="12sp"/>
 
 
         </TableRow>
@@ -198,20 +199,23 @@
             android:layout_margin="8dp"
             android:background="#FFF"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp">
+            app:cardElevation="15dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
+                android:layout_gravity="center_horizontal|center_vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/budgetEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/iconssalarybudget"/>
+                    android:src="@drawable/iconssalarybudget"
+                    tools:ignore="ContentDescription" />
 
 
 
@@ -219,8 +223,8 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  My Budget "
-                    android:textSize="20dp"
+                    android:text="@string/my_budgetl908"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"
                     android:shadowColor="#FAD17E06"
@@ -245,28 +249,31 @@
             android:layout_margin="8dp"
             android:background="#FFF"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp">
+            app:cardElevation="15dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
+                android:layout_gravity="center_horizontal|center_vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/todayEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/iconsetoday"/>
+                    android:src="@drawable/iconsetoday"
+                    tools:ignore="ContentDescription" />
 
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  Today "
-                    android:textSize="20dp"
+                    android:text="@string/todayl9867"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"
                     android:shadowColor="#FAD17E06"
@@ -291,28 +298,31 @@
             android:layout_margin="8dp"
             android:background="#FFF"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp">
+            app:cardElevation="15dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
+                android:layout_gravity="center_horizontal|center_vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/weekEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/iconseweek"/>
+                    android:src="@drawable/iconseweek"
+                    tools:ignore="ContentDescription" />
 
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  This Week "
-                    android:textSize="20dp"
+                    android:text="@string/this_weekl456"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"
                     android:shadowColor="#FAD17E06"
@@ -337,28 +347,31 @@
             android:layout_margin="8dp"
             android:background="#FFF"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp">
+            app:cardElevation="15dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
+                android:layout_gravity="center_horizontal|center_vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/monthEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/iconsemonth"/>
+                    android:src="@drawable/iconsemonth"
+                    tools:ignore="ContentDescription" />
 
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  This Month "
-                    android:textSize="20dp"
+                    android:text="@string/this_monthl980"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"
                     android:shadowColor="#FAD17E06"
@@ -383,28 +396,31 @@
             android:layout_margin="8dp"
             android:background="#FFF"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp">
+            app:cardElevation="15dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
+                android:layout_gravity="center_horizontal|center_vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/analysisEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/iconseanlysis"/>
+                    android:src="@drawable/iconseanlysis"
+                    tools:ignore="ContentDescription" />
 
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  Analytics "
-                    android:textSize="20dp"
+                    android:text="@string/analyticsl9087"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"
                     android:shadowColor="#FAD17E06"
@@ -429,28 +445,31 @@
             android:layout_margin="8dp"
             android:background="#FFF"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp">
+            app:cardElevation="15dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_horizontal|center_vertical">
+                android:layout_gravity="center_horizontal|center_vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/historyEBtnImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/iconsehistory"/>
+                    android:src="@drawable/iconsehistory"
+                    tools:ignore="ContentDescription" />
 
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="  History "
-                    android:textSize="20dp"
+                    android:text="@string/historyl098"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"
                     android:shadowColor="#FAD17E06"
@@ -475,12 +494,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        app:fabCustomSize="10mm"
+        app:fabCustomSize="90dp"
         android:backgroundTint="#C6018786"
         android:layout_margin="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/iconseplus"
-        />
+        tools:ignore="ContentDescription,UnusedAttribute" />
 </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

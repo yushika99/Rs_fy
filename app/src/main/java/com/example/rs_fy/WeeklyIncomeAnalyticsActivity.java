@@ -498,7 +498,7 @@ public class WeeklyIncomeAnalyticsActivity extends AppCompatActivity {
 
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(onlineUserId);
-        Query query = reference.orderByChild("week").equalTo(weeks);
+        Query query = reference.orderByChild("week").equalTo(weeks.getWeeks());
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

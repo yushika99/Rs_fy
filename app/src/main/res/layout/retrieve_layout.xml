@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,7 +10,8 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     app:cardCornerRadius="15dp"
-    app:cardElevation="15dp">
+    app:cardElevation="15dp"
+    tools:targetApi="lollipop">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text=" Item name"
+                android:text="@string/item_name32retlyin"
                 android:textStyle="bold"
                 android:textColor="#333"
                 android:textSize="19sp"/>
@@ -38,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="20dp"
-                android:text=" Rs. 0"
+                android:text="@string/rs_043retlin"
                 android:textStyle="bold"
                 android:textColor="#333"
                 android:textSize="18sp"/>
@@ -49,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="20dp"
-                android:text=" Note"
+                android:text="@string/note54retl"
                 android:textStyle="bold"
                 android:textColor="#333"
                 android:textSize="18sp"/>
@@ -60,7 +62,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="20dp"
-                android:text=" Date"
+                android:text="@string/date65retlay"
                 android:textColor="#333"
                 android:textSize="16sp"/>
 
@@ -76,7 +78,8 @@
             android:layout_marginRight="20dp"
             android:layout_toEndOf="@+id/linerlayout"
             android:layout_toRightOf="@+id/linerlayout"
-            android:src="@drawable/iconsehome" />
+            android:src="@drawable/iconsehome"
+            tools:ignore="ContentDescription" />
     </RelativeLayout>
 
 

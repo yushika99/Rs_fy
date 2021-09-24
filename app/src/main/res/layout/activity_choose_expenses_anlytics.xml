@@ -23,11 +23,8 @@
         android:id="@+id/todayAnalyticscardView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_row="0"
-        android:layout_column="0"
+
         android:layout_gravity="center"
-        android:layout_rowWeight="2"
-        android:layout_columnWeight="1"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:background="#FFF"
@@ -40,19 +37,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_gravity="center_horizontal|center_vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/todayAnalyticsImageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/iconstodayexanalyze"/>
+                android:src="@drawable/iconstodayexanalyze"
+                android:contentDescription="@string/todayanlytivpic" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  Today Expense Anlytics "
+                android:text="@string/today_expense_anlytics_text"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#333"
@@ -70,11 +69,7 @@
         android:id="@+id/weekAnalyticscardView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_row="0"
-        android:layout_column="0"
         android:layout_gravity="center"
-        android:layout_rowWeight="2"
-        android:layout_columnWeight="1"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:background="#FFF"
@@ -87,19 +82,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_gravity="center_horizontal|center_vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/weekAnalyticsImageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/iconsweekexanalyze"/>
+                android:src="@drawable/iconsweekexanalyze"
+                android:contentDescription="@string/weekanlyticspic" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  Week Expense Anlytics "
+                android:text="@string/week_expense_anlytics_txt"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#333"
@@ -117,11 +114,7 @@
         android:id="@+id/monthAnalyticscardView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_row="0"
-        android:layout_column="0"
         android:layout_gravity="center"
-        android:layout_rowWeight="2"
-        android:layout_columnWeight="1"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:background="#FFF"
@@ -134,18 +127,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_gravity="center_horizontal|center_vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/monthAnalyticsImageView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/iconmonthexanlytics"/>
+                android:src="@drawable/iconmonthexanlytics"
+                android:contentDescription="@string/anlyticscrdpic" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="  Month Expense Anlytics "
+                android:text="@string/month_expense_anlytics"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#333"
