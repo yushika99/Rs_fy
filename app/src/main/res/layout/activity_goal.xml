@@ -21,12 +21,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Income Goal "
+        android:text="@string/my_income_goal_title"
         android:textColor="#ffffff"
         android:textAlignment="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center_horizontal" />
 
@@ -38,8 +38,8 @@
         android:layout_marginHorizontal="80dp"
         android:background="@drawable/headtextsub"
         android:gravity="center"
-        android:textSize="18dp"
-        android:text="Total Income Goal  : Rs. 0.00 "
+        android:textSize="18sp"
+        android:text="@string/total_income_goal_rs_0_00"
         android:textColor="#ffffff"
         android:textStyle="bold" />
 
@@ -63,7 +63,8 @@
             android:backgroundTint="#FF1505"
             android:scaleType="centerCrop"
             android:src="@drawable/incomeplusred"
-            app:fabCustomSize="10mm" />
+            app:fabCustomSize="70dp"
+            android:contentDescription="@string/fabiconincomegoal" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

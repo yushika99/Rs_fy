@@ -40,7 +40,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Goal"
+                android:text="@string/goal_income_table"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Today"
+                android:text="@string/today_income_table"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -62,7 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Week"
+                android:text="@string/week_income_table"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -73,7 +73,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Month"
+                android:text="@string/month_income_table"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -84,7 +84,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Extra"
+                android:text="@string/extra_income_table"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -100,7 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0_income_table_goal"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -111,7 +111,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0_income_table_today"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -123,7 +123,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0_income_table_week"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -135,7 +135,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0_income_table_month"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -147,7 +147,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rs. 0"
+                android:text="@string/rs_0_income_table_extra"
                 android:textColor="#FFF"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -198,14 +198,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/incomegoal"/>
+                        android:src="@drawable/incomegoal"
+                        android:contentDescription="@string/incomegoal_icon" />
 
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Income Goals"
+                        android:text="@string/income_goals_txt"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
@@ -242,14 +243,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/incometoday"/>
+                        android:src="@drawable/incometoday"
+                        android:contentDescription="@string/incometoday_icon" />
 
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  Today "
+                        android:text="@string/today_income_txt"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
@@ -283,14 +285,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/incomeweek"/>
+                        android:src="@drawable/incomeweek"
+                        android:contentDescription="@string/incomeweek_icon" />
 
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  This Week "
+                        android:text="@string/this_week_income"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
@@ -324,14 +327,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/incomemonth"/>
+                        android:src="@drawable/incomemonth"
+                        android:contentDescription="@string/incomemonth_icon" />
 
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  This Month "
+                        android:text="@string/this_month_income_txt"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
@@ -365,14 +369,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/incomeanalytics"/>
+                        android:src="@drawable/incomeanalytics"
+                        android:contentDescription="@string/incomeanalytics_icon" />
 
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  Analytics "
+                        android:text="@string/incomeanalytics_txt"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
@@ -406,14 +411,15 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/incomehistory"/>
+                        android:src="@drawable/incomehistory"
+                        android:contentDescription="@string/incomehistory_icon" />
 
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  History "
+                        android:text="@string/history_txt"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
@@ -443,7 +449,8 @@
                 android:backgroundTint="#FF1505"
                 android:scaleType="centerCrop"
                 android:src="@drawable/incomeplusred"
-                app:fabCustomSize="10mm" />
+                app:fabCustomSize="70dp"
+                android:contentDescription="@string/incomeplusreddis" />
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

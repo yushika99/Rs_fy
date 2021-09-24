@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="   UPDATE  INCOME     GOAL  "
-        android:textSize="38dp"
+        android:text="@string/update_income_goal_layout_title"
+        android:textSize="38sp"
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="#333" />
@@ -23,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
-        android:text="itemName"
+        android:text="@string/itemnameupdate_income_goal_layout"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#333"/>
 
     <EditText
@@ -34,22 +34,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter Amount:"
+        android:hint="@string/enter_amountupdate_income_goal_layout"
         android:inputType="number"
         android:textColor="#000"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        android:autofillHints="amount"
         android:textColorHint="#000"/>
 
     <EditText
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="  Enter Note:"
+        android:hint="@string/enter_noteupdate_income_goal_layout"
         android:textColor="#000"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColorHint="#000"/>
+        android:inputType="text"
+        android:autofillHints="note"
+        android:textColorHint="#131313"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,8 +72,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textAllCaps="false"
-                android:text="  Delete"
-                android:textSize="20dp"
+                android:text="@string/deleteupdate_income_goal_layout"
+                android:textSize="20sp"
                 android:textColor="#F8F7F7"
                 android:textStyle="bold"
                 android:layout_margin="2dp"
@@ -88,8 +91,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textAllCaps="false"
-                android:text="Update"
-                android:textSize="20dp"
+                android:text="@string/updateupdate_income_goal_layout"
+                android:textSize="20sp"
                 android:gravity="center_horizontal"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"

@@ -11,7 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+//import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -115,7 +115,7 @@ public class IncomeActivity extends AppCompatActivity {
         ihomemonthcardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(IncomeActivity.this, MonthIncomeActivity.class);
+                Intent intent = new Intent(IncomeActivity.this, WeekIncomeActivity.class);
                 intent.putExtra("type","month");
                 startActivity(intent);
 
@@ -123,7 +123,7 @@ public class IncomeActivity extends AppCompatActivity {
         });
 
         //analytics card
-        ihomeanlyticscardView = findViewById(R.id.ihomeanlyticscardView);
+        ihomeanlyticscardView = findViewById(R.id.analyticsCardView);
         ihomeanlyticscardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -227,7 +227,7 @@ public class IncomeActivity extends AppCompatActivity {
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
                     totalAmount+=pTotal;
-                    ihomemonthTv.setText("Rs. "+ totalAmount);
+                    ihometodayTv.setText("Rs. "+ totalAmount);
                 }
                 personalRef.child("today").setValue(totalAmount);
             }

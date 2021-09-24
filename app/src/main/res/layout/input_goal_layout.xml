@@ -32,10 +32,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text=" SET AN INCOME GOAL"
+                android:text="@string/set_an_income_goal_title"
                 android:textColor="#333"
                 android:textStyle="bold"
-                android:textSize="38dp" />
+                android:textSize="38sp" />
 
 
             <TextView
@@ -43,10 +43,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:gravity="center"
-                android:text=" Choose Category"
+                android:text="@string/choose_category_input_goal_layout"
                 android:layout_marginTop="50dp"
                 android:textColor="#333"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Spinner
@@ -68,11 +68,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="Enter Amount:"
+                android:hint="@string/enter_amount_input_goal_layout"
                 android:inputType="number"
                 android:textColor="#000"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColorHint="#000"/>
 
             <EditText
@@ -80,9 +80,10 @@
                 android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="  Enter Note:"
+                android:hint="@string/enter_note_input_goal_layout"
+                android:inputType="text"
                 android:textColor="#000"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColorHint="#000"/>
 
@@ -106,8 +107,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:textAllCaps="false"
-                    android:text="  Cancle"
-                    android:textSize="20dp"
+                    android:text="@string/cancle_input_goal_layout"
+                    android:textSize="20sp"
                     android:textColor="#F8F7F7"
                     android:textStyle="bold"
                     android:layout_margin="2dp"
@@ -125,8 +126,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:textAllCaps="false"
-                    android:text="Save"
-                    android:textSize="20dp"
+                    android:text="@string/save_input_goal_layout"
+                    android:textSize="20sp"
                     android:gravity="center_horizontal"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"

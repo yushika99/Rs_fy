@@ -20,15 +20,15 @@
     <string name="my_income">My Income</string>
     <string name="my_income_goals">My Income Goals</string>
     <string name="history">History</string>
-    <string name="rs_0">Rs. 0</string>
-    <string name="rs_0">Rs. 0</string>
-    <string name="rs_0">Rs. 0</string>
-    <string name="rs_0">Rs. 0</string>
-    <string name="rs_0">Rs. 0</string>
+    <!--  <string name="rs_0">Rs. 0</string>-->
+    <!--  <string name="rs_0">Rs. 0</string>-->
+    <!-- <string name="rs_0">Rs. 0</string>-->
+    <!--   <string name="rs_0">Rs. 0</string>-->
+    <!--   <string name="rs_0">Rs. 0</string>-->
     <string name="today">Today</string>
     <string name="this_week">This Week</string>
     <string name="goal">Goal</string>
-    <string name="today">Today</string>
+    <!-- <string name="today">Today</string>-->
     <string name="week">Week</string>
     <string name="month">Month</string>
     <string name="extra">Extra</string>
@@ -40,7 +40,7 @@
     <string name="month_income_anlytics">Month Income Anlytics</string>
     <string name="today_income_anlytics">Today Income Anlytics</string>
     <string name="week_income_anlytics">Week Income Anlytics</string>
-    <string name="my_income">My Income</string>
+    <string name="my_income_home">My Income</string>
     <string name="my_expense">My Expense</string>
     <string name="logopic">logopic</string>
     <string name="deisplyEmail">checking</string>
@@ -48,6 +48,275 @@
     <string name="my_budget">My Budget</string>
     <string name="total_budget_amount_rs_0_00">Total Budget Amount : Rs. 0.00</string>
     <string name="fabiconinbudget">fabiconinbudget</string>
+
+
+    <string name="todayincomeanalyticsicondis">todayincomeanalyticsIconDIS</string>
+    <string name="weekincomeanalyticsicondis">weekincomeanalyticsIconDIS</string>
+    <string name="monthincomeanalyticsicondis">monthincomeanalyticsIconDIS</string>
+
+
+    <!-- activity_daily_income_analysis -->
+    <string name="daily_income_analysis_title">Daily Income</string>
+    <string name="today_total_rs_0_incomeAnalysis">Today Total: Rs.0</string>
+    <string name="dailystatusbargreen">dailyStatusBarBlue</string>
+    <string name="l_lt_50_dailyIN"><![CDATA[L < 50%]]></string>
+    <string name="dailystatusbarblue">dailystatusbarblue</string>
+    <string name="_50_99_dailyIN">50% - 99%</string>
+    <string name="dailystatusbarred">DailystatusbarRed</string>
+    <string name="_100_lt_g_dailyIN"><![CDATA[100% <G]]></string>
+
+    <string name="salary_daily">Salary</string>
+    <string name="dailySal_Rs">Rs .0</string>
+    <string name="daily_sal_status">status</string>
+    <string name="dailysalstatus_img">dailysalstatus_Img</string>
+    <string name="today_sal_time">Today</string>
+    <string name="today_sal_icon">today_sal_icon</string>
+
+    <string name="grants_today">Grants</string>
+    <string name="rs_0_grant">Rs .0</string>
+    <string name="daily_grant_stutas">status</string>
+    <string name="daily_grant_status_view">daily_grant_status_view</string>
+    <string name="today_grant_time">Today</string>
+    <string name="today_grant_icon">today_grant_icon</string>
+
+    <string name="rental_today">Rental</string>
+    <string name="rs_0_today_rent">Rs .0</string>
+    <string name="status_today_rent">status</string>
+    <string name="today_rent_status_view">today_rent_status_view</string>
+    <string name="today_rent_time">Today</string>
+    <string name="today_rent_icon">today_rent_icon</string>
+
+    <string name="invesment_today">Invesment</string>
+    <string name="rs_0_today_inv">Rs .0</string>
+    <string name="status_today_inv">status</string>
+    <string name="status_today_inv_view">status_today_inv_view</string>
+    <string name="today_inv">Today</string>
+    <string name="today_inv_icon">today_inv_icon</string>
+
+    <string name="wages_today">Wages</string>
+    <string name="rs_0_wage_today">Rs .0</string>
+    <string name="status_wage_today">status</string>
+    <string name="today_wage_date">Today</string>
+    <string name="today_wage_icon">today_wage_icon</string>
+    <string name="side_business_today">Side Business</string>
+    <string name="rs_0_today_SB">Rs .0</string>
+    <string name="status_today_SB">status</string>
+    <string name="status_today_sb_view">status_today_sb_view</string>
+    <string name="today_sb">Today</string>
+    <string name="today_sb_icon">today_sb_icon</string>
+    <string name="dividend_today">Dividend</string>
+    <string name="rs_0_div_today">Rs .0</string>
+    <string name="status_div_today">status</string>
+    <string name="status_div_today_view">status_div_today_view</string>
+    <string name="today_div_icon">Today</string>
+    <string name="today_div_img">today_div_img</string>
+    <string name="pension_today">Pension</string>
+    <string name="rs_0_pen_today">Rs .0</string>
+    <string name="status_today_pen_view">status</string>
+    <string name="status_wage_today_view">status_wage_today_view</string>
+    <string name="today_pen">Today</string>
+    <string name="today_pen_icon">today_pen_icon</string>
+    <string name="other_today">Other</string>
+    <string name="rs_0_other_today">Rs .0</string>
+    <string name="status_today_other">status</string>
+    <string name="today_other_status_view">today_other_status_view</string>
+    <string name="today_sum">Today</string>
+    <string name="today_sum_icon">today_sum_icon</string>
+    <string name="summary_of_today_income_text">Summary of today Income</string>
+    <string name="total_income_rs_0_text">Total Income: Rs.0</string>
+    <string name="status_today_last">status</string>
+    <string name="today_last_status_view">today_last_status_view</string>
+    <string name="today_date">Today</string>
+    <string name="todaysumdis">todaySumDis</string>
+    <string name="my_income_goal_title">My Income Goal</string>
+    <string name="total_income_goal_rs_0_00">Total Income Goal : Rs. 0.00</string>
+    <string name="fabiconincomegoal">fabiconincomegoal</string>
+    <string name="goal_income_table">Goal</string>
+    <string name="today_income_table">Today</string>
+    <string name="week_income_table">Week</string>
+    <string name="month_income_table">Month</string>
+    <string name="extra_income_table">Extra</string>
+    <string name="rs_0_income_table_goal">Rs. 0</string>
+    <string name="rs_0_income_table_today">Rs. 0</string>
+    <string name="rs_0_income_table_week">Rs. 0</string>
+    <string name="rs_0_income_table_month">Rs. 0</string>
+    <string name="rs_0_income_table_extra">Rs. 0</string>
+    <string name="incomegoal_icon">incomegoal_icon</string>
+    <string name="income_goals_txt">Income Goals</string>
+    <string name="incometoday_icon">incometoday_icon</string>
+    <string name="today_income_txt">Today</string>
+    <string name="incomeweek_icon">incomeweek_icon</string>
+    <string name="this_week_income">This Week</string>
+    <string name="incomemonth_icon">incomemonth_icon</string>
+    <string name="this_month_income_txt">This Month</string>
+    <string name="incomeanalytics_icon">incomeanalytics_icon</string>
+    <string name="incomeanalytics_txt">Analytics</string>
+    <string name="history_txt">History</string>
+    <string name="incomehistory_icon">incomehistory_icon</string>
+    <string name="incomeplusreddis">incomeplusredDIS</string>
+
+    <!-- income search -->
+    <string name="search_income">Search</string>
+    <string name="_0_00_income_search">0.00</string>
+
+
+    <!-- activity_monthly_income_analysis -->
+    <string name="monthly_income_title">Monthly Income</string>
+    <string name="monthlytotal_rs_0">MonthlyTotal: Rs.0</string>
+    <string name="l_50_income_month"><![CDATA[L < 50%]]></string>
+    <string name="_50_99_income_month">50% - 99%</string>
+    <string name="g_100_income_month"><![CDATA[G > 100%]]></string>
+    <string name="income_status_bar_month_green">income_status_bar_month_green</string>
+    <string name="income_status_bar_month_blue">income_status_bar_month_blue</string>
+    <string name="income_status_bar_month_red">income_status_bar_month_red</string>
+    <string name="salary_income_month">Salary</string>
+    <string name="grants_income_month">Grants</string>
+    <string name="rental_income_month">Rental</string>
+    <string name="invesment_income_month">Invesment</string>
+    <string name="wages_income_month">Wages</string>
+    <string name="side_business_income_month">Side Business</string>
+    <string name="dividend_income_month">Dividend</string>
+    <string name="pension_income_month">Pension</string>
+    <string name="other_income_month">Other</string>
+    <string name="rs_0_income_month_sal">Rs .0</string>
+    <string name="status_income_month_sal">status</string>
+    <string name="income_month_status_view_sal">income_month_status_view_sal</string>
+    <string name="rs_0_income_month_grant">Rs .0</string>
+    <string name="rs_0income_month_rent">Rs .0</string>
+    <string name="rs_0income_month_inv">Rs .0</string>
+    <string name="rs_0income_month_wage">Rs .0</string>
+    <string name="rs_0income_month_sb">Rs .0</string>
+    <string name="rs_0income_month_div">Rs .0</string>
+    <string name="rs_0income_month_pen">Rs .0</string>
+    <string name="rs_0income_month_other">Rs .0</string>
+    <string name="month_income_sal">Month</string>
+    <string name="month_income_grant">Month</string>
+    <string name="month_income_rent">Month</string>
+    <string name="month_income_inv">Month</string>
+    <string name="month_income_wage">Month</string>
+    <string name="month_income_sb">Month</string>
+    <string name="month_income_div">Month</string>
+    <string name="month_income_pen">Month</string>
+    <string name="month_income_other">Month</string>
+    <string name="month_income_Sum">Month</string>
+    <string name="status_month_income_pen">status</string>
+    <string name="status_month_income_other">status</string>
+    <string name="status_month_income_sum">status</string>
+    <string name="summary_of_month_income">Summary of Month Income</string>
+    <string name="total_income_rs_0_month">Total Income: Rs.0</string>
+    <string name="status_month_income_grant_date">status</string>
+    <string name="status_month_income_grant">status</string>
+    <string name="status_month_income_inv">status</string>
+    <string name="status_month_income_wage">status</string>
+    <string name="status_month_income_sb">status</string>
+    <string name="status_month_income_div">status</string>
+    <string name="incomesalary_monthdis">incomesalary_monthDIs</string>
+    <string name="grants_status_view_month">Grants_status_view</string>
+    <string name="incomerental_month_icon">incomerental_month_icon</string>
+    <string name="incomegrantt_month_icon">incomegrantt_month_icon</string>
+    <string name="incomeinvest_month_icon">incomeinvest_month_icon</string>
+    <string name="incomewage_month_icon">incomewage_month_icon</string>
+    <string name="incomeside_month_icon">incomeside_month_icon</string>
+    <string name="incomedevidence_month_icon">incomedevidence_month_icon</string>
+    <string name="incomepension_month_icon">incomepension_month_icon</string>
+    <string name="incomeother_month_icon">incomeother_month_icon</string>
+    <string name="monthsum_month_icon">monthsum_month_icon</string>
+    <string name="monthratioincome_image_status">MonthRatioIncome_Image_status</string>
+    <string name="other_income_status_month_view">other_income_status_month_view</string>
+    <string name="pension_status_month_view">Pension_status_month_view</string>
+    <string name="dividend_status_month_view">Dividend_status_month_view</string>
+    <string name="sidebusiness_status_month_view">Sidebusiness_status_month_view</string>
+    <string name="wages_status_month_view">Wages_status_month_view</string>
+    <string name="rental_status_month_view">Rental_status_month_view</string>
+    <string name="invesment_status_month_view">Invesment_status_month_view</string>
+    <string name="today_my_income_title">Today My Income</string>
+    <string name="today_total_income_rs_0_00">Today Total Income : Rs. 0.00</string>
+    <string name="incomeplusreddis_today">incomeplusredDIS_today</string>
+    <string name="weekly_my_income_title">Weekly My Income</string>
+    <string name="week_total_income_rs_0_00">week Total Income : Rs. 0.00</string>
+    <string name="set_an_income_goal_title">SET AN INCOME GOAL</string>
+    <string name="save_input_goal_layout">Save</string>
+    <string name="cancle_input_goal_layout">Cancle</string>
+    <string name="enter_note_input_goal_layout">Enter Note:</string>
+    <string name="enter_amount_input_goal_layout">Enter Amount:</string>
+    <string name="choose_category_input_goal_layout">Choose Category</string>
+    <string name="update_income_goal_layout_title">UPDATE INCOME GOAL</string>
+    <string name="itemnameupdate_income_goal_layout">itemName</string>
+    <string name="enter_amountupdate_income_goal_layout">Enter Amount:</string>
+    <string name="enter_noteupdate_income_goal_layout">Enter Note:</string>
+    <string name="deleteupdate_income_goal_layout">Delete</string>
+    <string name="updateupdate_income_goal_layout">Update</string>
+
+    <!-- activity_weekly_income_analysis -->
+    <string name="weekly_income_title">Weekly Income</string>
+    <string name="week_total_rs_0weekly_income">Week Total: Rs.0</string>
+    <string name="weekly_income_status_bar_blue">TODO</string>
+    <string name="l_50weekly_income"><![CDATA[L < 50%]]></string>
+    <string name="_50_99weekly_income">50% - 99%</string>
+    <string name="g_100weekly_income"><![CDATA[G > 100%]]></string>
+    <string name="weekly_income_status_bar_green">weekly_income_status_bar_green</string>
+    <string name="weekly_income_status_bar_red">weekly_income_status_bar_red</string>
+    <string name="salaryweekly_income">Salary</string>
+    <string name="grantsweekly_income">Grants</string>
+    <string name="rentalweekly_income">Rental</string>
+    <string name="invesmentweekly_income">Invesment</string>
+    <string name="wagesweekly_income">Wages</string>
+    <string name="side_businessweekly_income">Side Business</string>
+    <string name="dividendweekly_income">Dividend</string>
+    <string name="pensionweekly_income">Pension</string>
+    <string name="otherweekly_income">Other</string>
+    <string name="summary_of_week_incomeweekly_income">Summary of week Income</string>
+    <string name="total_income_rs_0weekly_income">Total Income: Rs.0</string>
+    <string name="date_weekly_income_sal">Date</string>
+    <string name="date_weekly_income_grant">Date</string>
+    <string name="date_weekly_income_rent">Date</string>
+    <string name="date_weekly_income_inv">Date</string>
+    <string name="date_weekly_income_wage">Date</string>
+    <string name="date_weekly_income_sb">Date</string>
+    <string name="date_weekly_income_div">Date</string>
+    <string name="date_weekly_income_pen">Date</string>
+    <string name="date_weekly_income_other">Date</string>
+    <string name="date_weekly_income_sum">Date</string>
+    <string name="rs_0_weekly_income_sal">Rs .0</string>
+    <string name="rs_0_weekly_income_grant">Rs .0</string>
+    <string name="rs_0_weekly_income_rent">Rs .0</string>
+    <string name="rs_0_weekly_income_inv">Rs .0</string>
+    <string name="rs_0_weekly_income_wage">Rs .0</string>
+    <string name="rs_0_weekly_income_sb">Rs .0</string>
+    <string name="rs_0_weekly_income_div">Rs .0</string>
+    <string name="rs_0_weekly_income_pen">Rs .0</string>
+    <string name="rs_0_weekly_income_other">Rs .0</string>
+    <string name="status_weekly_income_sal">status</string>
+    <string name="status_weekly_income_grant">status</string>
+    <string name="status_weekly_income_rent">status</string>
+    <string name="status_weekly_income_inv">status</string>
+    <string name="status_weekly_income_wage">status</string>
+    <string name="status_weekly_income_sb">status</string>
+    <string name="status_weekly_income_div">status</string>
+    <string name="status_weekly_income_pen">status</string>
+    <string name="status_weekly_income_other">status</string>
+    <string name="status_weekly_income_sum">status</string>
+    <string name="status_weekly_income_view_sal">status_weekly_income_view_sal</string>
+    <string name="status_weekly_income_view_grant">status_weekly_income_view_grant</string>
+    <string name="status_weekly_income_view_rent">status_weekly_income_view_rent</string>
+    <string name="status_weekly_income_view_inv">status_weekly_income_view_inv</string>
+    <string name="status_weekly_income_view_wage">status_weekly_income_view_wage</string>
+    <string name="status_weekly_income_view_sb">status_weekly_income_view_sb</string>
+    <string name="status_weekly_income_view_div">status_weekly_income_view_div</string>
+    <string name="status_weekly_income_view_other">status_weekly_income_view_other</string>
+    <string name="status_weekly_income_view_sum">status_weekly_income_view_sum</string>
+    <string name="incomesalary_icon">incomesalary_icon</string>
+    <string name="incomegrantt_icon_week">incomegrantt_icon_week</string>
+    <string name="incomerental_week_icon">incomerental_week_icon</string>
+    <string name="incomeinvest_week_icon">incomeinvest_week_icon</string>
+    <string name="incomewage_week_icon">incomewage_week_icon</string>
+    <string name="incomeside_week_icon">incomeside_week_icon</string>
+    <string name="incomedevidence_week_icon">incomedevidence_week_icon</string>
+    <string name="status_weekly_income_view_pen">status_weekly_income_view_pen</string>
+    <string name="incomepension_week_icon">incomepension_week_icon</string>
+    <string name="incomeother_week_icon">incomeother_week_icon</string>
+    <string name="todayinsum_week_icon">todayinsum_week_icon</string>
+
 
     <string-array name="items">
         <item>Select Item</item>
@@ -64,7 +333,3 @@
 
 
 </resources>
-
-
-
-
