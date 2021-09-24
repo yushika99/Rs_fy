@@ -38,7 +38,7 @@
             android:gravity="center_horizontal" />
 
         <TextView
-            android:id="@+id/todaytotalAmoutincome"
+            android:id="@+id/totalAmoutSpentOn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Total Amount: Rs.0 "
@@ -378,14 +378,14 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutInvest"
+                    android:id="@+id/relativeLayoutHome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@drawable/setcard">
 
                     <LinearLayout
-                        android:id="@+id/linerLayoutInvesment"
+                        android:id="@+id/linerLayoutHome1"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -454,7 +454,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
-                        android:layout_toEndOf="@+id/linerLayoutInvesment"
+                        android:layout_toEndOf="@+id/linerLayoutHome1"
                         android:src="@drawable/iconsehome" />
                 </RelativeLayout>
 
@@ -622,7 +622,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutDividend"
+                    android:id="@+id/relativeLayoutHealth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -703,7 +703,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutPension"
+                    android:id="@+id/relativeLayoutPersonal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -784,7 +784,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutOtherIncome"
+                    android:id="@+id/relativeLayoutOther"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -866,19 +866,19 @@
                 </RelativeLayout>
 
                 <com.anychart.AnyChartView
-                    android:id="@+id/anyChartViewIN"
+                    android:id="@+id/anyChartViewEx"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp" />
 
                 <RelativeLayout
-                    android:id="@+id/linerLayoutMonthlyInAnliysis"
+                    android:id="@+id/linerLayoutExAnliysis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:orientation="horizontal"
-                    android:background="@drawable/incomeSummaryBottom">
+                    android:background="@drawable/incomesummaryback">
 
                     <LinearLayout
                         android:id="@+id/incomeSummarylinerLayout"
@@ -957,7 +957,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/iconmonthexanlytics"/>
+                        android:src="@drawable/todayinsum"/>
 
                 </RelativeLayout>
 

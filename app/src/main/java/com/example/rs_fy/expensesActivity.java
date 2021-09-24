@@ -8,7 +8,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+//import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -186,7 +186,7 @@ private CardView budgetcardViewbtn,todaycardViewbtn,weekcardViewbtn,monthcardVie
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
                         totalAmountBudget+=pTotal;
-                        budgetTv.setText("$ "+String.valueOf(totalAmountBudget));
+                        budgetTv.setText("Rs "+String.valueOf(totalAmountBudget));
                     }
                 }else {
                     totalAmountBudget=0;

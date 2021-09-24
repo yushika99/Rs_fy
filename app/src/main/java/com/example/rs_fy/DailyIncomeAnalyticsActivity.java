@@ -65,7 +65,7 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
         setSupportActionBar(settingsToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Today Analytics");
+        getSupportActionBar().setTitle("Today Income Analytics");
 
 
         mAuth = FirebaseAuth.getInstance();

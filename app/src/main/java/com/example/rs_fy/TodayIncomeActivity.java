@@ -76,8 +76,8 @@ public class TodayIncomeActivity extends AppCompatActivity {
         loader = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
-        onlineUserId = mAuth.getCurrentUser().getUid();
-        incomeRef = FirebaseDatabase.getInstance().getReference("income").child(onlineUserId);
+        onlineUserID = mAuth.getCurrentUser().getUid();
+        incomeRef = FirebaseDatabase.getInstance().getReference("income").child(onlineUserID);
 
         recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -108,7 +108,7 @@ public class TodayIncomeActivity extends AppCompatActivity {
         Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(cal.getTime());
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(onlineUserId);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(onlineUserID);
         Query query = reference.orderByChild("date").equalTo(date);
         query.addValueEventListener(new ValueEventListener() {
             @Override

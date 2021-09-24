@@ -14,7 +14,7 @@
         android:text="@string/my_income"
         android:textColor="#FDFDFD"
         android:textAlignment="center"
-        android:textSize="29dp"
+        android:textSize="29sp"
         android:textStyle="bold"
         android:gravity="center_horizontal" />
 
@@ -45,7 +45,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
             <TextView
 
                 android:layout_width="0dp"
@@ -56,7 +56,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -67,7 +67,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -89,7 +89,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
 
         </TableRow>
@@ -105,7 +105,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
             <TextView
                 android:id="@+id/ihometodayTv"
                 android:layout_width="0dp"
@@ -116,7 +116,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/ihomeweekTv"
@@ -128,7 +128,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/ihomemonthTv"
@@ -140,7 +140,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:id="@+id/ihomeextraTv"
@@ -152,7 +152,7 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:textSize="15dp"/>
+                android:textSize="15sp"/>
 
 
         </TableRow>
@@ -206,7 +206,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Income Goals"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
                         android:shadowDx="5"
@@ -250,7 +250,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="  Today "
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
                         android:gravity="center_horizontal"/>
@@ -291,7 +291,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="  This Week "
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
                         android:gravity="center_horizontal"/>
@@ -332,7 +332,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="  This Month "
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
                         android:gravity="center_horizontal"/>
@@ -373,7 +373,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="  Analytics "
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
                         android:gravity="center_horizontal"/>
@@ -414,7 +414,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="  History "
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:textColor="#333"
                         android:gravity="center_horizontal"/>

@@ -31,7 +31,7 @@ import java.util.Map;
 public class IncomeHistoryActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     private RecyclerView recyclerView;
 
-    private TodayItemsAdapter todayItemsAdapter;
+    private TodayIncomeItemAdapter todayIncomeItemAdapter;
     private List<GoalData> myDataList;
 
     private FirebaseAuth mAuth;
@@ -67,8 +67,8 @@ public class IncomeHistoryActivity extends AppCompatActivity implements DatePick
         recyclerView.setLayoutManager(layoutManager);
 
         myDataList = new ArrayList<>();
-        todayItemsAdapter = new TodayItemsAdapter(IncomeHistoryActivity.this, myDataList);
-        recyclerView.setAdapter(todayItemsAdapter);
+        todayIncomeItemAdapter = new TodayIncomeItemAdapter(IncomeHistoryActivity.this, myDataList);
+        recyclerView.setAdapter(todayIncomeItemAdapter);
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +106,7 @@ public class IncomeHistoryActivity extends AppCompatActivity implements DatePick
                     GoalData data = snapshot.getValue(GoalData.class);
                     myDataList.add(data);
                 }
-                todayItemsAdapter.notifyDataSetChanged();
+                todayIncomeItemAdapter.notifyDataSetChanged();
                 recyclerView.setVisibility(View.VISIBLE);
 
                 int totalAmount = 0;

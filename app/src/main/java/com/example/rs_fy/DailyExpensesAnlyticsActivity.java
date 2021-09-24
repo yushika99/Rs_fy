@@ -37,7 +37,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
-public class DailyAnalyticsActivity extends AppCompatActivity {
+public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
 
     private Toolbar settingsToolbar;
 
@@ -47,19 +47,19 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
     private DatabaseReference expensesRef,personalRef;
 
     private TextView totalBudgetAmountTextView, analyticsTransportAmount,analyticsFoodAmount,analyticsHouseExpensesAmount,analyticsEntertainmentAmount;
-    private TextView analyticsEducationAmount,analyticsCharityAmount,analyticsApparelAmount,analyticsHealthAmount,analyticsPersonalExpensesAmount,analyticsOtherAmount, monthSpentAmount;
+    private TextView analyticsEducationAmount,analyticsCharityAmount,analyticsHealthAmount,analyticsPersonalExpensesAmount,analyticsOtherAmount, monthSpentAmount;
 
-    private RelativeLayout linearLayoutFood,linearLayoutTransport,linearLayoutFoodHouse,linearLayoutEntertainment,linearLayoutEducation;
-    private RelativeLayout linearLayoutCharity,linearLayoutApparel,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther, linearLayoutAnalysis;
+    private RelativeLayout linearLayoutFood,linearLayoutTransport,linearLayoutHouse,linearLayoutEntertainment,linearLayoutEducation;
+    private RelativeLayout linearLayoutCharity,linearLayoutHealth,linearLayoutPersonalExp,linearLayoutOther, linearLayoutAnalysis;
 
     private AnyChartView anyChartView;
-    private TextView progress_ratio_transport,progress_ratio_food,progress_ratio_house,progress_ratio_ent,progress_ratio_edu,progress_ratio_cha, progress_ratio_app,progress_ratio_hea,progress_ratio_per,progress_ratio_oth, monthRatioSpending;
-    private ImageView status_Image_transport, status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_app,status_Image_hea,status_Image_per,status_Image_oth, monthRatioSpending_Image;
+    private TextView progress_ratio_transport,progress_ratio_food,progress_ratio_house,progress_ratio_ent,progress_ratio_edu,progress_ratio_cha,progress_ratio_hea,progress_ratio_per,progress_ratio_oth, monthRatioSpending;
+    private ImageView status_Image_transport, status_Image_food,status_Image_house,status_Image_ent,status_Image_edu,status_Image_cha,status_Image_hea,status_Image_per,status_Image_oth, monthRatioSpending_Image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daily_analytics);
+        setContentView(R.layout.activity_daily_expenses_anlytics);
 
         settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
         setSupportActionBar(settingsToolbar);
@@ -84,23 +84,23 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
         analyticsTransportAmount = findViewById(R.id.analyticsTransportAmount);
         analyticsFoodAmount = findViewById(R.id.analyticsFoodAmount);
-        analyticsHouseExpensesAmount = findViewById(R.id.analyticsHouseExpensesAmount);
+        analyticsHouseExpensesAmount = findViewById(R.id.analyticsHomeAmount);
         analyticsEntertainmentAmount = findViewById(R.id.analyticsEntertainmentAmount);
         analyticsEducationAmount = findViewById(R.id.analyticsEducationAmount);
         analyticsCharityAmount = findViewById(R.id.analyticsCharityAmount);
-        analyticsApparelAmount = findViewById(R.id.analyticsApparelAmount);
+        //analyticsApparelAmount = findViewById(R.id.analyticsApparelAmount);
         analyticsHealthAmount = findViewById(R.id.analyticsHealthAmount);
-        analyticsPersonalExpensesAmount = findViewById(R.id.analyticsPersonalExpensesAmount);
+        analyticsPersonalExpensesAmount = findViewById(R.id.analyticsPersonalAmount);
         analyticsOtherAmount = findViewById(R.id.analyticsOtherAmount);
 
         //Relative layouts views
         linearLayoutTransport = findViewById(R.id.linearLayoutTransport);
         linearLayoutFood = findViewById(R.id.linearLayoutFood);
-        linearLayoutFoodHouse = findViewById(R.id.linearLayoutFoodHouse);
+        linearLayoutHouse = findViewById(R.id.linearLayoutHouse);
         linearLayoutEntertainment = findViewById(R.id.linearLayoutEntertainment);
         linearLayoutEducation = findViewById(R.id.linearLayoutEducation);
         linearLayoutCharity = findViewById(R.id.linearLayoutCharity);
-        linearLayoutApparel = findViewById(R.id.linearLayoutApparel);
+        //linearLayoutApparel = findViewById(R.id.linearLayoutApparel);
         linearLayoutHealth = findViewById(R.id.linearLayoutHealth);
         linearLayoutPersonalExp = findViewById(R.id.linearLayoutPersonalExp);
         linearLayoutOther = findViewById(R.id.linearLayoutOther);
@@ -112,21 +112,21 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
         progress_ratio_ent = findViewById(R.id.progress_ratio_ent);
         progress_ratio_edu = findViewById(R.id.progress_ratio_edu);
         progress_ratio_cha = findViewById(R.id.progress_ratio_cha);
-        progress_ratio_app = findViewById(R.id.progress_ratio_app);
+        //progress_ratio_app = findViewById(R.id.progress_ratio_app);
         progress_ratio_hea = findViewById(R.id.progress_ratio_hea);
         progress_ratio_per = findViewById(R.id.progress_ratio_per);
         progress_ratio_oth = findViewById(R.id.progress_ratio_oth);
 //imageviews
-        status_Image_transport = findViewById(R.id.status_Image_transport);
-        status_Image_food = findViewById(R.id.status_Image_food);
-        status_Image_house = findViewById(R.id.status_Image_house);
-        status_Image_ent = findViewById(R.id.status_Image_ent);
-        status_Image_edu = findViewById(R.id.status_Image_edu);
-        status_Image_cha = findViewById(R.id.status_Image_cha);
-        status_Image_app = findViewById(R.id.status_Image_app);
-        status_Image_hea = findViewById(R.id.status_Image_hea);
-        status_Image_per = findViewById(R.id.status_Image_per);
-        status_Image_oth = findViewById(R.id.status_Image_oth);
+        status_Image_transport = findViewById(R.id.transport_status);
+        status_Image_food = findViewById(R.id.food_status);
+        status_Image_house = findViewById(R.id.Home_status);
+        status_Image_ent = findViewById(R.id.entertainment_status);
+        status_Image_edu = findViewById(R.id.education_status);
+        status_Image_cha = findViewById(R.id.charity_status);
+        //status_Image_app = findViewById(R.id.status_Image_app);
+        status_Image_hea = findViewById(R.id.health_status);
+        status_Image_per = findViewById(R.id.personal_status);
+        status_Image_oth = findViewById(R.id.other_status);
 
         //anyChartView
         anyChartView = findViewById(R.id.anyChartView);
@@ -138,7 +138,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
         getTotalWeekEntertainmentExpenses();
         getTotalWeekEducationExpenses();
         getTotalWeekCharityExpenses();
-        getTotalWeekApparelExpenses();
         getTotalWeekHealthExpenses();
         getTotalWeekPersonalExpenses();
         getTotalWeekOtherExpenses();
@@ -193,7 +192,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -230,7 +229,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -259,14 +258,14 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                     }
                     personalRef.child("dayHouse").setValue(totalAmount);
                 }else {
-                    linearLayoutFoodHouse.setVisibility(View.GONE);
+                    linearLayoutHouse.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -302,7 +301,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -338,7 +337,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -374,46 +373,11 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-    private void getTotalWeekApparelExpenses(){
-        MutableDateTime epoch = new MutableDateTime();
-        epoch.setDate(0); //Set to Epoch time
-        DateTime now = new DateTime();
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Calendar cal = Calendar.getInstance();
-        String date = dateFormat.format(cal.getTime());
-        String itemNday = "Apparel and Services"+date;
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
-        Query query = reference.orderByChild("itemNday").equalTo(itemNday);
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    int totalAmount = 0;
-                    for (DataSnapshot ds :  snapshot.getChildren()) {
-                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
-                        Object total = map.get("amount");
-                        int pTotal = Integer.parseInt(String.valueOf(total));
-                        totalAmount += pTotal;
-                        analyticsApparelAmount.setText("Spent: " + totalAmount);
-                    }
-                    personalRef.child("dayApp").setValue(totalAmount);
-                }else {
-                    linearLayoutApparel.setVisibility(View.GONE);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
     private void getTotalWeekHealthExpenses(){
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
@@ -446,7 +410,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -482,7 +446,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -518,7 +482,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -606,12 +570,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                         chaTotal = 0;
                     }
 
-                    int appTotal;
-                    if (snapshot.hasChild("dayApp")){
-                        appTotal = Integer.parseInt(snapshot.child("dayApp").getValue().toString());
-                    }else {
-                        appTotal = 0;
-                    }
 
                     int heaTotal;
                     if (snapshot.hasChild("dayHea")){
@@ -641,7 +599,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                     data.add(new ValueDataEntry("Entertainment", entTotal));
                     data.add(new ValueDataEntry("Education", eduTotal));
                     data.add(new ValueDataEntry("Charity", chaTotal));
-                    data.add(new ValueDataEntry("Apparel", appTotal));
                     data.add(new ValueDataEntry("Health", heaTotal));
                     data.add(new ValueDataEntry("Personal", perTotal));
                     data.add(new ValueDataEntry("other", othTotal));
@@ -666,13 +623,13 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                     anyChartView.setChart(pie);
                 }
                 else {
-                    Toast.makeText(DailyAnalyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DailyExpensesAnlyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DailyAnalyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DailyExpensesAnlyticsActivity.this,"Child does not exist", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -722,14 +679,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                     }else {
                         chaTotal = 0;
                     }
-
-                    float appTotal;
-                    if (snapshot.hasChild("dayApp")){
-                        appTotal = Integer.parseInt(snapshot.child("dayApp").getValue().toString());
-                    }else {
-                        appTotal = 0;
-                    }
-
                     float heaTotal;
                     if (snapshot.hasChild("dayHea")){
                         heaTotal = Integer.parseInt(snapshot.child("dayHea").getValue().toString());
@@ -804,12 +753,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
                         chaRatio = 0;
                     }
 
-                    float appRatio;
-                    if (snapshot.hasChild("dayAppRatio")){
-                        appRatio = Integer.parseInt(snapshot.child("dayAppRatio").getValue().toString());
-                    }else {
-                        appRatio =0;
-                    }
 
                     float heaRatio;
                     if (snapshot.hasChild("dayHealthRatio")){
@@ -935,19 +878,6 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
                     }
 
-                    float appPercent = (appTotal/appRatio)*100;
-                    if (appPercent<50){
-                        progress_ratio_app.setText(appPercent+" %" +" used of "+appRatio + ". Status:");
-                        status_Image_app.setImageResource(R.drawable.green);
-                    }else if (appPercent >= 50 && appPercent <100){
-                        progress_ratio_app.setText(appPercent+" %" +" used of "+appRatio + ". Status:");
-                        status_Image_app.setImageResource(R.drawable.brown);
-                    }else {
-                        progress_ratio_app.setText(appPercent+" %" +" used of "+appRatio + ". Status:");
-                        status_Image_app.setImageResource(R.drawable.red);
-
-                    }
-
                     float heaPercent = (heaTotal/heaRatio)*100;
                     if (heaPercent<50){
                         progress_ratio_hea.setText(heaPercent+" %" +" used of "+heaRatio + ". Status:");
@@ -993,7 +923,7 @@ public class DailyAnalyticsActivity extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(DailyAnalyticsActivity.this, "setStatusAndImageResource Errors", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DailyExpensesAnlyticsActivity.this, "setStatusAndImageResource Errors", Toast.LENGTH_SHORT).show();
                 }
             }
 
