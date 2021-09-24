@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Week's Spending "
+        android:text="@string/my_week_s_spending24ws"
         android:textColor="#DCEDE4"
         android:textAlignment="center"
         android:layout_marginBottom="1dp"
@@ -46,7 +46,7 @@
         android:shadowDx="35"
         android:shadowDy="67"
         android:shadowRadius="80"
-        android:text="Total Week Amount : Rs. 0.00 "
+        android:text="@string/total_week_amount_rs_0_00ws49"
         android:textColor="#FFF"
         android:textStyle="bold" />
 

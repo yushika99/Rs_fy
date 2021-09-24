@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HistortyExActivity"
-    android:background="@drawable/incomedis2">
+    android:background="@drawable/expensesdis3">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/todayIncomeToolbar"
@@ -36,7 +36,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/spinner"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Search "
+                android:text="@string/searchlex345"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="15sp"
@@ -47,8 +47,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="0.00"
-                android:textSize="17dp"
+                android:text="@string/_0_00loi"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 android:textColor="#000"
                 android:layout_gravity="center_horizontal"

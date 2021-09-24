@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,7 +10,7 @@
     android:layout_marginTop="10dp"
     app:cardCornerRadius="15dp"
     app:cardElevation="15dp"
-    >
+    tools:targetApi="lollipop">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +34,7 @@
                 android:textAlignment="center"
 
                 android:gravity="center"
-                android:entries="@array/Bitems"
+                android:entries="@array/items"
                 android:layout_gravity="center"
                 android:background="@drawable/spinner">
 
@@ -44,30 +45,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:textSize="12dp"
-                    android:hint="Enter Amount"
+                    android:textSize="12sp"
+                    android:hint="@string/enter_amount49inl"
                     android:inputType="number"
                     android:textColor="#000"
                     android:textColorHint="#009688"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:importantForAutofill="no" />
 
             <EditText
                 android:visibility="gone"
                 android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter note.."
-                android:textSize="12dp"
+                android:hint="@string/enter_note61inl"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="#000"
-                android:textColorHint="#333"/>
+                android:textColorHint="#333"
+                android:importantForAutofill="no"
+                android:inputType="textShortMessage" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
 
             <RelativeLayout
@@ -81,8 +86,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:textAllCaps="false"
-                    android:text="Save"
-                    android:textSize="12dp"
+                    android:text="@string/save89inl"
+                    android:textSize="12sp"
                     android:gravity="center_horizontal"
                     android:textColor="#100F0F"
                     android:textStyle="bold"
@@ -100,8 +105,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:textAllCaps="false"
-                    android:text="Cancle"
-                    android:textSize="12dp"
+                    android:text="@string/cancle108inl"
+                    android:textSize="12sp"
                     android:gravity="center_horizontal"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
@@ -119,10 +124,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Select a Budget Item"
+        android:text="@string/select_a_budget_item127inl"
         android:textColor="#333"
         android:textStyle="bold"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"/>

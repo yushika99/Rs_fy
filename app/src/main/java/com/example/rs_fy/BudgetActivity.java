@@ -10,7 +10,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+//import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -48,7 +49,7 @@ import java.util.Map;
 public class BudgetActivity extends AppCompatActivity {
 
     private TextView TotalBudgetAmountTextview;
-    private androidx.recyclerview.widget.RecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
 
 
@@ -316,7 +317,7 @@ public class BudgetActivity extends AppCompatActivity {
         // check this error
     }
 
-     public class MyViewHolder extends android.support.v7.widget.RecyclerView.ViewHolder {
+     public class MyViewHolder extends RecyclerView.ViewHolder {
         View mView;
         public ImageView imageView;
         public TextView notes,date;

@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="20dp"
-        android:text="Update this item ? "
-        android:textSize="14dp"
+        android:text="@string/update_this_item16uplay"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="#333"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="itemName"
+        android:text="@string/itemname32uplay"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -40,30 +40,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter amount"
+        android:hint="@string/enter_amount43uplay"
         android:textColorHint="#D6CCCC"
         android:textStyle="bold"
         android:textColor="#333"
         android:textSize="20sp"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter note"
+        android:hint="@string/enter_note56uplay"
         android:textColorHint="#D6CCCC"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="#333"
-        android:inputType="textCapSentences"/>
+        android:inputType="textCapSentences"
+        android:importantForAutofill="no" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -81,7 +84,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:textAllCaps="false"
-                android:text="Delete"
+                android:text="@string/delete87uplay"
                 android:textSize="12sp"
                 android:textColor="#333"
                 android:textStyle="bold"
@@ -107,7 +110,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_save_form"
                 android:gravity="center_horizontal"
-                android:text="Update"
+                android:text="@string/update113uplay"
                 android:textAllCaps="false"
                 android:textColor="#F6F6F6"
                 android:textSize="12sp"

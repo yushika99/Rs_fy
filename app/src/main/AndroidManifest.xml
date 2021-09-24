@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Rs_fy">
 <!--        <activity android:name=".TodayIncomeItemAdapter"></activity>-->
         <activity android:name=".IncomeHistoryActivity" />
-        <activity android:name=".WeekIncomeActivity" />
+        <activity android:name=".MonthIncomeActivity" />
+            <activity android:name=".WeekIncomeActivity" />
         <activity android:name=".WeeklyIncomeAnalyticsActivity" />
         <activity android:name=".MonthlyIncomeAnalyticsActivity" />
         <activity android:name=".DailyIncomeAnalyticsActivity" />
@@ -27,7 +28,7 @@
             android:name=".WeeklyExpencesAnalyticsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".DailyAnalyticsActivity"
+            android:name=".DailyExpensesAnlyticsActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ChooseExpensesAnlyticsActivity"

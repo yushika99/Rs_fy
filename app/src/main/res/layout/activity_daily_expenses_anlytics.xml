@@ -11,7 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/settingsToolbar"
@@ -26,7 +27,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Today My Spending "
+        android:text="@string/today_my_spending_txt"
         android:textColor="#F5FBFFFE"
         android:textAlignment="center"
         android:textSize="25sp"
@@ -41,7 +42,7 @@
         android:id="@+id/totalBudgetAmountTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total Amount: Rs.0 "
+        android:text="@string/total_amount_rs_0_txt1"
         android:layout_marginTop="1dp"
         android:background="@drawable/headtextsub"
         android:layout_marginHorizontal="80dp"
@@ -71,12 +72,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/green" />
+            android:src="@drawable/green"
+            android:contentDescription="@string/ststsred" />
         <TextView
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="L < 50%"
+            android:text="@string/l_lt_50"
             android:textStyle="bold"
             android:textSize="12sp"
             android:layout_gravity="center_vertical"
@@ -90,12 +92,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/brown" />
+            android:src="@drawable/brown"
+            android:contentDescription="@string/greenstat" />
         <TextView
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="50% - 99% "
+            android:text="@string/_50_99"
             android:textStyle="bold"
             android:textSize="12sp"
             android:layout_gravity="center_vertical"
@@ -109,12 +112,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/red" />
+            android:src="@drawable/red"
+            android:contentDescription="@string/brownstat" />
         <TextView
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text=" G > 100% "
+            android:text="@string/g_100"
             android:textStyle="bold"
             android:textSize="12sp"
             android:layout_gravity="center_vertical"
@@ -153,7 +157,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Transport"
+                            android:text="@string/transport_s"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -164,7 +168,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/t1rs_0"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -181,7 +185,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/status1"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -191,7 +195,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                android:contentDescription="@string/tevelpic" />
 
                         </LinearLayout>
 
@@ -202,7 +207,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todaye1"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -212,7 +217,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutTransport1"
-                        android:src="@drawable/iconsetransport" />
+                        android:src="@drawable/iconsetransport"
+                        android:contentDescription="@string/transport_s" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -234,7 +240,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Food"
+                            android:text="@string/food"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -245,7 +251,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0e2"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -262,7 +268,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/status2"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -272,7 +278,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -283,7 +290,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todayex1"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -293,7 +300,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutFood1"
-                        android:src="@drawable/iconsefood" />
+                        android:src="@drawable/iconsefood"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -315,7 +323,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Entertainment"
+                            android:text="@string/entertainmentt1"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -326,7 +334,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0ex2"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -343,7 +351,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/statusx3"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -353,7 +361,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -364,7 +373,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todayex0"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -374,7 +383,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutEntertainment1"
-                        android:src="@drawable/iconseentertainment" />
+                        android:src="@drawable/iconseentertainment"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -396,7 +406,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Home"
+                            android:text="@string/home1"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -408,7 +418,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0ex6"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -425,7 +435,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/statusex8"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -435,7 +445,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -446,7 +457,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todayex98"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -456,7 +467,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutHouse1"
-                        android:src="@drawable/iconsehome" />
+                        android:src="@drawable/iconsehome"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
 
@@ -479,7 +491,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Education"
+                            android:text="@string/educationex98"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -490,7 +502,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0exu7"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -507,7 +519,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/statusx098"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -517,7 +529,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -528,7 +541,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todayexc78"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -538,7 +551,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutEducation1"
-                        android:src="@drawable/iconseeducation" />
+                        android:src="@drawable/iconseeducation"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -560,7 +574,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Charity"
+                            android:text="@string/charityex879"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -571,7 +585,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0ex98790"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -588,7 +602,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/status_ex5678"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -598,7 +612,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -609,7 +624,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todayexd5678"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -619,7 +634,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutCharity1"
-                        android:src="@drawable/iconsecharity" />
+                        android:src="@drawable/iconsecharity"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -641,7 +657,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Health"
+                            android:text="@string/health78990"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -652,7 +668,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0esx9867"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -669,7 +685,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/statusopi890"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -679,7 +695,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -692,7 +709,8 @@
                             android:layout_marginBottom="10dp"
                             android:text="Today"
                             android:textColor="#333"
-                            android:textSize="12sp" />
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
 
                     <ImageView
@@ -700,7 +718,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutHealth1"
-                        android:src="@drawable/iconsehealth" />
+                        android:src="@drawable/iconsehealth"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -722,10 +741,11 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Personal"
+                            android:text="@string/personalex5678"
                             android:textColor="#333"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="TooManyViews" />
 
                         <TextView
                             android:id="@+id/analyticsPersonalAmount"
@@ -733,7 +753,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0ex456"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -750,7 +770,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/statusx4678"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -760,7 +780,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -771,7 +792,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todayex8908"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -781,7 +802,8 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutPersonalExp1"
-                        android:src="@drawable/iconsepersonal" />
+                        android:src="@drawable/iconsepersonal"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -804,7 +826,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:text="Other"
+                            android:text="@string/otherex0987"
                             android:textColor="#333"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -815,7 +837,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
-                            android:text="Rs .0"
+                            android:text="@string/rs_0ex45678"
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -832,7 +854,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/statusb6789"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -842,7 +864,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginRight="10dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
 
                         </LinearLayout>
 
@@ -853,7 +876,7 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Today"
+                            android:text="@string/todayb567"
                             android:textColor="#333"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -863,13 +886,14 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linearLayoutOther1"
-                        android:src="@drawable/iconseother" />
+                        android:src="@drawable/iconseother"
+                        tools:ignore="ContentDescription" />
                 </RelativeLayout>
 
                 <com.anychart.AnyChartView
                     android:id="@+id/anyChartView"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp" />
 
                 <RelativeLayout
@@ -898,7 +922,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_marginBottom="10dp"
                             android:gravity="center_vertical"
-                            android:text="Summary of Spending"
+                            android:text="@string/summary_of_spending23"
                             android:textAlignment="center"
                             android:textColor="#0B0A0A"
                             android:textSize="20sp"
@@ -910,7 +934,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:gravity="center_vertical"
-                            android:text="Total Spent: Rs.0"
+                            android:text="@string/total_spent_rs_0b12"
                             android:textAlignment="center"
                             android:textColor="#333"
                             android:textSize="15sp"
@@ -926,7 +950,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
-                                android:text="status"
+                                android:text="@string/statusb543"
                                 android:textAlignment="center"
                                 android:textColor="#333"
                                 android:textSize="15sp"
@@ -937,14 +961,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
                                 android:layout_marginTop="5dp"
-                                android:layout_weight="1" />
+                                android:layout_weight="1"
+                                tools:ignore="ContentDescription" />
                         </LinearLayout>
 
                         <TextView
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Today"
+                            android:text="@string/todayb12"
                             android:textColor="#333"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -960,7 +985,8 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/linearLayoutAnalysis1"
-                        android:src="@drawable/todayinsum" />
+                        android:src="@drawable/todayinsum"
+                        tools:ignore="ContentDescription" />
 
                 </RelativeLayout>
 

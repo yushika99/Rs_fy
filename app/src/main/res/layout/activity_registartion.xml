@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Welcome"
+        android:text="@string/welcome16reg"
         android:textColor="#FAF8F8"
         android:textAlignment="center"
         android:textSize="50sp"
@@ -60,7 +60,8 @@
         android:inputType="textEmailAddress"
         android:textSize="20sp"
         android:layout_margin="10dp"
-        android:textColorHint="#AEBAB9" />
+        android:textColorHint="#AEBAB9"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/password"
@@ -73,7 +74,8 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="5dp"
-        android:textColorHint="#AEBAB9" />
+        android:textColorHint="#AEBAB9"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/registerbtn"
@@ -88,7 +90,7 @@
         android:id="@+id/registerQn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="have an account? Login"
+        android:text="@string/have_an_account_login93reg"
         android:textColor="#030707"
         android:textStyle="bold"
         android:textSize="15sp"
