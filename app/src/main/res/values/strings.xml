@@ -509,6 +509,7 @@
     <string name="login">Login</string>
     <string name="welcome_to_rs_fy">Welcome to Rs.fy</string>
     <string name="income_main">income_main</string>
+    <string name="iconexpensesfirst_main">iconexpensesfirst_main</string>
 
 
     <string-array name="items">
