@@ -16,7 +16,8 @@
         android:elevation="4dp"
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:targetApi="lollipop" />
 
     <TextView
         android:layout_width="match_parent"
@@ -64,7 +65,8 @@
             android:scaleType="centerCrop"
             android:src="@drawable/incomeplusred"
             app:fabCustomSize="70dp"
-            android:contentDescription="@string/fabiconincomegoal" />
+            android:contentDescription="@string/fabiconincomegoal"
+            tools:targetApi="lollipop" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

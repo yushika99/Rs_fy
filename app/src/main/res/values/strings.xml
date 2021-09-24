@@ -296,6 +296,7 @@
     <string name="today_div_img">today_div_img</string>
     <string name="pension_today">Pension</string>
     <string name="rs_0_pen_today">Rs .0</string>
+    <string name="status_today_pen1">status</string>
     <string name="status_today_pen_view">status</string>
     <string name="status_wage_today_view">status_wage_today_view</string>
     <string name="today_pen">Today</string>
@@ -500,6 +501,14 @@
     <string name="incomepension_week_icon">incomepension_week_icon</string>
     <string name="incomeother_week_icon">incomeother_week_icon</string>
     <string name="todayinsum_week_icon">todayinsum_week_icon</string>
+    <string name="goal_goal_retrive_layout">Goal</string>
+    <string name="rs_0_goal_retrive_layout">Rs. 0</string>
+    <string name="note_goal_retrive_layout">Note</string>
+    <string name="date_goal_retrive_layout">Date</string>
+    <string name="incomesalary_goal_retrive_layout">incomesalary_goal_retrive_layout</string>
+    <string name="login">Login</string>
+    <string name="welcome_to_rs_fy">Welcome to Rs.fy</string>
+    <string name="income_main">income_main</string>
 
 
     <string-array name="items">

@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:elevation="1dp"
         android:theme="@style/AppTheme"
-        app:popupTheme="@style/AppTheme" />
+        app:popupTheme="@style/AppTheme"
+        tools:targetApi="lollipop" />
 
     <TableLayout
         android:id="@+id/ihometable"
@@ -186,14 +187,16 @@
                 android:layout_margin="8dp"
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="15dp">
+                app:cardElevation="15dp"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -231,14 +234,16 @@
                 android:layout_margin="8dp"
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="15dp">
+                app:cardElevation="15dp"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -273,14 +278,16 @@
                 android:layout_margin="8dp"
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="15dp">
+                app:cardElevation="15dp"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -315,14 +322,16 @@
                 android:layout_margin="8dp"
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="15dp">
+                app:cardElevation="15dp"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -357,14 +366,16 @@
                 android:layout_margin="8dp"
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="15dp">
+                app:cardElevation="15dp"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -399,14 +410,16 @@
                 android:layout_margin="8dp"
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="15dp">
+                app:cardElevation="15dp"
+                tools:targetApi="lollipop">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:layout_gravity="center_horizontal|center_vertical">
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -450,7 +463,8 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/incomeplusred"
                 app:fabCustomSize="70dp"
-                android:contentDescription="@string/incomeplusreddis" />
+                android:contentDescription="@string/incomeplusreddis"
+                tools:targetApi="lollipop" />
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

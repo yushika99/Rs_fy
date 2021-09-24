@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="  Welcome to Rs.fy "
+        android:text="@string/welcome_to_rs_fy"
         android:textColor="#FFFFFF"
         android:textAlignment="center"
-        android:textSize="60dp"
+        android:textSize="60sp"
         android:textStyle="bold"
         android:shadowColor="#3C1103"
         android:shadowDx="35"
@@ -47,7 +47,8 @@
             android:layout_margin="20dp"
             android:background="#fff"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp">
+            app:cardElevation="15dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -55,23 +56,25 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="7.5dp">
+                android:layout_margin="7.5dp"
+                tools:ignore="UseCompoundDrawables">
 
 
                 <ImageView
                     android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_marginTop="10sp"
                     android:layout_marginBottom="10sp"
+                    android:contentDescription="@string/income_main"
                     android:src="@drawable/iconincomefirst1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/my_income_home"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"/>
 
@@ -92,7 +95,8 @@
             android:layout_margin="20dp"
             android:background="#fff"
             app:cardCornerRadius="15dp"
-            app:cardElevation="55dp">
+            app:cardElevation="55dp"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -100,7 +104,8 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="7.5dp">
+                android:layout_margin="7.5dp"
+                tools:ignore="UseCompoundDrawables">
 
 
                 <ImageView
@@ -116,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/my_expense"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="#333"/>
 

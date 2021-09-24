@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,7 +10,8 @@
     android:layout_marginTop="30dp"
     android:layout_marginBottom="20dp"
     app:cardCornerRadius="15dp"
-    app:cardElevation="15dp">
+    app:cardElevation="15dp"
+    tools:targetApi="lollipop">
 
 
 
@@ -73,7 +75,8 @@
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColorHint="#000"/>
+                android:textColorHint="#000"
+                android:autofillHints="enter amount" />
 
             <EditText
 
@@ -85,7 +88,8 @@
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColorHint="#000"/>
+                android:textColorHint="#000"
+                android:autofillHints="note" />
 
 
         </LinearLayout>
@@ -94,7 +98,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="100dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <RelativeLayout
                 android:layout_width="0dp"

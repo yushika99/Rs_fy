@@ -16,17 +16,16 @@
         android:elevation="4dp"
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:targetApi="lollipop"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/todayIncomeAnalyticscardView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_row="0"
-        android:layout_column="0"
+
         android:layout_gravity="center"
-        android:layout_rowWeight="2"
-        android:layout_columnWeight="1"
+
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:background="#FFF"
@@ -39,7 +38,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_gravity="center_horizontal|center_vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/todayIncomeAnalyticsImageView"
@@ -70,11 +70,9 @@
         android:id="@+id/weekIncomeAnalyticscardView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_row="0"
-        android:layout_column="0"
+
         android:layout_gravity="center"
-        android:layout_rowWeight="2"
-        android:layout_columnWeight="1"
+
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:background="#FFF"
@@ -87,7 +85,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_gravity="center_horizontal|center_vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/weekIncomeAnalyticsImageView"
@@ -118,11 +117,9 @@
         android:id="@+id/monthIncomeAnalyticscardView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_row="0"
-        android:layout_column="0"
+
         android:layout_gravity="center"
-        android:layout_rowWeight="2"
-        android:layout_columnWeight="1"
+
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:background="#FFF"
@@ -135,7 +132,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_gravity="center_horizontal|center_vertical">
+            android:layout_gravity="center_horizontal|center_vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/monthIncomeAnalyticsImageView"

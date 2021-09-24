@@ -11,7 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_Feed_Toolbar"
@@ -745,7 +746,8 @@
                             android:text="@string/pension_today"
                             android:textColor="#333"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="TooManyViews" />
 
                         <TextView
                             android:id="@+id/analyticsPensionAmount"
@@ -770,7 +772,7 @@
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginRight="10dp"
                                 android:layout_weight="2"
-                                android:text="@string/status_today_pen"
+                                android:text="@string/status_today_pen1"
                                 android:textColor="#333"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
