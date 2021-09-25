@@ -12,7 +12,7 @@
 <!--        <activity android:name=".TodayIncomeItemAdapter"></activity>-->
         <activity android:name=".IncomeHistoryActivity" />
         <activity android:name=".MonthIncomeActivity" />
-            <activity android:name=".WeekIncomeActivity" />
+        <activity android:name=".WeekIncomeActivity" />
         <activity android:name=".WeeklyIncomeAnalyticsActivity" />
         <activity android:name=".MonthlyIncomeAnalyticsActivity" />
         <activity android:name=".DailyIncomeAnalyticsActivity" />
