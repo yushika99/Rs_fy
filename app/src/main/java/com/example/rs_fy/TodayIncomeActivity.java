@@ -162,11 +162,11 @@ public class TodayIncomeActivity extends AppCompatActivity {
         final Button cancel = myView.findViewById(R.id.cancel);
         final Button save = myView.findViewById(R.id.save);
 
-        note.setVisibility(View.GONE);
+        note.setVisibility(View.VISIBLE);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
                 // validation
                 String Amount = amount.getText().toString();
@@ -178,9 +178,14 @@ public class TodayIncomeActivity extends AppCompatActivity {
                     amount.setError("Amount is required!");
                     return;
                 }
-                if (Item.equals("Select Goal")) {
+                if (Item.equals("Select Item")) {
                     Toast.makeText(TodayIncomeActivity.this, "Select a valid Item", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                if (TextUtils.isEmpty(notes)){
+                    note.setError("Note is Reqired ");
+                    return;
+                }
+                else {
                     loader.setMessage("Adding a Goal");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();

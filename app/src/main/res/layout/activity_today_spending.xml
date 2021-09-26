@@ -18,12 +18,12 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0759EAB7"
+            android:background="#FFFFFF"
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:targetApi="lollipop" />
+             />
 
         <TextView
             android:layout_width="match_parent"
@@ -78,13 +78,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
-                app:fabCustomSize="10dp"
-                android:backgroundTint="#C6018786"
+                app:fabCustomSize="70dp"
+                android:backgroundTint="#FFFFFF"
                 android:layout_margin="10dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/iconseplus"
                 tools:ignore="ContentDescription"
-                tools:targetApi="lollipop" />
+                />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

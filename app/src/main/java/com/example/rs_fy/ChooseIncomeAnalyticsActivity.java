@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 
 
-
 public class ChooseIncomeAnalyticsActivity extends AppCompatActivity {
     private CardView todayIncomeAnalyticscardView, weekIncomeAnalyticscardView, monthIncomeAnalyticscardView;
 
@@ -24,7 +23,7 @@ public class ChooseIncomeAnalyticsActivity extends AppCompatActivity {
 
         todayIncomeAnalyticscardView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(ChooseIncomeAnalyticsActivity.this, DailyIncomeAnalyticsActivity.class);
                 startActivity(intent);
             }

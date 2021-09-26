@@ -61,11 +61,11 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_expenses_anlytics);
 
-        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+        settingsToolbar = findViewById(R.id.settingsToolbar);
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Today Analytics");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        settingsToolbar.setTitle("Today Analytics");
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -240,7 +240,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(cal.getTime());
-        String itemNday = "House Expenses"+date;
+        String itemNday = "House"+date;
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(onlineUserId);
         Query query = reference.orderByChild("itemNday").equalTo(itemNday);
@@ -507,7 +507,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
 
                     }
                     totalBudgetAmountTextView.setText("Total day's spending: $ "+ totalAmount);
-                    monthSpentAmount.setText("Total Spent: $ "+totalAmount);
+                    monthSpentAmount.setText("Total Spent: Rs. "+totalAmount);
                 }
                 else {
                     totalBudgetAmountTextView.setText("You've not spent today");
@@ -594,7 +594,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                     Pie pie = AnyChart.pie();
                     List<DataEntry> data = new ArrayList<>();
                     data.add(new ValueDataEntry("Transport", traTotal));
-                    data.add(new ValueDataEntry("House exp", houseTotal));
+                    data.add(new ValueDataEntry("House", houseTotal));
                     data.add(new ValueDataEntry("Food", foodTotal));
                     data.add(new ValueDataEntry("Entertainment", entTotal));
                     data.add(new ValueDataEntry("Education", eduTotal));

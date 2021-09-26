@@ -11,12 +11,12 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0059EAB7"
+
         android:elevation="4dp"
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:targetApi="lollipop" />
+        />
 
 
 
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
         android:text="@string/my_expensesl1"
-        android:textColor="#FBFBFB"
+        android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -197,10 +197,9 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
-            android:background="#FFF"
+            android:background="#FFFFFF"
             app:cardCornerRadius="15dp"
-            app:cardElevation="15dp"
-            tools:targetApi="lollipop">
+            app:cardElevation="15dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -247,10 +246,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
-            android:background="#FFF"
+            android:background="#FFFFFF"
             app:cardCornerRadius="15dp"
             app:cardElevation="15dp"
-            tools:targetApi="lollipop">
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -296,10 +295,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
-            android:background="#FFF"
+            android:background="#FFFFFF"
             app:cardCornerRadius="15dp"
             app:cardElevation="15dp"
-            tools:targetApi="lollipop">
+           >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -345,10 +344,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
-            android:background="#FFF"
+            android:background="#FFFFFF"
             app:cardCornerRadius="15dp"
             app:cardElevation="15dp"
-            tools:targetApi="lollipop">
+           >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -394,10 +393,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
-            android:background="#FFF"
+            android:background="#FFFFFF"
             app:cardCornerRadius="15dp"
             app:cardElevation="15dp"
-            tools:targetApi="lollipop">
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -443,10 +442,10 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
-            android:background="#FFF"
+            android:background="#FFFFFF"
             app:cardCornerRadius="15dp"
             app:cardElevation="15dp"
-            tools:targetApi="lollipop">
+           >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -495,7 +494,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         app:fabCustomSize="90dp"
-        android:backgroundTint="#C6018786"
+        android:backgroundTint="#FFFFFF"
         android:layout_margin="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/iconseplus"

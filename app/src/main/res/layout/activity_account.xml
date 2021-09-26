@@ -13,7 +13,7 @@
         android:id="@+id/my_Feed_Toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#000"
+        android:background="#FFFFFF"
         android:layout_marginTop="1dp"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         app:popupTheme="@style/Theme.AppCompat.Light" >
@@ -43,7 +43,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
-            android:background="#000"/>
+            android:background="#FFFFFF"/>
 
         <ImageView
             android:id="@+id/logo"
@@ -84,7 +84,7 @@
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="#fff" />
+            android:textColor="#FFFFFF" />
         </LinearLayout>
 
     </LinearLayout>

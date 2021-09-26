@@ -1,138 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/backmain"
     android:gravity="center"
-    android:background="@drawable/backmain">
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/welcome_to_rs_fy"
-        android:textColor="#FFFFFF"
-        android:textAlignment="center"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        android:shadowColor="#3C1103"
-        android:shadowDx="35"
-        android:shadowDy="67"
-        android:shadowRadius="80"
-        android:gravity="center_horizontal" />
+        android:orientation="vertical">
 
-    <GridLayout
-        android:id="@+id/grid_layout"
-        android:rowCount="1"
-        android:columnCount="2"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="390dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:shadowColor="#3C1103"
+            android:shadowDx="35"
+            android:shadowDy="67"
+            android:shadowRadius="80"
+            android:text="@string/welcome_to_rs_fy"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="60sp"
+            android:textStyle="bold" />
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/incomeCard"
+        <GridLayout
+            android:id="@+id/grid_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="20dp"
-            android:background="#fff"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="15dp"
-            tools:targetApi="lollipop">
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="390dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:columnCount="2"
+            android:rowCount="1">
 
-            <LinearLayout
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/incomeCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="7.5dp"
-                tools:ignore="UseCompoundDrawables">
+                android:layout_margin="20dp"
+                android:background="#FFFFFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
 
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="10sp"
-                    android:contentDescription="@string/income_main"
-                    android:src="@drawable/iconincomefirst1"
-                    tools:ignore="ObsoleteLayoutParam" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/my_income_home"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#333"/>
+                    android:layout_margin="7.5dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_marginTop="10sp"
+                        android:layout_marginBottom="10sp"
+                        android:contentDescription="@string/income_main"
+                        android:src="@drawable/iconincomefirst1"
+                        tools:ignore="ObsoleteLayoutParam" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_income_home"
+                        android:textColor="#333"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/expensesCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_gravity="fill"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="20dp"
-            android:background="#fff"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="55dp"
-            tools:targetApi="lollipop">
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <LinearLayout
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/expensesCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="7.5dp"
-                tools:ignore="UseCompoundDrawables">
+                android:layout_margin="20dp"
+                android:background="#FFFFFF"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="55dp">
 
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="10sp"
-                    android:src="@drawable/iconexpensesfirst"
-                    android:contentDescription="@string/iconexpensesfirst_main"
-                    tools:ignore="ObsoleteLayoutParam" />
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/my_expense"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#333"/>
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:layout_marginBottom="10sp"
+                        android:contentDescription="@string/iconexpensesfirst_main"
+                        android:src="@drawable/iconexpensesfirst"
+                        tools:ignore="ObsoleteLayoutParam" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_expense"
+                        android:textColor="#333"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
 
-    </GridLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

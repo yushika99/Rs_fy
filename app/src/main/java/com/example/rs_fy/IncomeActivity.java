@@ -36,10 +36,10 @@ import java.util.Objects;
 
 public class IncomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private TextView ihomegoalTv,ihometodayTv,ihomeweekTv,ihomemonthTv,ihomeextraTv;
-    private CardView ihomegoalcardView,ihometodaycardView,ihomeweekcardView,ihomemonthcardView,ihomeanlyticscardView,ihomehistorycardView;
+    private TextView ihomegoalTv, ihometodayTv, ihomeweekTv, ihomemonthTv, ihomeextraTv;
+    private CardView ihomegoalcardView, ihometodaycardView, ihomeweekcardView, ihomemonthcardView, ihomeanlyticscardView, ihomehistorycardView;
 
-    private CardView analyticsCardView;
+//    private CardView analyticsCardView;
 
     private FirebaseAuth mAuth;
     private DatabaseReference goalRef, incomeRef, personalRef;
@@ -47,9 +47,8 @@ public class IncomeActivity extends AppCompatActivity {
 
     private int totalAmountMonth = 0;
     private int totalAmountGoal = 0;
-    private  int totalAmountGoalB = 0;
-    private  int totalAmountGoalC = 0;
-
+    private int totalAmountGoalB = 0;
+    private int totalAmountGoalC = 0;
 
 
     @Override
@@ -61,12 +60,19 @@ public class IncomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("My income");
 
+//        ihomegoalcardView = findViewById(R.id.ihomegoalcardView);
+//        ihometodaycardView = findViewById(R.id.ihometodaycardView);
+//        ihomeweekcardView = findViewById(R.id.ihomeweekcardView);
+//        ihomemonthcardView = findViewById(R.id.ihomemonthcardView);
+//        ihomeanlyticscardView = findViewById(R.id.ihomeanlyticscardView);
+//        ihomehistorycardView = findViewById(R.id.ihomehistorycardView);
 
-        ihomegoalTv =findViewById(R.id.ihomegoalTv);
-        ihometodayTv =findViewById(R.id.ihometodayTv);
-        ihomeweekTv =findViewById(R.id.ihomeweekTv);
-        ihomemonthTv =findViewById(R.id.ihomemonthTv);
-        ihomeextraTv =findViewById(R.id.ihomeextraTv);
+//table
+        ihomegoalTv = findViewById(R.id.ihomegoalTv);
+        ihometodayTv = findViewById(R.id.ihometodayTv);
+        ihomeweekTv = findViewById(R.id.ihomeweekTv);
+        ihomemonthTv = findViewById(R.id.ihomemonthTv);
+        ihomeextraTv = findViewById(R.id.ihomeextraTv);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -104,7 +110,7 @@ public class IncomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(IncomeActivity.this, WeekIncomeActivity.class);
-                intent.putExtra("type","week");
+                intent.putExtra("type", "week");
                 startActivity(intent);
 
             }
@@ -116,14 +122,14 @@ public class IncomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(IncomeActivity.this, WeekIncomeActivity.class);
-                intent.putExtra("type","month");
+                intent.putExtra("type", "month");
                 startActivity(intent);
 
             }
         });
 
         //analytics card
-        ihomeanlyticscardView = findViewById(R.id.analyticsCardView);
+        ihomeanlyticscardView = findViewById(R.id.ihomehistorycardView);
         ihomeanlyticscardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,16 +155,16 @@ public class IncomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if (snapshot.exists() && snapshot.getChildrenCount()>0){
-                    for (DataSnapshot ds :  snapshot.getChildren()){
-                        Map<String, Object> map = (Map<String, Object>)ds.getValue();
+                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
-                        totalAmountGoalB+=pTotal;
+                        totalAmountGoalB += pTotal;
                     }
                     totalAmountGoalC = totalAmountGoalB;
                     personalRef.child("goal").setValue(totalAmountGoalC);
-                }else {
+                } else {
                     personalRef.child("goal").setValue(0);
                     Toast.makeText(IncomeActivity.this, "Please Set an Income Goal ", Toast.LENGTH_LONG).show();
                 }
@@ -180,21 +186,21 @@ public class IncomeActivity extends AppCompatActivity {
     }
 
     private void getGoalAmount() {
-        incomeRef.addValueEventListener(new ValueEventListener() {
+        goalRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                if (snapshot.exists() && snapshot.getChildrenCount()>0){
-                    for (DataSnapshot ds :  snapshot.getChildren()){
-                        Map<String, Object> map = (Map<String, Object>)ds.getValue();
+                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+                        Map<String, Object> map = (Map<String, Object>) ds.getValue();
                         Object total = map.get("amount");
                         int pTotal = Integer.parseInt(String.valueOf(total));
-                        totalAmountGoal+=pTotal;
-                        ihomegoalTv.setText("Rs. "+String.valueOf(totalAmountGoal));
+                        totalAmountGoal += pTotal;
+                        ihomegoalTv.setText("Rs. " + String.valueOf(totalAmountGoal));
                     }
-                }else {
-                    totalAmountGoal=0;
-                    ihomegoalTv.setText("Rs. "+String.valueOf(0));
+                } else {
+                    totalAmountGoal = 0;
+                    ihomegoalTv.setText("Rs. " + String.valueOf(0));
                     //check
 
 
@@ -211,7 +217,7 @@ public class IncomeActivity extends AppCompatActivity {
     }
 
 
-    private void getTodayIncomeAmount(){
+    private void getTodayIncomeAmount() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(cal.getTime());
@@ -222,12 +228,12 @@ public class IncomeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 int totalAmount = 0;
-                for (DataSnapshot ds :  dataSnapshot.getChildren()){
-                    Map<String, Object> map = (Map<String, Object>)ds.getValue();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Map<String, Object> map = (Map<String, Object>) ds.getValue();
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
-                    totalAmount+=pTotal;
-                    ihometodayTv.setText("Rs. "+ totalAmount);
+                    totalAmount += pTotal;
+                    ihometodayTv.setText("Rs. " + totalAmount);
                 }
                 personalRef.child("today").setValue(totalAmount);
             }
@@ -239,7 +245,7 @@ public class IncomeActivity extends AppCompatActivity {
         });
     }
 
-    private void getMonthIncomeAmount(){
+    private void getMonthIncomeAmount() {
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
         DateTime now = new DateTime();
@@ -251,16 +257,16 @@ public class IncomeActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int totalAmount = 0;
-                for (DataSnapshot ds :  dataSnapshot.getChildren()){
-                    Map<String, Object> map = (Map<String, Object>)ds.getValue();
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Map<String, Object> map = (Map<String, Object>) ds.getValue();
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
-                    totalAmount+=pTotal;
-                    ihomemonthTv.setText("Rs. "+ totalAmount);
+                    totalAmount += pTotal;
+                    ihomemonthTv.setText("Rs. " + totalAmount);
 
                 }
                 personalRef.child("month").setValue(totalAmount);
-                totalAmountMonth  = totalAmount;
+                totalAmountMonth = totalAmount;
 
             }
 
@@ -271,7 +277,7 @@ public class IncomeActivity extends AppCompatActivity {
         });
     }
 
-    private void getWeekIncomeAmount(){
+    private void getWeekIncomeAmount() {
         MutableDateTime epoch = new MutableDateTime();
         epoch.setDate(0); //Set to Epoch time
         DateTime now = new DateTime();
@@ -282,15 +288,15 @@ public class IncomeActivity extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int totalAmount  = 0;
-                for (DataSnapshot ds :  dataSnapshot.getChildren()){
-                    Map<String, Object> map = (Map<String, Object>)ds.getValue();
+                int totalAmount = 0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Map<String, Object> map = (Map<String, Object>) ds.getValue();
                     Object total = map.get("amount");
                     int pTotal = Integer.parseInt(String.valueOf(total));
-                    totalAmount +=pTotal;
-                    ihomeweekTv.setText("Rs. "+ totalAmount );
+                    totalAmount += pTotal;
+                    ihomeweekTv.setText("Rs. " + totalAmount);
                 }
-                personalRef.child("week").setValue(totalAmount );
+                personalRef.child("week").setValue(totalAmount);
             }
 
             @Override
@@ -300,7 +306,7 @@ public class IncomeActivity extends AppCompatActivity {
         });
     }
 
-    private void getExtra(){
+    private void getExtra() {
         personalRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot snapshot) {
@@ -341,8 +347,8 @@ public class IncomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.account){
-            Intent intent  = new Intent(IncomeActivity.this, AccountActivity.class);
+        if (item.getItemId() == R.id.account) {
+            Intent intent = new Intent(IncomeActivity.this, AccountActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

@@ -1,6 +1,9 @@
 package com.example.rs_fy;
+import androidx.annotation.NonNull;
 
+import android.app.AlertDialog;
 import android.content.Context;
+//import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +30,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
+
 public class TodayIncomeItemAdapter  extends  RecyclerView.Adapter<TodayIncomeItemAdapter.ViewHolder>{
 
     private Context mContext;
@@ -53,7 +55,7 @@ public class TodayIncomeItemAdapter  extends  RecyclerView.Adapter<TodayIncomeIt
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TodayIncomeItemAdapter.ViewHolder holder, int position) {
 
         final  GoalData data = myDataList.get(position);
 
@@ -100,13 +102,13 @@ public class TodayIncomeItemAdapter  extends  RecyclerView.Adapter<TodayIncomeIt
                 item = data.getItem();
                 amount = data.getAmount();
                 note = data.getNotes();
-                updateData();
+                updateBdata();
             }
         });
 
     }
 
-    private void updateData() {
+    private void updateBdata() {
 
         AlertDialog.Builder myDialog= new AlertDialog.Builder(mContext);
         LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -124,8 +126,12 @@ public class TodayIncomeItemAdapter  extends  RecyclerView.Adapter<TodayIncomeIt
         mAmount.setText(String.valueOf(amount));
         mAmount.setSelection(String.valueOf(amount).length());
 
-        mNotes.setText( note);
-        mNotes.setSelection(note.length());
+        try {
+            mNotes.setText(note);
+            mNotes.setSelection(note.length());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Button delBut = mView.findViewById(R.id.delBut);
         Button btnUpdate = mView.findViewById(R.id.btnUpdate);
@@ -154,7 +160,7 @@ public class TodayIncomeItemAdapter  extends  RecyclerView.Adapter<TodayIncomeIt
 
                 GoalData data = new GoalData(item, date, post_key, itemNday, itemNweek, itemNmonth, amount, weeks.getWeeks(), months.getMonths(), note);
 
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("expenses").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 reference.child(post_key).setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -174,7 +180,7 @@ public class TodayIncomeItemAdapter  extends  RecyclerView.Adapter<TodayIncomeIt
 
         delBut.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 reference.child(post_key).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

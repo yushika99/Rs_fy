@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        expensesCard = findViewById(R.id.expensesCard);
+        incomeCard = findViewById(R.id.incomeCard);
+
         expensesCard.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

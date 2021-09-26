@@ -18,12 +18,12 @@
             android:id="@+id/weekIncomeToolbar"
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            android:background="#0759EAB7"
+            android:background="#FFFFFF"
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:targetApi="lollipop" />
+           />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
 
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#FFFFFFFF">
+            android:background="#FFFFFF">
 
             <ImageView
                 android:layout_width="1dp"

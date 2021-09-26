@@ -45,7 +45,7 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
     private String onlineUserId = "";
     private DatabaseReference incomeRef, personalRef;
 
-    private TextView TotalGoalAmountTextview, analyticsSalaryAmount, analyticsGrantsAmount, analyticsRentalAmount, analyticsInvesmentAmount;
+    private TextView totalIncomAmountTextView, analyticsSalaryAmount, analyticsGrantsAmount, analyticsRentalAmount, analyticsInvesmentAmount;
     private TextView analyticsWagesAmount, analyticsSidebusinessAmount, analyticsDividendAmount, analyticsPensionAmount, analyticsOtherIncomeAmount, monthIncomeAmount;
 
     private RelativeLayout relativeLayoutSalary, relativeLayoutGrants, relativeLayoutRental, relativeLayoutInvest, relativeLayoutWages;
@@ -63,8 +63,8 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
 
         settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Today Income Analytics");
 
 
@@ -74,7 +74,7 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
         personalRef = FirebaseDatabase.getInstance().getReference("personal").child(onlineUserId);
 
 
-        TotalGoalAmountTextview = findViewById(R.id.TotalGoalAmountTextview);
+        totalIncomAmountTextView = findViewById(R.id.totalIncomAmountTextView);
 
         //general analytic
         monthIncomeAmount = findViewById(R.id.monthIncomeAmount);
@@ -511,10 +511,10 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
                         totalAmount += pTotal;
 
                     }
-                    TotalGoalAmountTextview.setText("Total day's Income: $ " + totalAmount);
-                    monthIncomeAmount.setText("Total income: $ " + totalAmount);
+                    totalIncomAmountTextView.setText("Total day's Income: $ " + totalAmount);
+                    monthIncomeAmount.setText("Total income: Rs. " + totalAmount);
                 } else {
-                    TotalGoalAmountTextview.setText("No income Today");
+                    totalIncomAmountTextView.setText("No income Today");
                     anyChartView.setVisibility(View.GONE);
                 }
             }

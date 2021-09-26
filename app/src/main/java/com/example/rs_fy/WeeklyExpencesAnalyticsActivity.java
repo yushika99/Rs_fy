@@ -60,11 +60,11 @@ public class WeeklyExpencesAnalyticsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weekly_expences_analytics);
 
 
-        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+        settingsToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Monthly Analytics");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        settingsToolbar.setTitle("Monthly Analytics");
 
         mAuth = FirebaseAuth.getInstance();
         onlineUserId = mAuth.getCurrentUser().getUid();

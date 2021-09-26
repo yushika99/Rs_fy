@@ -59,7 +59,7 @@ public class MonthlyIncomeAnalyticsActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_monthly_income_analytics);
 
-            settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
+            settingsToolbar = findViewById(R.id.settingsToolbar);
             setSupportActionBar(settingsToolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);

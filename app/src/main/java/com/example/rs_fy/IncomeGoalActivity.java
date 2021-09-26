@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Map;
 
+import static android.content.ContentValues.TAG;
+
 
 public class IncomeGoalActivity extends AppCompatActivity {
 
@@ -74,11 +77,16 @@ public class IncomeGoalActivity extends AppCompatActivity {
         TotalGoalAmountTextview = findViewById(R.id.TotalGoalAmountTextview);
         recyclerView = findViewById(R.id.recyclerView);
 
+        fab = findViewById(R.id.fab);
+//        fab.setOnClickListener((View.OnClickListener) this);
+
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
+
 
         goalRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -101,12 +109,11 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
 //floating action button to add goals
 
-        fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                addgoal();
+                additem();
             }
         });
 
@@ -118,7 +125,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
                     for (DataSnapshot snap : snapshot.getChildren()) {
 
-                        Data data = snap.getValue(Data.class);
+                        GoalData data = snap.getValue(GoalData.class);
 
                         totalammount += data.getAmount();
 
@@ -161,7 +168,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
     }
 
 
-    private void addgoal() {
+    private void additem() {
         AlertDialog.Builder myDiolag = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
         View myView = inflater.inflate(R.layout.input_goal_layout, null);
@@ -187,10 +194,10 @@ public class IncomeGoalActivity extends AppCompatActivity {
                     amount.setError("Amount is Required!");
                     return;
                 }
-                if (goalItem.equals("Select Goal")) {
+                if (goalItem.equals("Select Item")) {
                     Toast.makeText(IncomeGoalActivity.this, "Select a valid Item", Toast.LENGTH_SHORT).show();
                 } else {
-                    loader.setMessage("Adding a Goal");
+                    loader.setMessage("Adding a Item");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
 
@@ -217,6 +224,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(IncomeGoalActivity.this, "Goal Item Added Sccessfuly", Toast.LENGTH_SHORT).show();
+
                             } else {
                                 Toast.makeText(IncomeGoalActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
@@ -237,12 +245,15 @@ public class IncomeGoalActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void OnStart() {
+    public void OnStart(){
         super.onStart();
 
         FirebaseRecyclerOptions<GoalData> options = new FirebaseRecyclerOptions.Builder<GoalData>()
-                .setQuery(goalRef, GoalData.class)
+                .setQuery(goalRef,GoalData.class)
                 .build();
+
+//        Log.d(TAG, "getData1: "+goalRef.child("MkSrlUoFiSAa6LLiWqF"));
+//        Log.d(TAG, "getOption: "+options);
 
         FirebaseRecyclerAdapter<GoalData, MyViewHolder> adapter = new FirebaseRecyclerAdapter<GoalData, MyViewHolder>(options) {
             @Override
@@ -291,7 +302,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
                         post_key = getRef(position).getKey();
                         item = model.getItem();
                         amount = model.getAmount();
-                        updateData();
+                        updateBdata();
                     }
                 });
             }
@@ -341,7 +352,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
         }
     }
 
-    private void updateData() {
+    private void updateBdata() {
 
         AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);

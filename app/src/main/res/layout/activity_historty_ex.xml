@@ -12,11 +12,11 @@
         android:id="@+id/todayIncomeToolbar"
         android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:background="#0759EAB7"
+        android:background="#FFFFFF"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:targetApi="lollipop"/>
+        />
 
     <ScrollView
         android:layout_width="match_parent"

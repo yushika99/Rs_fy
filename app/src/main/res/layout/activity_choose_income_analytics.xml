@@ -17,7 +17,7 @@
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:targetApi="lollipop"/>
+       />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/todayIncomeAnalyticscardView"

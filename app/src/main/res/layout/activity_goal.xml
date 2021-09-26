@@ -12,12 +12,12 @@
         android:id="@+id/goaltoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="FF03DAC5"
+        android:background="#FFFFFF"
         android:elevation="4dp"
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:targetApi="lollipop" />
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -66,7 +66,7 @@
             android:src="@drawable/incomeplusred"
             app:fabCustomSize="70dp"
             android:contentDescription="@string/fabiconincomegoal"
-            tools:targetApi="lollipop" />
+            />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

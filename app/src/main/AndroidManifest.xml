@@ -9,15 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rs_fy">
-<!--        <activity android:name=".TodayIncomeItemAdapter"></activity>-->
+        <!--        <activity android:name=".TodayIncomeItemAdapter"></activity>-->
         <activity android:name=".IncomeHistoryActivity" />
-        <activity android:name=".MonthIncomeActivity" />
+        <!--        <activity android:name=".MonthIncomeActivity" />-->
         <activity android:name=".WeekIncomeActivity" />
         <activity android:name=".WeeklyIncomeAnalyticsActivity" />
         <activity android:name=".MonthlyIncomeAnalyticsActivity" />
         <activity android:name=".DailyIncomeAnalyticsActivity" />
         <activity android:name=".ChooseIncomeAnalyticsActivity" />
-        <activity android:name=".TodayIncomeActivity" />
+        <activity
+            android:name=".TodayIncomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".HistortyExActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -45,9 +47,15 @@
         <activity
             android:name=".expensesActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".AccountActivity" />
-        <activity android:name=".IncomeGoalActivity" />
-        <activity android:name=".IncomeActivity" />
+        <activity
+            android:name=".AccountActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".IncomeGoalActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".IncomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

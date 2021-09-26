@@ -19,18 +19,18 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="FF03DAC5"
+            android:background="#FFFFFF"
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:targetApi="lollipop" />
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/today_my_income_title"
-            android:textColor="#F5FBFFFE"
+            android:textColor="#FFFFFF"
             android:textAlignment="center"
             android:layout_marginTop="19dp"
             android:textSize="25sp"
@@ -78,12 +78,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:layout_margin="10dp"
-                android:backgroundTint="#FF1505"
+                android:backgroundTint="#FFFFFF"
                 android:scaleType="centerCrop"
                 android:src="@drawable/incomeplusred"
                 app:fabCustomSize="70dp"
                 android:contentDescription="@string/incomeplusreddis_today"
-                tools:targetApi="lollipop" />
+                 />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

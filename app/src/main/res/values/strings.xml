@@ -6,10 +6,9 @@
     <string name="enter_email">Enter Email</string>
     <string name="password">password</string>
     <string name="don_t_have_an_account_signup">Don\'t have an Account, signUp</string>
-    <string name="login">Login</string>
+    <!--    <string name="login">Login</string>-->
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
 
     <string name="income_and_expenses">Income and expenses</string>
@@ -57,11 +56,11 @@
     <string name="today_my_spending_txt">Today My Spending</string>
     <string name="total_amount_rs_0_txt1">Total Amount: Rs.0</string>
     <string name="ststsred">ststsred</string>
-    <string name="l_lt_50"><![CDATA[L < 50%]]></string>
+    <string name="l_lt_50">L &lt; 50</string>
     <string name="greenstat">greenstat</string>
     <string name="_50_99">50% - 99%</string>
     <string name="brownstat">brownstat</string>
-    <string name="g_100"><![CDATA[G > 100%]]></string>
+    <string name="g_100">G &lt; 100%</string>
     <string name="transport_s">Transport</string>
     <string name="t1rs_0">Rs .0</string>
     <string name="status1">status</string>
@@ -123,7 +122,7 @@
     <string name="_0_00loi">0.00</string>
     <string name="this_monthly_anlyticslt1">This MonthLy Anlytics</string>
     <string name="total_amount_rs_0lt2">Total Amount: Rs.0</string>
-    <string name="l_50"><![CDATA[L < 50%]]></string>
+    <string name="l_50">L &lt; 50</string>
     <string name="h_50_99">50% - 99%</string>
     <string name="transportt234">Transport</string>
     <string name="rs_0c56">Rs .0</string>
@@ -154,7 +153,7 @@
     <string name="entertainment326me">Entertainment</string>
     <string name="rs_0337me">Rs .0</string>
     <string name="status354me">status</string>
-    <string name="rtg_100"><![CDATA[G > 100%]]></string>
+    <string name="rtg_100">G &lt; 100%</string>
     <string name="this_month376me">This Month</string>
     <string name="home409me">Home</string>
     <string name="rs_0420me">Rs .0</string>
@@ -176,9 +175,9 @@
     <string name="status931wes">status</string>
     <string name="my_week_spendingwea31">My Week Spending</string>
     <string name="total_amount_rs_0wea46">Total Amount: Rs.0</string>
-    <string name="l_50wes82"><![CDATA[L < 50%]]></string>
+    <string name="l_50wes82">L &lt;50%</string>
     <string name="was_50_99_102">50% - 99%</string>
-    <string name="g_100wea122"><![CDATA[G > 100%]]></string>
+    <string name="g_100wea122">G &lt;100%</string>
     <string name="transportwea161">Transport</string>
     <string name="rs_0wea172">Rs .0</string>
     <string name="statuswea189">status</string>
@@ -221,13 +220,13 @@
     <string name="enter_note61inl">Enter note..</string>
     <string name="save89inl">Save</string>
     <string name="cancle108inl">Cancle</string>
-    <string name="select_a_budget_item127inl">Select a Budget Item</string>
+    <string name="select_a_budget_item127inl">Select a Item</string>
     <string name="item_name32retlyin">Item name</string>
     <string name="rs_043retlin">Rs. 0</string>
     <string name="note54retl">Note</string>
     <string name="date65retlay">Date</string>
     <string name="update_this_item16uplay">Update this item ?</string>
-    <string name="itemname32uplay">itemName</string>
+    <string name="itemname32uplay">Transport</string>
     <string name="enter_amount43uplay">Enter amount</string>
     <string name="enter_note56uplay">Enter note</string>
     <string name="delete87uplay">Delete</string>
@@ -243,11 +242,11 @@
     <string name="daily_income_analysis_title">Daily Income</string>
     <string name="today_total_rs_0_incomeAnalysis">Today Total: Rs.0</string>
     <string name="dailystatusbargreen">dailyStatusBarBlue</string>
-    <string name="l_lt_50_dailyIN"><![CDATA[L < 50%]]></string>
+    <string name="l_lt_50_dailyIN">L &lt; 50% </string>
     <string name="dailystatusbarblue">dailystatusbarblue</string>
     <string name="_50_99_dailyIN">50% - 99%</string>
     <string name="dailystatusbarred">DailystatusbarRed</string>
-    <string name="_100_lt_g_dailyIN"><![CDATA[100% <G]]></string>
+    <string name="_100_lt_g_dailyIN">100% &lt;G</string>
 
     <string name="salary_daily">Salary</string>
     <string name="dailySal_Rs">Rs .0</string>
@@ -348,9 +347,9 @@
     <!-- activity_monthly_income_analysis -->
     <string name="monthly_income_title">Monthly Income</string>
     <string name="monthlytotal_rs_0">MonthlyTotal: Rs.0</string>
-    <string name="l_50_income_month"><![CDATA[L < 50%]]></string>
+    <string name="l_50_income_month">L &lt;50%</string>
     <string name="_50_99_income_month">50% - 99%</string>
-    <string name="g_100_income_month"><![CDATA[G > 100%]]></string>
+    <string name="g_100_income_month">G &lt;100%</string>
     <string name="income_status_bar_month_green">income_status_bar_month_green</string>
     <string name="income_status_bar_month_blue">income_status_bar_month_blue</string>
     <string name="income_status_bar_month_red">income_status_bar_month_red</string>
@@ -419,14 +418,14 @@
     <string name="incomeplusreddis_today">incomeplusredDIS_today</string>
     <string name="weekly_my_income_title">Weekly My Income</string>
     <string name="week_total_income_rs_0_00">week Total Income : Rs. 0.00</string>
-    <string name="set_an_income_goal_title">SET AN INCOME GOAL</string>
+    <string name="set_an_income_goal_title">SET AN ITEM </string>
     <string name="save_input_goal_layout">Save</string>
     <string name="cancle_input_goal_layout">Cancle</string>
-    <string name="enter_note_input_goal_layout">Enter Note:</string>
-    <string name="enter_amount_input_goal_layout">Enter Amount:</string>
+    <string name="enter_note_input_goal_layout">  Enter Note:</string>
+    <string name="enter_amount_input_goal_layout"> Enter Amount:</string>
     <string name="choose_category_input_goal_layout">Choose Category</string>
-    <string name="update_income_goal_layout_title">UPDATE INCOME GOAL</string>
-    <string name="itemnameupdate_income_goal_layout">itemName</string>
+    <string name="update_income_goal_layout_title">UPDATE THIS ITEM</string>
+    <string name="itemnameupdate_income_goal_layout">salary</string>
     <string name="enter_amountupdate_income_goal_layout">Enter Amount:</string>
     <string name="enter_noteupdate_income_goal_layout">Enter Note:</string>
     <string name="deleteupdate_income_goal_layout">Delete</string>
@@ -436,9 +435,9 @@
     <string name="weekly_income_title">Weekly Income</string>
     <string name="week_total_rs_0weekly_income">Week Total: Rs.0</string>
     <string name="weekly_income_status_bar_blue">TODO</string>
-    <string name="l_50weekly_income"><![CDATA[L < 50%]]></string>
+    <string name="l_50weekly_income">L &lt;50%</string>
     <string name="_50_99weekly_income">50% - 99%</string>
-    <string name="g_100weekly_income"><![CDATA[G > 100%]]></string>
+    <string name="g_100weekly_income">G &lt; 100%</string>
     <string name="weekly_income_status_bar_green">weekly_income_status_bar_green</string>
     <string name="weekly_income_status_bar_red">weekly_income_status_bar_red</string>
     <string name="salaryweekly_income">Salary</string>
@@ -523,6 +522,29 @@
         <item>Health</item>
         <item>Personal</item>
         <item>Other</item>
+    </string-array>
+
+    <string-array name="goals">
+        <item>Select Goal</item>
+
+        <item>Salary</item>
+
+        <item>Grants</item>
+
+        <item>Rental</item>
+
+        <item>Invesment</item>
+
+        <item>Wages</item>
+
+        <item>side business</item>
+
+        <item>Dividend</item>
+
+        <item>Pension</item>
+
+        <item>Other</item>
+
     </string-array>
 
 

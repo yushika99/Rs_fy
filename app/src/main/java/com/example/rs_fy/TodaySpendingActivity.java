@@ -70,7 +70,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
         toolbar=findViewById(R.id.toolbar);
         //set support action bar
         setSupportActionBar(toolbar);
-        getActionBar().setTitle("My Today Spending ");
+        toolbar.setTitle("My Today Spending ");
 
         totalAmoutSpentOn=findViewById(R.id.todaytotalAmoutincome);
         progressBar=findViewById(R.id.progressBar);

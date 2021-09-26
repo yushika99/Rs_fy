@@ -18,18 +18,18 @@
             android:id="@+id/my_Feed_Toolbar"
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            android:background="#0759EAB7"
+            android:background="#FFFFFF"
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:targetApi="lollipop" />
+             />
         <TextView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/daily_income_analysis_title"
-            android:textColor="#F5FBFFFE"
+            android:textColor="#FFFFFF"
             android:textAlignment="center"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -62,7 +62,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-
+            android:id="@+id/statusbardailyincome"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
             android:background="#FFFFFFFF">
@@ -927,7 +927,7 @@
                             android:layout_marginBottom="10dp"
                             android:gravity="center_vertical"
                             android:text="@string/summary_of_today_income_text"
-                            android:textAlignment="center"
+
                             android:textColor="#0B0A0A"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -939,7 +939,7 @@
                             android:layout_gravity="center_horizontal"
                             android:gravity="center_vertical"
                             android:text="@string/total_income_rs_0_text"
-                            android:textAlignment="center"
+
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />

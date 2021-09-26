@@ -7,32 +7,33 @@
     tools:context=".IncomeActivity"
     android:background="@drawable/incomedis2">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/my_income"
-        android:textColor="#FDFDFD"
-        android:textAlignment="center"
-        android:textSize="29sp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal" />
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="1dp"
-        android:theme="@style/AppTheme"
-        app:popupTheme="@style/AppTheme"
-        tools:targetApi="lollipop" />
-
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />
+    <TextView
+        android:id="@+id/txtbelowtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="@string/my_income"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
     <TableLayout
         android:id="@+id/ihometable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/txtbelowtoolbar">
 
 
         <TableRow android:background="@drawable/table_income_raw_1"
@@ -188,7 +189,7 @@
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="15dp"
-                tools:targetApi="lollipop">
+               >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -235,7 +236,7 @@
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="15dp"
-                tools:targetApi="lollipop">
+               >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -279,7 +280,7 @@
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="15dp"
-                tools:targetApi="lollipop">
+               >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -323,7 +324,7 @@
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="15dp"
-                tools:targetApi="lollipop">
+               >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -367,7 +368,7 @@
                 android:background="#FFF"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="15dp"
-                tools:targetApi="lollipop">
+               >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -408,10 +409,10 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:background="#FFF"
+                android:background="#FFFFFF"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="15dp"
-                tools:targetApi="lollipop">
+                >
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -464,7 +465,7 @@
                 android:src="@drawable/incomeplusred"
                 app:fabCustomSize="70dp"
                 android:contentDescription="@string/incomeplusreddis"
-                tools:targetApi="lollipop" />
+                 />
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

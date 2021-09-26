@@ -12,18 +12,18 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0759EAB7"
+        android:background="@color/black"
         android:elevation="4dp"
         android:maxWidth="1dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        tools:targetApi="lollipop" />
+         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/my_budget"
-        android:textColor="#DCEDE4"
+        android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:layout_marginBottom="1dp"
         android:textSize="25sp"
@@ -47,7 +47,7 @@
         android:shadowDy="67"
         android:shadowRadius="80"
         android:text="@string/total_budget_amount_rs_0_00"
-        android:textColor="#FFF"
+        android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
 
@@ -67,12 +67,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         app:fabCustomSize="90dp"
-        android:backgroundTint="#C6018786"
+        android:backgroundTint="#FFFFFF"
         android:layout_margin="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/iconseplus"
         android:contentDescription="@string/fabiconinbudget"
-        tools:targetApi="lollipop" />
+         />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

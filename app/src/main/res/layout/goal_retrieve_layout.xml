@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:elevation="10dp"
     android:layout_margin="20dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
+    android:elevation="10dp"
+    android:orientation="vertical"
     app:cardCornerRadius="15dp"
-    app:cardElevation="15dp"
-    tools:targetApi="lollipop">
+    app:cardElevation="15dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,41 +30,42 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/goal_goal_retrive_layout"
-                android:textStyle="bold"
                 android:textColor="#333"
-                android:textSize="19sp"/>
+                android:textSize="19sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/rs_0_goal_retrive_layout"
-                android:textStyle="bold"
                 android:textColor="#333"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/note_goal_retrive_layout"
-                android:textStyle="bold"
                 android:textColor="#333"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:layout_marginLeft="20dp"
                 android:text="@string/date_goal_retrive_layout"
                 android:textColor="#333"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -79,8 +79,8 @@
             android:layout_marginRight="20dp"
             android:layout_toEndOf="@+id/retrivegoallinerlayout"
             android:layout_toRightOf="@+id/retrivegoallinerlayout"
-            android:src="@drawable/incomesalary"
-            android:contentDescription="@string/incomesalary_goal_retrive_layout" />
+            android:contentDescription="@string/incomesalary_goal_retrive_layout"
+            android:src="@drawable/incomesalary" />
     </RelativeLayout>
 
 

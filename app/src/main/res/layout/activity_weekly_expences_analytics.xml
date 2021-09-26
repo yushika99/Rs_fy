@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/expensesdis3"
     android:orientation="vertical"
-    tools:context=".WeeklyExpencesAnalyticsActivity"
-    android:background="@drawable/expensesdis3">
+    tools:context=".WeeklyExpencesAnalyticsActivity">
 
 
     <LinearLayout
@@ -19,111 +19,115 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            android:background="#0759EAB7"
+            android:background="#FFFFFF"
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            tools:targetApi="lollipop" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/my_week_spendingwea31"
-            android:textColor="#F5FBFFFE"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:gravity="center_horizontal"
             android:shadowColor="#B60558"
             android:shadowDx="35"
             android:shadowDy="67"
             android:shadowRadius="80"
-            android:gravity="center_horizontal" />
+            android:text="@string/my_week_spendingwea31"
+            android:textAlignment="center"
+            android:textColor="#F5FBFFFE"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/todaytotalAmoutincome"
+            android:id="@+id/totalAmoutSpentOn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/total_amount_rs_0wea46"
+            android:layout_marginHorizontal="80dp"
             android:layout_marginTop="1dp"
             android:background="@drawable/headtextsub"
-            android:layout_marginHorizontal="80dp"
             android:gravity="center"
             android:shadowColor="#F1E6EB"
             android:shadowDx="35"
             android:shadowDy="67"
             android:shadowRadius="80"
+            android:text="@string/total_amount_rs_0wea46"
             android:textColor="#FFF"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/statusbar">
+            android:background="@drawable/statusbar"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="1dp"
                 android:layout_height="18dp"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
+                android:layout_weight="1"
                 android:src="@drawable/green"
                 tools:ignore="ContentDescription" />
+
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="2"
                 android:text="@string/l_50wes82"
-                android:textStyle="bold"
+                android:textColor="#333"
                 android:textSize="12sp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#333"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="1dp"
                 android:layout_height="18dp"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
+                android:layout_weight="1"
                 android:src="@drawable/brown"
                 tools:ignore="ContentDescription" />
+
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="2"
                 android:text="@string/was_50_99_102"
-                android:textStyle="bold"
+                android:textColor="#333"
                 android:textSize="12sp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#333"/>
+                android:textStyle="bold" />
+
 
             <ImageView
                 android:layout_width="1dp"
                 android:layout_height="18dp"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
+                android:layout_weight="1"
                 android:src="@drawable/red"
                 tools:ignore="ContentDescription" />
+
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="2"
                 android:text="@string/g_100wea122"
-                android:textStyle="bold"
+                android:textColor="#333"
                 android:textSize="12sp"
-                android:layout_gravity="center_vertical"
-                android:textColor="#333"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -218,8 +222,10 @@
                         android:layout_height="70dp"
                         android:layout_margin="10dp"
                         android:layout_toEndOf="@+id/linerLayoutSal"
+
                         android:src="@drawable/iconsetransport"
                         tools:ignore="ContentDescription" />
+
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -389,7 +395,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutInvest"
+                    android:id="@+id/relativeLayoutHome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -639,7 +645,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutDividend"
+                    android:id="@+id/relativeLayoutHealth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -722,7 +728,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutPension"
+                    android:id="@+id/relativeLayoutPersonal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -806,7 +812,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeLayoutOtherIncome"
+                    android:id="@+id/relativeLayoutOther"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -889,12 +895,20 @@
                         android:src="@drawable/iconseother"
                         tools:ignore="ContentDescription" />
                 </RelativeLayout>
-
-                <com.anychart.AnyChartView
-                    android:id="@+id/anyChartViewIN"
+                
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp" />
+                    android:layout_height="wrap_content">
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartViewEx"
+                        android:layout_width="match_parent"
+                        android:layout_height="600dp"
+                        android:layout_marginTop="20dp" />
+
+
+                </LinearLayout>
+
 
                 <RelativeLayout
                     android:id="@+id/linerLayoutMonthlyInAnliysis"
@@ -902,17 +916,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:orientation="horizontal"
-                    android:background="@drawable/incomesummaryback">
+                    android:background="@drawable/incomesummaryback"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:id="@+id/incomeSummarylinerLayout"
                         android:layout_width="250dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="vertical">
 
 
@@ -923,7 +937,7 @@
                             android:layout_marginBottom="10dp"
                             android:gravity="center_vertical"
                             android:text="@string/summary_of_weekly_spending925wea"
-                            android:textAlignment="center"
+
                             android:textColor="#0B0A0A"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -935,7 +949,7 @@
                             android:layout_gravity="center_horizontal"
                             android:gravity="center_vertical"
                             android:text="@string/total_spent_rs_0937ewa"
-                            android:textAlignment="center"
+
                             android:textColor="#333"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -955,12 +969,13 @@
                                 android:textColor="#333"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
+
                             <ImageView
                                 android:id="@+id/monthRatioSpending_Image"
                                 android:layout_width="0dp"
                                 android:layout_height="18dp"
-                                android:layout_weight="1"
                                 android:layout_marginTop="5dp"
+                                android:layout_weight="1"
                                 tools:ignore="ContentDescription" />
                         </LinearLayout>
 
@@ -975,14 +990,15 @@
 
 
                     </LinearLayout>
+
                     <ImageView
-                        android:layout_toEndOf="@id/incomeSummarylinerLayout"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@id/incomeSummarylinerLayout"
                         android:src="@drawable/iconsweekexanalyze"
                         tools:ignore="ContentDescription" />
 
