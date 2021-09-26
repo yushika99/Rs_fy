@@ -47,13 +47,13 @@ tools:context=".IncomeHistoryActivity"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/_0_00_income_search"
-            android:textSize="70sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#000"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:visibility="gone"
-            android:background="#808080"
+
             />
 
         <androidx.recyclerview.widget.RecyclerView

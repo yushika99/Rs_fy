@@ -80,7 +80,7 @@ public class BudgetActivity extends AppCompatActivity {
 
         TotalBudgetAmountTextview=findViewById(R.id.TotalBudgetAmountTextview);
         recyclerView=findViewById(R.id.TodayIncomeRecyclerView);
-
+        getData();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
@@ -94,7 +94,7 @@ public class BudgetActivity extends AppCompatActivity {
                 for(DataSnapshot snap: snapshot.getChildren()){
                     Data data = snap.getValue(Data.class);
                     totalAmount+=data.getAmount();
-                    String sTotal =String.valueOf("Month Budget: Rs. "+totalAmount);
+                    String sTotal =String.valueOf("Month Budget:Rs. "+totalAmount);
                     TotalBudgetAmountTextview.setText(sTotal);
 
 
@@ -131,7 +131,7 @@ public class BudgetActivity extends AppCompatActivity {
 
                         totalammount+=data.getAmount();
 
-                        String sttotal=String.valueOf("Month Budget: "+totalammount);
+                        String sttotal=String.valueOf("Month Budget:Rs. "+totalammount);
 
                         TotalBudgetAmountTextview.setText(sttotal);
 
@@ -226,6 +226,7 @@ public class BudgetActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(BudgetActivity.this,"Budget Item Added Sccessfuly",Toast.LENGTH_SHORT).show();
+                                getData();
                             }else{
                                 Toast.makeText(BudgetActivity.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
@@ -246,8 +247,7 @@ public class BudgetActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void OnStart(){
-        super.onStart();
+    public void getData(){
 
         FirebaseRecyclerOptions<Data> options =new FirebaseRecyclerOptions.Builder<Data>()
                 .setQuery(budgetRef,Data.class)
@@ -255,7 +255,7 @@ public class BudgetActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<Data, MyViewHolder> adapter = new FirebaseRecyclerAdapter<Data, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull final Data model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView")  int position, @NonNull final Data model) {
                         holder.setItemAmount("Allocated amount: Rs" +model.getAmount());
                         holder.setDate("On : "+model.getDate());
                         holder.setItemName("Budget Item : "+model.getItem());
@@ -311,7 +311,7 @@ public class BudgetActivity extends AppCompatActivity {
             }
         };
 
-        recyclerView.setAdapter(recyclerView.getAdapter());
+        recyclerView.setAdapter(adapter);
         adapter.startListening();
         adapter.notifyDataSetChanged();
         // check this error
@@ -325,7 +325,7 @@ public class BudgetActivity extends AppCompatActivity {
          public MyViewHolder(@NonNull  View itemView) {
              super(itemView);
              mView=itemView;
-             imageView =itemView.findViewById(R.id.imageView);
+             imageView =itemView.findViewById(R.id.Imageview);
              notes=itemView.findViewById(R.id.note);
              date=itemView.findViewById(R.id.date);
 
@@ -501,7 +501,7 @@ public class BudgetActivity extends AppCompatActivity {
     }
 
     private void getMonthHouseBudgetRatios(){
-        Query query = budgetRef.orderByChild("item").equalTo("House Expenses");
+        Query query = budgetRef.orderByChild("item").equalTo("House");
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -48,9 +48,9 @@ public class IncomeHistoryActivity extends AppCompatActivity implements DatePick
         setContentView(R.layout.activity_income_history);
         settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("History");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        settingsToolbar.setTitle("History");
 
 
         search = findViewById(R.id.search);

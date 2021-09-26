@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -80,7 +81,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
 //        fab.setOnClickListener((View.OnClickListener) this);
 
-
+        getData();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
@@ -224,9 +225,10 @@ public class IncomeGoalActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(IncomeGoalActivity.this, "Goal Item Added Sccessfuly", Toast.LENGTH_SHORT).show();
-
+                                getData();
                             } else {
                                 Toast.makeText(IncomeGoalActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+
                             }
                             loader.dismiss();
                         }
@@ -245,8 +247,8 @@ public class IncomeGoalActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void OnStart(){
-        super.onStart();
+    public void getData(){
+
 
         FirebaseRecyclerOptions<GoalData> options = new FirebaseRecyclerOptions.Builder<GoalData>()
                 .setQuery(goalRef,GoalData.class)
@@ -257,7 +259,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
 
         FirebaseRecyclerAdapter<GoalData, MyViewHolder> adapter = new FirebaseRecyclerAdapter<GoalData, MyViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull GoalData model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull GoalData model) {
                 holder.setItemAmount("Allocated amount: Rs" + model.getAmount());
                 holder.setDate("On : " + model.getDate());
                 holder.setItemName("Goal Item : " + model.getItem());

@@ -58,7 +58,7 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
         holder.item.setText("Item: " + data.getItem());
         holder.amount.setText("Amount: " + data.getAmount());
         holder.date.setText("On: " + data.getDate());
-        holder.notes.setText("Item: " + data.getNotes());
+        holder.notes.setText("Note: " + data.getNotes());
 
         switch (data.getItem()) {
 

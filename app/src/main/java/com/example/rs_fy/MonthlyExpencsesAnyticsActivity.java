@@ -501,8 +501,8 @@ public class MonthlyExpencsesAnyticsActivity extends AppCompatActivity {
                         totalAmount+=pTotal;
 
                     }
-                    totalAmoutSpentOn.setText("Total Months's spending: $ "+ totalAmount);
-                    monthSpentAmount.setText("Total Spent: $ "+totalAmount);
+                    totalAmoutSpentOn.setText("Total Months's spending: Rs. "+ totalAmount);
+                    monthSpentAmount.setText("Total Spent: Rs. "+totalAmount);
                 }else {
                     anyChartViewEx.setVisibility(View.GONE);
                 }

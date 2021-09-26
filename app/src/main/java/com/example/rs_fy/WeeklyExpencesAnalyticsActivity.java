@@ -60,7 +60,7 @@ public class WeeklyExpencesAnalyticsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weekly_expences_analytics);
 
 
-        settingsToolbar = findViewById(R.id.toolbar);
+        settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
         setSupportActionBar(settingsToolbar);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);

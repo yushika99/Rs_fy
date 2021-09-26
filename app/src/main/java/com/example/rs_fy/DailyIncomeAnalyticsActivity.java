@@ -511,7 +511,7 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
                         totalAmount += pTotal;
 
                     }
-                    totalIncomAmountTextView.setText("Total day's Income: $ " + totalAmount);
+                    totalIncomAmountTextView.setText("Total day's Income: Rs. " + totalAmount);
                     monthIncomeAmount.setText("Total income: Rs. " + totalAmount);
                 } else {
                     totalIncomAmountTextView.setText("No income Today");

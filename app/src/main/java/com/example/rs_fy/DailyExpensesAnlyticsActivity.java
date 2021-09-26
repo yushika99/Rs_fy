@@ -506,7 +506,7 @@ public class DailyExpensesAnlyticsActivity extends AppCompatActivity {
                         totalAmount+=pTotal;
 
                     }
-                    totalBudgetAmountTextView.setText("Total day's spending: $ "+ totalAmount);
+                    totalBudgetAmountTextView.setText("Total day's spending: Rs. "+ totalAmount);
                     monthSpentAmount.setText("Total Spent: Rs. "+totalAmount);
                 }
                 else {

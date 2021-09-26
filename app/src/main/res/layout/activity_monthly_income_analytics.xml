@@ -18,7 +18,7 @@
             android:id="@+id/settingsToolbar"
             android:layout_width="match_parent"
             android:layout_height="68dp"
-            android:background="#FFFFFF"
+
             android:elevation="4dp"
             android:maxWidth="1dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -849,7 +849,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/progress_ratio_other_i"
+                                android:id="@+id/progress_ratio_other"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
