@@ -65,7 +65,7 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
         setSupportActionBar(settingsToolbar);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Today Income Analytics");
+        settingsToolbar.setTitle("Today Income Analytics");
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -314,7 +314,7 @@ public class DailyIncomeAnalyticsActivity extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(cal.getTime());
-        String itemNday = "Wage" + date;
+        String itemNday = "Wages" + date;
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(onlineUserId);
         Query query = reference.orderByChild("itemNday").equalTo(itemNday);

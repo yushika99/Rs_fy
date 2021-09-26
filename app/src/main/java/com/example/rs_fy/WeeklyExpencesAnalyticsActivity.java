@@ -64,7 +64,7 @@ public class WeeklyExpencesAnalyticsActivity extends AppCompatActivity {
         setSupportActionBar(settingsToolbar);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        settingsToolbar.setTitle("Monthly Analytics");
+        settingsToolbar.setTitle("Weekly Analytics");
 
         mAuth = FirebaseAuth.getInstance();
         onlineUserId = mAuth.getCurrentUser().getUid();

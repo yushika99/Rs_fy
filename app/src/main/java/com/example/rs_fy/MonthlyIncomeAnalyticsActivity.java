@@ -61,9 +61,9 @@ public class MonthlyIncomeAnalyticsActivity extends AppCompatActivity {
 
             settingsToolbar = findViewById(R.id.settingsToolbar);
             setSupportActionBar(settingsToolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setTitle("Monthly  Analytics");
+           // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+           // getSupportActionBar().setDisplayShowHomeEnabled(true);
+            settingsToolbar.setTitle("Monthly  Analytics");
 
 
             mAuth = FirebaseAuth.getInstance();
@@ -77,7 +77,7 @@ public class MonthlyIncomeAnalyticsActivity extends AppCompatActivity {
             //general analytic
             monthIncomeAmount = findViewById(R.id.monthIncomeAmount);
             linearLayoutAnalysis = findViewById(R.id.linearLayoutAnalysis);
-            monthRatioIncome = findViewById(R.id.monthRatioIncome);
+            monthRatioIncome = findViewById(R.id.monthRatioIncomeT);
             monthRatioIncome_Image = findViewById(R.id.monthRatioIncome_Image);
 
             analyticsSalaryAmount = findViewById(R.id.analyticsSalaryAmount);

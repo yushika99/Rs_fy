@@ -124,8 +124,12 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
         mAmount.setSelection(String.valueOf(amount).length());
 
         try {
-            mNotes.setText(note);
-            mNotes.setSelection(note.length());
+            if(note.length()>0){
+                mNotes.setText(note);
+                mNotes.setSelection(note.length());
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

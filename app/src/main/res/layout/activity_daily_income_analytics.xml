@@ -892,13 +892,19 @@
                         android:contentDescription="@string/today_sum_icon" />
                 </RelativeLayout>
 
-
-
-                <com.anychart.AnyChartView
-                    android:id="@+id/anyChartView"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp" />
+                    android:layout_height="wrap_content" >
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/anyChartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="600dp"
+                        android:layout_marginTop="20dp" />
+
+
+                </LinearLayout>
+
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutAnalysis"

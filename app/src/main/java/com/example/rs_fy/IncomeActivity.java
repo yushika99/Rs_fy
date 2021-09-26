@@ -129,7 +129,7 @@ public class IncomeActivity extends AppCompatActivity {
         });
 
         //analytics card
-        ihomeanlyticscardView = findViewById(R.id.ihomehistorycardView);
+        ihomeanlyticscardView = findViewById(R.id.ihomeanlyticscardView);
         ihomeanlyticscardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

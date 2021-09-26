@@ -58,6 +58,7 @@
 
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/chekinccolin"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -66,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
-                app:layout_anchor="@+id/TodayIncomeRecyclerView"
+                app:layout_anchor="@+id/weekIncomeRecyclerView"
                 app:layout_anchorGravity="center" />
 
             <androidx.recyclerview.widget.RecyclerView

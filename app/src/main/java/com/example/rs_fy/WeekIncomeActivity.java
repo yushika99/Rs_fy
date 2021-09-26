@@ -3,6 +3,7 @@ package com.example.rs_fy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +36,7 @@ public class WeekIncomeActivity extends AppCompatActivity {
     private TextView totalWeekAmountTextView;
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
+    private CoordinatorLayout chekinccolin;
 
     private WeekIncomeAdapter weekIncomeAdapter;
     private List<GoalData> myDataList;
@@ -52,16 +54,20 @@ public class WeekIncomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_week_income);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Week income");
+        toolbar.setTitle("Week income");
+
         totalWeekAmountTextView = findViewById(R.id.totalWeekAmountTextView);
-        progressBar = findViewById(R.id.progressBar);
-        recyclerView = findViewById(R.id.recyclerView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        recyclerView = findViewById(R.id.weekIncomeRecyclerView);
+        chekinccolin = findViewById(R.id.chekinccolin);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
+
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
 
         mAuth = FirebaseAuth.getInstance();
         onlineUserId = mAuth.getCurrentUser().getUid();

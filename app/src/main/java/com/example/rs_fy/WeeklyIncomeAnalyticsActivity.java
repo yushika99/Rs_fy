@@ -63,9 +63,9 @@ public class WeeklyIncomeAnalyticsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weekly_income_analytics);
         settingsToolbar = findViewById(R.id.my_Feed_Toolbar);
         setSupportActionBar(settingsToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Weekly Analytics");
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        settingsToolbar.setTitle("Weekly Analytics");
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -74,7 +74,7 @@ public class WeeklyIncomeAnalyticsActivity extends AppCompatActivity {
         personalRef = FirebaseDatabase.getInstance().getReference("personal").child(onlineUserId);
 
 
-        TotalGoalAmountTextview = findViewById(R.id.TotalGoalAmountTextview);
+        TotalGoalAmountTextview = findViewById(R.id.weektotalAmoutincome);
 
         //general analytic
         monthIncomeAmount = findViewById(R.id.monthIncomeAmount);
@@ -311,7 +311,7 @@ public class WeeklyIncomeAnalyticsActivity extends AppCompatActivity {
         DateTime now = new DateTime();
         Weeks weeks = Weeks.weeksBetween(epoch, now);
 
-        String itemNweek = "Wage"+weeks.getWeeks();
+        String itemNweek = "Wages"+weeks.getWeeks();
 
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("income").child(onlineUserId);

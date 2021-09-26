@@ -12,11 +12,16 @@
         <!--        <activity android:name=".TodayIncomeItemAdapter"></activity>-->
         <activity android:name=".IncomeHistoryActivity" />
         <!--        <activity android:name=".MonthIncomeActivity" />-->
-        <activity android:name=".WeekIncomeActivity" />
-        <activity android:name=".WeeklyIncomeAnalyticsActivity" />
-        <activity android:name=".MonthlyIncomeAnalyticsActivity" />
-        <activity android:name=".DailyIncomeAnalyticsActivity" />
-        <activity android:name=".ChooseIncomeAnalyticsActivity" />
+        <activity android:name=".WeekIncomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".WeeklyIncomeAnalyticsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MonthlyIncomeAnalyticsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".DailyIncomeAnalyticsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".ChooseIncomeAnalyticsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".TodayIncomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

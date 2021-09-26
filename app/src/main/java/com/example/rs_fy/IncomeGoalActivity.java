@@ -330,7 +330,7 @@ public class IncomeGoalActivity extends AppCompatActivity {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
-            imageView = itemView.findViewById(R.id.imageview);
+            imageView = itemView.findViewById(R.id.imageView);
             notes = itemView.findViewById(R.id.note);
             date = itemView.findViewById(R.id.date);
 
