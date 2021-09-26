@@ -62,6 +62,7 @@ public class TodayIncomeItemAdapter  extends  RecyclerView.Adapter<TodayIncomeIt
         holder.item.setText("Item: "+ data.getItem());
         holder.amount.setText("Amount: "+ data.getAmount());
         holder.date.setText("On "+data.getDate());
+
         holder.notes.setText("Note: "+data.getNotes());
 
 
